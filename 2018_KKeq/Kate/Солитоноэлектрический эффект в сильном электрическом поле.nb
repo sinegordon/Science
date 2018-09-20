@@ -1,0 +1,728 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.1'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     34217,        657]*)
+(*NotebookOutlinePosition[     34879,        680]*)
+(*  CellTagsIndexPosition[     34835,        676]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[TextData[{
+  StyleBox["\:0412\:044b\:0440\:0430\:0436\:0435\:043d\:0438\:0435 \:0434\
+\:043b\:044f \:0442\:043e\:043a\:0430 \:0443\:0432\:043b\:0435\:0447\:0435\
+\:043d\:0438\:044f(\:0447\:0435\:0440\:0435\:0437 \:0432\:043d\:0443\:0442\
+\:0440\:0435\:043d\:043d\:0438\:0435 \:0438\:043d\:0442\:0435\:0433\:0440\
+\:0430\:043b\:044b)\n",
+    FontSize->18],
+  Cell[BoxData[
+      FormBox[
+        RowBox[{
+          StyleBox[\(j\_z\),
+            FontSize->12], 
+          StyleBox["=",
+            FontSize->12], 
+          RowBox[{
+            StyleBox[\(-j\_0\),
+              FontSize->12], 
+            StyleBox[" ",
+              FontSize->12], 
+            RowBox[{
+              StyleBox[\(\[Integral]\_\(-\[Infinity]\)\%\[Tau]\),
+                FontSize->12], 
+              RowBox[{
+                StyleBox[\(\[ExponentialE]\^\(\[Tau]\_1 - \[Tau]\)\),
+                  FontSize->18], 
+                StyleBox[" ",
+                  FontSize->19], 
+                RowBox[{"(", 
+                  RowBox[{
+                    StyleBox["1",
+                      FontSize->14], 
+                    StyleBox["-",
+                      FontSize->14], 
+                    StyleBox[\(cos(\[CurlyPhi]\_1 - \[CurlyPhi])\),
+                      FontSize->14], 
+                    StyleBox["-",
+                      FontSize->19], 
+                    
+                    StyleBox[\(\[Alpha]\_c\ \(cos(\[Tau]\ \[Alpha]\_c + \
+\[CurlyPhi]\_sol)\)\ \((Int11 + Int12)\)\),
+                      FontSize->14], 
+                    StyleBox["+",
+                      FontSize->14], 
+                    
+                    StyleBox[\(\[Alpha]\_c\ \(sin(\[Tau]\ \[Alpha]\_c + \
+\[CurlyPhi]\_sol)\)\ \((Int13 + Int14)\)\),
+                      FontSize->14]}], 
+                  StyleBox[")",
+                    FontSize->14]}], 
+                StyleBox[\(\[DifferentialD]\[Tau]\_1\),
+                  FontSize->16]}]}]}]}], TraditionalForm]]]
+}], "Text",
+  TextAlignment->Center,
+  TextJustification->0,
+  Background->GrayLevel[0.900008]],
+
+Cell[BoxData[
+    \(j\_z = \(-j\_0\) \(\[Integral]\_\(-\[Infinity]\)\%\[Tau] 
+              Exp[\[Tau]\_1 - \[Tau]]*\((1 - 
+                Cos[\[CurlyPhi]\_1 - \[CurlyPhi]] - \[Alpha]\_c*
+                  Cos[\[Alpha]\_c*\[Tau] + \[CurlyPhi]\_sol]*\((Int11 + 
+                      Int12)\) + \[Alpha]\_c*
+                  Sin[\[Alpha]\_c*\[Tau] + \[CurlyPhi]\_sol]*\((Int13 + 
+                      Int14)\))\) \[DifferentialD]\[Tau]\_1\)\)], "Input"],
+
+Cell[TextData[{
+  StyleBox["\:0412\:043d\:0443\:0442\:0440\:0435\:043d\:043d\:0438\:0435 \
+\:0438\:043d\:0442\:0435\:0433\:0440\:0430\:043b\:044b(\:0441 \:0437\:0430\
+\:043c\:0435\:043d\:043e\:0439)\n",
+    FontSize->18],
+  Cell[BoxData[{
+      \(Int11 = \[Integral]\_\[Tau]\%\(\[Tau]\_1\)\((1 - 
+                2*Exp[\(-\[Beta]\)*\[Alpha]\_0^2*\[Tau]\_2^2])\)*
+            Sin[\[Alpha]\_c*\[Tau]\_2] \[DifferentialD]\[Tau]\_2\), "\n", 
+      \(Int12 = \[Integral]\_\[Tau]\%\(\[Tau]\_1\)\((\((\(-\[Gamma]\))\)*\
+\[Alpha]\_0*\[Tau]\_2*Exp[\(-\[Gamma]\)*\[Alpha]\_0^2*\[Tau]\_2^2])\)*
+            Cos[\[Alpha]\_c*\[Tau]\_2] \[DifferentialD]\[Tau]\_2\), "\n", 
+      \(Int13 = \[Integral]\_\[Tau]\%\(\[Tau]\_1\)\((1 - 
+                2*Exp[\(-\[Beta]\)*\[Alpha]\_0^2*\[Tau]\_2^2])\)*
+            Cos[\[Alpha]\_c*\[Tau]\_2] \[DifferentialD]\[Tau]\_2\), "\n", 
+      \(Int14 = \[Integral]\_\[Tau]\%\(\[Tau]\_1\)\((\((\(-\[Gamma]\))\)*\
+\[Alpha]\_0*\[Tau]\_2*Exp[\(-\[Gamma]\)*\[Alpha]\_0^2*\[Tau]\_2^2])\)*
+            Sin[\[Alpha]\_c*\[Tau]\_2] \[DifferentialD]\[Tau]\_2\)}],
+    TextAlignment->Left,
+    TextJustification->0]
+}], "Text",
+  TextAlignment->Center,
+  TextJustification->0,
+  Background->GrayLevel[0.900008]],
+
+Cell[BoxData[{
+    \(Int11 = \[Integral]\_\[Tau]\%\(\[Tau]\_1\)\((1 - 
+              2*Exp[\(-\[Beta]\)*\[Alpha]\_0^2*\[Tau]\_2^2])\)*
+          Sin[\[Alpha]\_c*\[Tau]\_2] \[DifferentialD]\[Tau]\_2\), "\
+\[IndentingNewLine]", 
+    \(Int12 = \[Integral]\_\[Tau]\%\(\[Tau]\_1\)\((\((\(-\[Gamma]\))\)*\
+\[Alpha]\_0*\[Tau]\_2*Exp[\(-\[Gamma]\)*\[Alpha]\_0^2*\[Tau]\_2^2])\)*
+          Cos[\[Alpha]\_c*\[Tau]\_2] \[DifferentialD]\[Tau]\_2\), "\
+\[IndentingNewLine]", 
+    \(Int13 = \[Integral]\_\[Tau]\%\(\[Tau]\_1\)\((1 - 
+              2*Exp[\(-\[Beta]\)*\[Alpha]\_0^2*\[Tau]\_2^2])\)*
+          Cos[\[Alpha]\_c*\[Tau]\_2] \[DifferentialD]\[Tau]\_2\), "\
+\[IndentingNewLine]", 
+    \(Int14 = \[Integral]\_\[Tau]\%\(\[Tau]\_1\)\((\((\(-\[Gamma]\))\)*\
+\[Alpha]\_0*\[Tau]\_2*Exp[\(-\[Gamma]\)*\[Alpha]\_0^2*\[Tau]\_2^2])\)*
+          Sin[\[Alpha]\_c*\[Tau]\_2] \[DifferentialD]\[Tau]\_2\)}], "Input",
+  TextAlignment->Left,
+  TextJustification->0],
+
+Cell[TextData[{
+  StyleBox["\:0412\:044b\:0440\:0430\:0436\:0435\:043d\:0438\:0435 \:0434\
+\:043b\:044f \:0442\:043e\:043a\:0430 \:0443\:0432\:043b\:0435\:0447\:0435\
+\:043d\:0438\:044f(\:0447\:0435\:0440\:0435\:0437 \:0432\:043d\:0435\:0448\
+\:043d\:0438\:0435 \:0438\:043d\:0442\:0435\:0433\:0440\:0430\:043b\:044b)\n",
+    
+    FontSize->18],
+  Cell[BoxData[
+      \(TraditionalForm\`j\_z = \(-j\_0\)\ \((Int21 - \(cos(\[Tau]\ \
+\[Alpha]\_c + \[CurlyPhi]\_sol)\)\ \((Int22 - 
+                    Int23 + \((Int26 + 
+                          Int27)\)\ \[Alpha]\_c)\) - \(sin(\[Tau]\ \
+\[Alpha]\_c + \[CurlyPhi]\_sol)\)\ \((Int24 + 
+                    Int25 - \[Alpha]\_c\ \((Int28 - Int29)\))\))\)\)],
+    Background->GrayLevel[0.900008]]
+}], "Text",
+  TextAlignment->Center,
+  TextJustification->0,
+  Background->GrayLevel[0.900008]],
+
+Cell[BoxData[
+    \(j\_z = \(-j\_0\) \((Int21 - 
+            Cos[\[Alpha]\_c*\[Tau] + \[CurlyPhi]\_sol]*\((Int22 - 
+                  Int23 + \[Alpha]\_c*\((Int26 + Int27)\))\) - 
+            Sin[\[Alpha]\_c*\[Tau] + \[CurlyPhi]\_sol]*\((Int24 + 
+                  Int25 - \[Alpha]\_c*\((Int28 - Int29)\))\))\)\)], "Input"],
+
+Cell[TextData[{
+  StyleBox["\:0412\:043d\:0435\:0448\:043d\:0438\:0435 \:0438\:043d\:0442\
+\:0435\:0433\:0440\:0430\:043b\:044b(\:0431\:0435\:0437 \:0437\:0430\:043c\
+\:0435\:043d\:044b)",
+    FontSize->18],
+  "\n",
+  Cell[BoxData[{
+      \(Int21 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] 
+              Exp[\[Tau]\_1 - \[Tau]] \[DifferentialD]\[Tau]\_1\), "\n", 
+      \(Int22 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+            Cos[\[Alpha]\_c*\[Tau]\_1]*
+            Cos[\[CurlyPhi]\_\(1  sol\)] \[DifferentialD]\[Tau]\_1\), "\n", 
+      \(Int23 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+            Sin[\[Alpha]\_c*\[Tau]\_1]*
+            Sin[\[CurlyPhi]\_\(1  sol\)] \[DifferentialD]\[Tau]\_1\), "\n", 
+      \(Int24 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+            Sin[\[Alpha]\_c*\[Tau]\_1]*
+            Cos[\[CurlyPhi]\_\(1  sol\)] \[DifferentialD]\[Tau]\_1\), "\n", 
+      \(Int25 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+            Cos[\[Alpha]\_c*\[Tau]\_1]*
+            Sin[\[CurlyPhi]\_\(1  sol\)] \[DifferentialD]\[Tau]\_1\), "\n", 
+      \(Int26 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+            Int11 \[DifferentialD]\[Tau]\_1\), "\n", 
+      \(Int27 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+            Int12 \[DifferentialD]\[Tau]\_1\), "\n", 
+      \(Int28 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+            Int13 \[DifferentialD]\[Tau]\_1\), "\n", 
+      \(Int29 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+            Int14 \[DifferentialD]\[Tau]\_1\), "\[IndentingNewLine]", 
+      \(\(Cos[\[CurlyPhi]\_\(1  sol\)] = 
+          1 - 2*Exp[\(-\[Beta]\)*\[Alpha]\_0^2*\[Tau]\_1^2];\)\), 
+    "\[IndentingNewLine]", 
+      \(\(Sin[\[CurlyPhi]\_\(1  sol\)] = \((\(-\[Gamma]\))\)*\[Alpha]\_0*\
+\[Tau]\_1*Exp[\(-\[Gamma]\)*\[Alpha]\_0^2*\[Tau]\_1^2];\)\)}],
+    Background->GrayLevel[0.900008]]
+}], "Text",
+  TextAlignment->Center,
+  TextJustification->0,
+  Background->GrayLevel[0.900008]],
+
+Cell[BoxData[{
+    \(Int21 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] 
+            Exp[\[Tau]\_1 - \[Tau]] \[DifferentialD]\[Tau]\_1\), "\
+\[IndentingNewLine]", 
+    \(Int22 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+          Cos[\[Alpha]\_c*\[Tau]\_1]*
+          Cos[\[CurlyPhi]\_\(1  sol\)] \[DifferentialD]\[Tau]\_1\), "\
+\[IndentingNewLine]", 
+    \(Int23 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+          Sin[\[Alpha]\_c*\[Tau]\_1]*
+          Sin[\[CurlyPhi]\_\(1  sol\)] \[DifferentialD]\[Tau]\_1\), "\
+\[IndentingNewLine]", 
+    \(Int24 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+          Sin[\[Alpha]\_c*\[Tau]\_1]*
+          Cos[\[CurlyPhi]\_\(1  sol\)] \[DifferentialD]\[Tau]\_1\), "\
+\[IndentingNewLine]", 
+    \(Int25 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+          Cos[\[Alpha]\_c*\[Tau]\_1]*
+          Sin[\[CurlyPhi]\_\(1  sol\)] \[DifferentialD]\[Tau]\_1\), "\
+\[IndentingNewLine]", 
+    \(Int26 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+          Int11 \[DifferentialD]\[Tau]\_1\), "\[IndentingNewLine]", 
+    \(Int27 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+          Int12 \[DifferentialD]\[Tau]\_1\), "\[IndentingNewLine]", 
+    \(Int28 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+          Int13 \[DifferentialD]\[Tau]\_1\), "\[IndentingNewLine]", 
+    \(Int29 = \[Integral]\_\(-\[Infinity]\)\%\[Tau] Exp[\[Tau]\_1 - \[Tau]]*
+          Int14 \[DifferentialD]\[Tau]\_1\)}], "Input"],
+
+Cell[TextData[StyleBox["\:0411\:043b\:043e\:043a \:0432\:044b\:0447\:0438\
+\:0441\:043b\:0435\:043d\:0438\:044f",
+  FontSize->18]], "Text",
+  TextAlignment->Center,
+  TextJustification->0,
+  Background->GrayLevel[0.900008]],
+
+Cell[BoxData[
+    \(\(\(\[IndentingNewLine]\)\(\(Int11 = \[Integral]\_\[Tau]\%\(\[Tau]\_1\)\
+\((1 - 2*Exp[\(-\[Beta]\)*\[Alpha]\_0^2*\[Tau]\_2^2])\)*
+            Sin[\[Alpha]\_c*\[Tau]\_2] \[DifferentialD]\[Tau]\_2;\)\
+\[IndentingNewLine]
+    \(Int12 = \[Integral]\_\[Tau]\%\(\[Tau]\_1\)\((\((\(-\[Gamma]\))\)*\
+\[Alpha]\_0*\[Tau]\_2*Exp[\(-\[Gamma]\)*\[Alpha]\_0^2*\[Tau]\_2^2])\)*
+            Cos[\[Alpha]\_c*\[Tau]\_2] \[DifferentialD]\[Tau]\_2;\)\
+\[IndentingNewLine]
+    \(Int13 = \[Integral]\_\[Tau]\%\(\[Tau]\_1\)\((1 - 
+                2*Exp[\(-\[Beta]\)*\[Alpha]\_0^2*\[Tau]\_2^2])\)*
+            Cos[\[Alpha]\_c*\[Tau]\_2] \[DifferentialD]\[Tau]\_2;\)\
+\[IndentingNewLine]
+    \(Int14 = \[Integral]\_\[Tau]\%\(\[Tau]\_1\)\((\((\(-\[Gamma]\))\)*\
+\[Alpha]\_0*\[Tau]\_2*Exp[\(-\[Gamma]\)*\[Alpha]\_0^2*\[Tau]\_2^2])\)*
+            Sin[\[Alpha]\_c*\[Tau]\_2] \[DifferentialD]\[Tau]\_2;\)\)\)\)], \
+"Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(Int21 = \[Integral]Exp[\[Tau]\_1 - \[Tau]] \[DifferentialD]\[Tau]\_1;\
+\)\), "\[IndentingNewLine]", 
+    \(\(Int22 = \[Integral]Exp[\[Tau]\_1 - \[Tau]]*
+            Cos[\[Alpha]\_c*\[Tau]\_1]*\((1 - 
+                2*Exp[\(-\[Beta]\)*\[Alpha]\_0^2*\[Tau]\_1^2])\) \
+\[DifferentialD]\[Tau]\_1;\)\), "\[IndentingNewLine]", 
+    \(\(Int23 = \[Integral]Exp[\[Tau]\_1 - \[Tau]]*
+            Sin[\[Alpha]\_c*\[Tau]\_1]*\((\((\(-\[Gamma]\))\)*\[Alpha]\_0*\
+\[Tau]\_1*
+                Exp[\(-\[Gamma]\)*\[Alpha]\_0^2*\[Tau]\_1^2])\) \
+\[DifferentialD]\[Tau]\_1;\)\), "\[IndentingNewLine]", 
+    \(\(Int24 = \[Integral]Exp[\[Tau]\_1 - \[Tau]]*
+            Sin[\[Alpha]\_c*\[Tau]\_1]*\((1 - 
+                2*Exp[\(-\[Beta]\)*\[Alpha]\_0^2*\[Tau]\_1^2])\) \
+\[DifferentialD]\[Tau]\_1;\)\), "\[IndentingNewLine]", 
+    \(\(Int25 = \[Integral]Exp[\[Tau]\_1 - \[Tau]]*
+            Cos[\[Alpha]\_c*\[Tau]\_1]*\((\((\(-\[Gamma]\))\)*\[Alpha]\_0*\
+\[Tau]\_1*
+                Exp[\(-\[Gamma]\)*\[Alpha]\_0^2*\[Tau]\_1^2])\) \
+\[DifferentialD]\[Tau]\_1;\)\), "\[IndentingNewLine]", 
+    \(\(Int26 = \[Integral]Exp[\[Tau]\_1 - \[Tau]]*
+            Int11 \[DifferentialD]\[Tau]\_1;\)\), "\[IndentingNewLine]", 
+    \(\(Int27 = \[Integral]Exp[\[Tau]\_1 - \[Tau]]*
+            Int12 \[DifferentialD]\[Tau]\_1;\)\), "\[IndentingNewLine]", 
+    \(\(Int28 = \[Integral]Exp[\[Tau]\_1 - \[Tau]]*
+            Int13 \[DifferentialD]\[Tau]\_1;\)\), "\[IndentingNewLine]", 
+    \(\(Int29 = \[Integral]Exp[\[Tau]\_1 - \[Tau]]*
+            Int14 \[DifferentialD]\[Tau]\_1;\)\), "\[IndentingNewLine]", 
+    \(Int21 = 
+      FullSimplify[
+        ReplaceAll[
+          Int21, \[Tau]\_1 \[Rule] \[Tau]]]\), "\[IndentingNewLine]", 
+    \(Int22 = 
+      FullSimplify[
+        ReplaceAll[
+          Int22, \[Tau]\_1 \[Rule] \[Tau]]]\), "\[IndentingNewLine]", 
+    \(Int23 = 
+      FullSimplify[
+        ReplaceAll[
+          Int23, \[Tau]\_1 \[Rule] \[Tau]]]\), "\[IndentingNewLine]", 
+    \(Int24 = 
+      FullSimplify[
+        ReplaceAll[
+          Int24, \[Tau]\_1 \[Rule] \[Tau]]]\), "\[IndentingNewLine]", 
+    \(Int25 = 
+      FullSimplify[
+        ReplaceAll[
+          Int25, \[Tau]\_1 \[Rule] \[Tau]]]\), "\[IndentingNewLine]", 
+    \(Int26 = 
+      FullSimplify[
+        ReplaceAll[
+          Int26, \[Tau]\_1 \[Rule] \[Tau]]]\), "\[IndentingNewLine]", 
+    \(Int27 = 
+      FullSimplify[
+        ReplaceAll[
+          Int27, \[Tau]\_1 \[Rule] \[Tau]]]\), "\[IndentingNewLine]", 
+    \(Int28 = 
+      FullSimplify[
+        ReplaceAll[
+          Int28, \[Tau]\_1 \[Rule] \[Tau]]]\), "\[IndentingNewLine]", 
+    \(Int29 = 
+      FullSimplify[ReplaceAll[Int29, \[Tau]\_1 \[Rule] \[Tau]]]\)}], "Input"],
+
+Cell[BoxData[
+    \(1\)], "Output"],
+
+Cell[BoxData[
+    \(\(-\(\(\[ExponentialE]\^\(\(-\[Tau]\) - \((\[ImaginaryI] + \[Alpha]\_c)\
+\)\^2\/\(4\ \[Beta]\ \[Alpha]\_0\%2\)\)\ \@\[Pi]\ \((Erf[\(\(-1\) + 2\ \
+\[Beta]\ \[Tau]\ \[Alpha]\_0\%2 + \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \
+\@\[Beta]\ \[Alpha]\_0\)] - \[ImaginaryI]\ \[ExponentialE]\^\(\(\[ImaginaryI]\
+\ \[Alpha]\_c\)\/\(\[Beta]\ \[Alpha]\_0\%2\)\)\ Erfi[\(\(-\[ImaginaryI]\) + 2\
+\ \[ImaginaryI]\ \[Beta]\ \[Tau]\ \[Alpha]\_0\%2 + \[Alpha]\_c\)\/\(2\ \@\
+\[Beta]\ \[Alpha]\_0\)])\)\)\/\(2\ \@\[Beta]\ \[Alpha]\_0\)\)\) + \
+\(Cos[\[Tau]\ \[Alpha]\_c] + Sin[\[Tau]\ \[Alpha]\_c]\ \[Alpha]\_c\)\/\(1 + \
+\[Alpha]\_c\%2\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(\(1\/\(8\ \@\[Gamma]\ \[Alpha]\_0\%2\)\)\((\[ExponentialE]\^\(\(-\
+\[Tau]\) - \[Gamma]\ \[Tau]\^2\ \[Alpha]\_0\%2 - \(\[Alpha]\_c\ \((\
+\[ImaginaryI] + \[Alpha]\_c)\)\)\/\(2\ \[Gamma]\ \[Alpha]\_0\%2\)\)\ \
+\((\(-2\)\ \[ImaginaryI]\ \[ExponentialE]\^\(\(\((\[ImaginaryI] + \
+\[Alpha]\_c)\)\ \((\(-2\)\ \[ImaginaryI]\ \[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 + \
+\[Alpha]\_c)\)\)\/\(2\ \[Gamma]\ \[Alpha]\_0\%2\)\)\ \((\(-1\) + \
+\[ExponentialE]\^\(2\ \[ImaginaryI]\ \[Tau]\ \[Alpha]\_c\))\)\ \@\[Gamma]\ \
+\[Alpha]\_0 + \[ExponentialE]\^\(\(1 + 4\ \[Gamma]\^2\ \[Tau]\^2\ \[Alpha]\_0\
+\%4 + \[Alpha]\_c\%2\)\/\(4\ \[Gamma]\ \[Alpha]\_0\%2\)\)\ \@\[Pi]\ \((\
+\[ExponentialE]\^\(\(\[ImaginaryI]\ \[Alpha]\_c\)\/\(\[Gamma]\ \[Alpha]\_0\%2\
+\)\)\ Erfi[\(\(-\[ImaginaryI]\) + 2\ \[ImaginaryI]\ \[Gamma]\ \[Tau]\ \
+\[Alpha]\_0\%2 + \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \[Alpha]\_0\)]\ \((1 + \
+\[ImaginaryI]\ \[Alpha]\_c)\) - \[ImaginaryI]\ \((Erf[\(\(-1\) + 2\ \[Gamma]\ \
+\[Tau]\ \[Alpha]\_0\%2 + \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \
+\[Alpha]\_0\)] + 
+                        Erfi[\(\[ImaginaryI] - 2\ \[ImaginaryI]\ \[Gamma]\ \
+\[Tau]\ \[Alpha]\_0\%2 + \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \[Alpha]\_0\)]\ \
+\[Alpha]\_c)\))\))\))\)\)\)], "Output"],
+
+Cell[BoxData[
+    \(1\/2\ \((\(\[ExponentialE]\^\(\(-\[Tau]\) - \((\[ImaginaryI] + \[Alpha]\
+\_c)\)\^2\/\(4\ \[Beta]\ \[Alpha]\_0\%2\)\)\ \@\[Pi]\ \((\(-\[ImaginaryI]\)\ \
+Erf[\(\(-1\) + 2\ \[Beta]\ \[Tau]\ \[Alpha]\_0\%2 + \[ImaginaryI]\ \
+\[Alpha]\_c\)\/\(2\ \@\[Beta]\ \[Alpha]\_0\)] + \[ExponentialE]\^\(\(\
+\[ImaginaryI]\ \[Alpha]\_c\)\/\(\[Beta]\ \[Alpha]\_0\%2\)\)\ Erfi[\(\(-\
+\[ImaginaryI]\) + 2\ \[ImaginaryI]\ \[Beta]\ \[Tau]\ \[Alpha]\_0\%2 + \
+\[Alpha]\_c\)\/\(2\ \@\[Beta]\ \[Alpha]\_0\)])\)\)\/\(\@\[Beta]\ \
+\[Alpha]\_0\) + \(2\ \((Sin[\[Tau]\ \[Alpha]\_c] - Cos[\[Tau]\ \[Alpha]\_c]\ \
+\[Alpha]\_c)\)\)\/\(1 + \[Alpha]\_c\%2\))\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(\(1\/\(8\ \@\[Gamma]\ \[Alpha]\_0\%2\)\)\((\[ExponentialE]\^\(\(-\
+\[Tau]\) - \[Gamma]\ \[Tau]\^2\ \[Alpha]\_0\%2 - \(\[Alpha]\_c\ \((\
+\[ImaginaryI] + \[Alpha]\_c)\)\)\/\(2\ \[Gamma]\ \[Alpha]\_0\%2\)\)\ \((2\ \
+\[ExponentialE]\^\(\(\((\[ImaginaryI] + \[Alpha]\_c)\)\ \((\(-2\)\ \
+\[ImaginaryI]\ \[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 + \[Alpha]\_c)\)\)\/\(2\ \
+\[Gamma]\ \[Alpha]\_0\%2\)\)\ \((1 + \[ExponentialE]\^\(2\ \[ImaginaryI]\ \
+\[Tau]\ \[Alpha]\_c\))\)\ \@\[Gamma]\ \[Alpha]\_0 - \[ExponentialE]\^\(\(1 + \
+4\ \[Gamma]\^2\ \[Tau]\^2\ \[Alpha]\_0\%4 + \[Alpha]\_c\%2\)\/\(4\ \[Gamma]\ \
+\[Alpha]\_0\%2\)\)\ \@\[Pi]\ \((Erf[\(\(-1\) + 2\ \[Gamma]\ \[Tau]\ \
+\[Alpha]\_0\%2 + \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \
+\[Alpha]\_0\)] + 
+                  Erfi[\(\[ImaginaryI] - 2\ \[ImaginaryI]\ \[Gamma]\ \[Tau]\ \
+\[Alpha]\_0\%2 + \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \[Alpha]\_0\)]\ \[Alpha]\_c \
++ \[ExponentialE]\^\(\(\[ImaginaryI]\ \[Alpha]\_c\)\/\(\[Gamma]\ \
+\[Alpha]\_0\%2\)\)\ Erfi[\(\(-\[ImaginaryI]\) + 2\ \[ImaginaryI]\ \[Gamma]\ \
+\[Tau]\ \[Alpha]\_0\%2 + \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \[Alpha]\_0\)]\ \
+\((\(-\[ImaginaryI]\) + \[Alpha]\_c)\))\))\))\)\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(-\(\(\[ImaginaryI]\ \[ExponentialE]\^\(\(-\[Tau]\) - \((\[ImaginaryI] \
++ \[Alpha]\_c)\)\^2\/\(4\ \[Beta]\ \[Alpha]\_0\%2\)\)\ \@\[Pi]\ \((\
+\[ExponentialE]\^\(\(\[ImaginaryI]\ \[Alpha]\_c\)\/\(\[Beta]\ \
+\[Alpha]\_0\%2\)\)\ Erf[\(\(-1\) + 2\ \[Beta]\ \[Tau]\ \[Alpha]\_0\%2 - \
+\[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Beta]\ \[Alpha]\_0\)] - 
+                  Erf[\(\(-1\) + 2\ \[Beta]\ \[Tau]\ \[Alpha]\_0\%2 + \
+\[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Beta]\ \[Alpha]\_0\)])\)\)\/\(2\ \@\
+\[Beta]\ \[Alpha]\_0\)\)\) + \(\(-Sin[\[Tau]\ \[Alpha]\_c]\) + Cos[\[Tau]\ \
+\[Alpha]\_c]\ \[Alpha]\_c\)\/\(1 + \[Alpha]\_c\%2\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(\(1\/\(8\ \@\[Gamma]\ \[Alpha]\_0\%2\)\)\((\[ExponentialE]\^\(\(-\
+\[Gamma]\)\ \[Tau]\^2\ \[Alpha]\_0\%2 + \[Tau]\ \((\(-1\) - \[ImaginaryI]\ \
+\[Alpha]\_c)\) - \(\[Alpha]\_c\ \((2\ \[ImaginaryI] + \[Alpha]\_c)\)\)\/\(4\ \
+\[Gamma]\ \[Alpha]\_0\%2\)\)\ \((\(-2\)\ \[ExponentialE]\^\(\[Tau] + \(\
+\[Alpha]\_c\ \((2\ \[ImaginaryI] + \[Alpha]\_c)\)\)\/\(4\ \[Gamma]\ \
+\[Alpha]\_0\%2\)\)\ \((1 + \[ExponentialE]\^\(2\ \[ImaginaryI]\ \[Tau]\ \
+\[Alpha]\_c\))\)\ \@\[Gamma]\ \[Alpha]\_0 + \[ExponentialE]\^\(1\/\(4\ \
+\[Gamma]\ \[Alpha]\_0\%2\) + \[Gamma]\ \[Tau]\^2\ \[Alpha]\_0\%2 + \
+\[ImaginaryI]\ \[Tau]\ \[Alpha]\_c\)\ \@\[Pi]\ \((Erf[\(\(-1\) + 2\ \[Gamma]\ \
+\[Tau]\ \[Alpha]\_0\%2 + \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \
+\[Alpha]\_0\)]\ \((1 - \[ImaginaryI]\ \[Alpha]\_c)\) + \[ExponentialE]\^\(\(\
+\[ImaginaryI]\ \[Alpha]\_c\)\/\(\[Gamma]\ \[Alpha]\_0\%2\)\)\ Erf[\(\(-1\) + \
+2\ \[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 - \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\
+\[Gamma]\ \[Alpha]\_0\)]\ \((1 + \[ImaginaryI]\ \[Alpha]\_c)\))\))\))\)\)\)], \
+"Output"],
+
+Cell[BoxData[
+    \(\(\[ExponentialE]\^\(\(-\[Tau]\) - \((\[ImaginaryI] + \[Alpha]\_c)\)\^2\
+\/\(4\ \[Beta]\ \[Alpha]\_0\%2\)\)\ \@\[Pi]\ \((\[ExponentialE]\^\(\(\
+\[ImaginaryI]\ \[Alpha]\_c\)\/\(\[Beta]\ \[Alpha]\_0\%2\)\)\ Erf[\(\(-1\) + 2\
+\ \[Beta]\ \[Tau]\ \[Alpha]\_0\%2 - \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\
+\[Beta]\ \[Alpha]\_0\)] + Erf[\(\(-1\) + 2\ \[Beta]\ \[Tau]\ \[Alpha]\_0\%2 + \
+\[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Beta]\ \[Alpha]\_0\)])\)\)\/\(2\ \@\
+\[Beta]\ \[Alpha]\_0\) - \(Cos[\[Tau]\ \[Alpha]\_c] + Sin[\[Tau]\ \
+\[Alpha]\_c]\ \[Alpha]\_c\)\/\(1 + \[Alpha]\_c\%2\)\)], "Output"],
+
+Cell[BoxData[
+    \(\(\(1\/\(8\ \@\[Gamma]\ \[Alpha]\_0\%2\)\)\((\[ExponentialE]\^\(\(-\
+\[Gamma]\)\ \[Tau]\^2\ \[Alpha]\_0\%2 + \[Tau]\ \((\(-1\) - \[ImaginaryI]\ \
+\[Alpha]\_c)\) - \(\[Alpha]\_c\ \((2\ \[ImaginaryI] + \[Alpha]\_c)\)\)\/\(4\ \
+\[Gamma]\ \[Alpha]\_0\%2\)\)\ \((2\ \[ImaginaryI]\ \[ExponentialE]\^\(\[Tau] \
++ \(\[Alpha]\_c\ \((2\ \[ImaginaryI] + \[Alpha]\_c)\)\)\/\(4\ \[Gamma]\ \
+\[Alpha]\_0\%2\)\)\ \((\(-1\) + \[ExponentialE]\^\(2\ \[ImaginaryI]\ \[Tau]\ \
+\[Alpha]\_c\))\)\ \@\[Gamma]\ \[Alpha]\_0 + \[ExponentialE]\^\(1\/\(4\ \
+\[Gamma]\ \[Alpha]\_0\%2\) + \[Gamma]\ \[Tau]\^2\ \[Alpha]\_0\%2 + \
+\[ImaginaryI]\ \[Tau]\ \[Alpha]\_c\)\ \@\[Pi]\ \((\[ExponentialE]\^\(\(\
+\[ImaginaryI]\ \[Alpha]\_c\)\/\(\[Gamma]\ \[Alpha]\_0\%2\)\)\ Erf[\(\(-1\) + \
+2\ \[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 - \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\
+\[Gamma]\ \[Alpha]\_0\)]\ \((\(-\[ImaginaryI]\) + \[Alpha]\_c)\) + 
+                  Erf[\(\(-1\) + 2\ \[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 + \
+\[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \[Alpha]\_0\)]\ \((\
+\[ImaginaryI] + \[Alpha]\_c)\))\))\))\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(j\_z = 
+      FullSimplify[\(-j\_0\) \((Int21 - 
+              Cos[\[Alpha]\_c*\[Tau] + \[CurlyPhi]\_sol]*\((Int22 - 
+                    Int23 + \[Alpha]\_c*\((Int26 + Int27)\))\) - 
+              Sin[\[Alpha]\_c*\[Tau] + \[CurlyPhi]\_sol]*\((Int24 + 
+                    Int25 - \[Alpha]\_c*\((Int28 - Int29)\))\))\)]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-j\_0\)\ \((1 - 
+          Cos[\[CurlyPhi]\_sol] + \(\(1\/\(2\ \[Alpha]\_0\)\)\((\(\
+\[ExponentialE]\^\(\(-\(\((\[ImaginaryI] + \[Alpha]\_c)\)\^2\/\(4\ \[Beta]\ \
+\[Alpha]\_0\%2\)\)\) + \[ImaginaryI]\ \((\[Tau]\ \((\[ImaginaryI] + \
+\[Alpha]\_c)\) + \[CurlyPhi]\_sol)\)\)\ \@\[Pi]\ Erf[\(\(-1\) + 2\ \[Beta]\ \
+\[Tau]\ \[Alpha]\_0\%2 + \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Beta]\ \
+\[Alpha]\_0\)]\ \((1 - \[ImaginaryI]\ \[Alpha]\_c)\)\)\/\@\[Beta] + \
+\[ExponentialE]\^\(\(-\[Gamma]\)\ \[Tau]\^2\ \[Alpha]\_0\%2\)\ \((\(-Sin[\
+\[CurlyPhi]\_sol]\) + 
+                    Cos[\[CurlyPhi]\_sol]\ \[Alpha]\_c)\) - \(\[ImaginaryI]\ \
+\[ExponentialE]\^\(\(-\(\((\(-\[ImaginaryI]\) + \[Alpha]\_c)\)\^2\/\(4\ \
+\[Beta]\ \[Alpha]\_0\%2\)\)\) - \[ImaginaryI]\ \((\[Tau]\ \((\(-\[ImaginaryI]\
+\) + \[Alpha]\_c)\) + \[CurlyPhi]\_sol)\)\)\ \@\[Pi]\ \((Erfi[\(\(-\
+\[ImaginaryI]\) + 2\ \[ImaginaryI]\ \[Beta]\ \[Tau]\ \[Alpha]\_0\%2 + \
+\[Alpha]\_c\)\/\(2\ \@\[Beta]\ \[Alpha]\_0\)] - Erf[\(\(-1\) + 2\ \[Beta]\ \
+\[Tau]\ \[Alpha]\_0\%2 - \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Beta]\ \
+\[Alpha]\_0\)]\ \[Alpha]\_c)\)\)\/\@\[Beta])\)\) + \(\(1\/\(8\ \@\[Gamma]\ \
+\[Alpha]\_0\%2\)\)\((\[ExponentialE]\^\(\(-\(\((\(-\[ImaginaryI]\) + \[Alpha]\
+\_c)\)\^2\/\(4\ \[Gamma]\ \[Alpha]\_0\%2\)\)\) - \[ImaginaryI]\ \((\[Tau]\ \
+\((\(-\[ImaginaryI]\) + \[Alpha]\_c)\) + \[CurlyPhi]\_sol)\)\)\ \@\[Pi]\ \
+\((\((1 + \[ImaginaryI]\ \[Alpha]\_c)\)\ \((Erfi[\(\(-\[ImaginaryI]\) + 2\ \
+\[ImaginaryI]\ \[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 + \[Alpha]\_c\)\/\(2\ \@\
+\[Gamma]\ \[Alpha]\_0\)] - 
+                        Erf[\(\(-1\) + 2\ \[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 - \
+\[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \[Alpha]\_0\)]\ \[Alpha]\_c)\) \
++ \[ImaginaryI]\ \[ExponentialE]\^\(\[ImaginaryI]\ \((\((2\ \[Tau] - 1\/\(\
+\[Gamma]\ \[Alpha]\_0\%2\))\)\ \[Alpha]\_c + 2\ \[CurlyPhi]\_sol)\)\)\ \
+\((\(-Erf[\(\(-1\) + 2\ \[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 + \[ImaginaryI]\ \
+\[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \[Alpha]\_0\)]\) + \[Alpha]\_c\ \((\
+\[ImaginaryI]\ Erf[\(\(-1\) + 2\ \[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 + \
+\[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \[Alpha]\_0\)] - 
+                              Erfi[\(\[ImaginaryI] - 2\ \[ImaginaryI]\ \
+\[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 + \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \
+\[Alpha]\_0\)] + 
+                              Erf[\(\(-1\) + 2\ \[Gamma]\ \[Tau]\ \[Alpha]\_0\
+\%2 + \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \[Alpha]\_0\)]\ \[Alpha]\
+\_c)\))\))\))\)\))\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(j\_z = \(-j\_0\) \((Int21 - 
+            Cos[\[Alpha]\_c*\[Tau] + \[CurlyPhi]\_sol]*\((Int22 - 
+                  Int23 + \[Alpha]\_c*\((Int26 + Int27)\))\) - 
+            Sin[\[Alpha]\_c*\[Tau] + \[CurlyPhi]\_sol]*\((Int24 + 
+                  Int25 - \[Alpha]\_c*\((Int28 - Int29)\))\))\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(-j\_0\)\ \((1 - 
+          Cos[\[Tau]\ \[Alpha]\_c + \[CurlyPhi]\_sol]\ \((\(-\(\(\
+\[ExponentialE]\^\(\(-\[Tau]\) - \((\[ImaginaryI] + \[Alpha]\_c)\)\^2\/\(4\ \
+\[Beta]\ \[Alpha]\_0\%2\)\)\ \@\[Pi]\ \((Erf[\(\(-1\) + 2\ \[Beta]\ \[Tau]\ \
+\[Alpha]\_0\%2 + \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Beta]\ \[Alpha]\_0\)] \
+- \[ImaginaryI]\ \[ExponentialE]\^\(\(\[ImaginaryI]\ \[Alpha]\_c\)\/\(\[Beta]\
+\ \[Alpha]\_0\%2\)\)\ Erfi[\(\(-\[ImaginaryI]\) + 2\ \[ImaginaryI]\ \[Beta]\ \
+\[Tau]\ \[Alpha]\_0\%2 + \[Alpha]\_c\)\/\(2\ \@\[Beta]\ \[Alpha]\_0\)])\)\)\/\
+\(2\ \@\[Beta]\ \[Alpha]\_0\)\)\) + \(Cos[\[Tau]\ \[Alpha]\_c] + Sin[\[Tau]\ \
+\[Alpha]\_c]\ \[Alpha]\_c\)\/\(1 + \[Alpha]\_c\%2\) + \[Alpha]\_c\ \((\(-\(\(\
+\[ImaginaryI]\ \[ExponentialE]\^\(\(-\[Tau]\) - \((\[ImaginaryI] + \
+\[Alpha]\_c)\)\^2\/\(4\ \[Beta]\ \[Alpha]\_0\%2\)\)\ \@\[Pi]\ \((\
+\[ExponentialE]\^\(\(\[ImaginaryI]\ \[Alpha]\_c\)\/\(\[Beta]\ \
+\[Alpha]\_0\%2\)\)\ Erf[\(\(-1\) + 2\ \[Beta]\ \[Tau]\ \[Alpha]\_0\%2 - \
+\[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Beta]\ \[Alpha]\_0\)] - 
+                                  Erf[\(\(-1\) + 2\ \[Beta]\ \[Tau]\ \[Alpha]\
+\_0\%2 + \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Beta]\ \
+\[Alpha]\_0\)])\)\)\/\(2\ \@\[Beta]\ \[Alpha]\_0\)\)\) + \(\(1\/\(8\ \@\
+\[Gamma]\ \[Alpha]\_0\%2\)\)\((\[ExponentialE]\^\(\(-\[Gamma]\)\ \[Tau]\^2\ \
+\[Alpha]\_0\%2 + \[Tau]\ \((\(-1\) - \[ImaginaryI]\ \[Alpha]\_c)\) - \(\
+\[Alpha]\_c\ \((2\ \[ImaginaryI] + \[Alpha]\_c)\)\)\/\(4\ \[Gamma]\ \
+\[Alpha]\_0\%2\)\)\ \((\(-2\)\ \[ExponentialE]\^\(\[Tau] + \(\[Alpha]\_c\ \
+\((2\ \[ImaginaryI] + \[Alpha]\_c)\)\)\/\(4\ \[Gamma]\ \[Alpha]\_0\%2\)\)\ \
+\((1 + \[ExponentialE]\^\(2\ \[ImaginaryI]\ \[Tau]\ \[Alpha]\_c\))\)\ \@\
+\[Gamma]\ \[Alpha]\_0 + \[ExponentialE]\^\(1\/\(4\ \[Gamma]\ \[Alpha]\_0\%2\) \
++ \[Gamma]\ \[Tau]\^2\ \[Alpha]\_0\%2 + \[ImaginaryI]\ \[Tau]\ \[Alpha]\_c\)\ \
+\@\[Pi]\ \((Erf[\(\(-1\) + 2\ \[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 + \
+\[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \[Alpha]\_0\)]\ \((1 - \
+\[ImaginaryI]\ \[Alpha]\_c)\) + \[ExponentialE]\^\(\(\[ImaginaryI]\ \
+\[Alpha]\_c\)\/\(\[Gamma]\ \[Alpha]\_0\%2\)\)\ Erf[\(\(-1\) + 2\ \[Gamma]\ \
+\[Tau]\ \[Alpha]\_0\%2 - \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \
+\[Alpha]\_0\)]\ \((1 + \[ImaginaryI]\ \[Alpha]\_c)\))\))\))\)\) + \(\(-Sin[\
+\[Tau]\ \[Alpha]\_c]\) + Cos[\[Tau]\ \[Alpha]\_c]\ \[Alpha]\_c\)\/\(1 + \
+\[Alpha]\_c\%2\))\) - \(\(1\/\(8\ \@\[Gamma]\ \[Alpha]\_0\%2\)\)\((\
+\[ExponentialE]\^\(\(-\[Tau]\) - \[Gamma]\ \[Tau]\^2\ \[Alpha]\_0\%2 - \(\
+\[Alpha]\_c\ \((\[ImaginaryI] + \[Alpha]\_c)\)\)\/\(2\ \[Gamma]\ \
+\[Alpha]\_0\%2\)\)\ \((\(-2\)\ \[ImaginaryI]\ \[ExponentialE]\^\(\(\((\
+\[ImaginaryI] + \[Alpha]\_c)\)\ \((\(-2\)\ \[ImaginaryI]\ \[Gamma]\ \[Tau]\ \
+\[Alpha]\_0\%2 + \[Alpha]\_c)\)\)\/\(2\ \[Gamma]\ \[Alpha]\_0\%2\)\)\ \((\(-1\
+\) + \[ExponentialE]\^\(2\ \[ImaginaryI]\ \[Tau]\ \[Alpha]\_c\))\)\ \
+\@\[Gamma]\ \[Alpha]\_0 + \[ExponentialE]\^\(\(1 + 4\ \[Gamma]\^2\ \[Tau]\^2\ \
+\[Alpha]\_0\%4 + \[Alpha]\_c\%2\)\/\(4\ \[Gamma]\ \[Alpha]\_0\%2\)\)\ \@\[Pi]\
+\ \((\[ExponentialE]\^\(\(\[ImaginaryI]\ \[Alpha]\_c\)\/\(\[Gamma]\ \
+\[Alpha]\_0\%2\)\)\ Erfi[\(\(-\[ImaginaryI]\) + 2\ \[ImaginaryI]\ \[Gamma]\ \
+\[Tau]\ \[Alpha]\_0\%2 + \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \[Alpha]\_0\)]\ \((1 \
++ \[ImaginaryI]\ \[Alpha]\_c)\) - \[ImaginaryI]\ \((Erf[\(\(-1\) + 2\ \
+\[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 + \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\
+\[Gamma]\ \[Alpha]\_0\)] + 
+                                    Erfi[\(\[ImaginaryI] - 2\ \[ImaginaryI]\ \
+\[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 + \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \
+\[Alpha]\_0\)]\ \[Alpha]\_c)\))\))\))\)\))\) - 
+          Sin[\[Tau]\ \[Alpha]\_c + \[CurlyPhi]\_sol]\ \((1\/2\ \((\(\
+\[ExponentialE]\^\(\(-\[Tau]\) - \((\[ImaginaryI] + \[Alpha]\_c)\)\^2\/\(4\ \
+\[Beta]\ \[Alpha]\_0\%2\)\)\ \@\[Pi]\ \((\(-\[ImaginaryI]\)\ Erf[\(\(-1\) + 2\
+\ \[Beta]\ \[Tau]\ \[Alpha]\_0\%2 + \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\
+\[Beta]\ \[Alpha]\_0\)] + \[ExponentialE]\^\(\(\[ImaginaryI]\ \[Alpha]\_c\)\/\
+\(\[Beta]\ \[Alpha]\_0\%2\)\)\ Erfi[\(\(-\[ImaginaryI]\) + 2\ \[ImaginaryI]\ \
+\[Beta]\ \[Tau]\ \[Alpha]\_0\%2 + \[Alpha]\_c\)\/\(2\ \@\[Beta]\ \
+\[Alpha]\_0\)])\)\)\/\(\@\[Beta]\ \[Alpha]\_0\) + \(2\ \((Sin[\[Tau]\ \
+\[Alpha]\_c] - Cos[\[Tau]\ \[Alpha]\_c]\ \[Alpha]\_c)\)\)\/\(1 + \
+\[Alpha]\_c\%2\))\) + \(\(1\/\(8\ \@\[Gamma]\ \[Alpha]\_0\%2\)\)\((\
+\[ExponentialE]\^\(\(-\[Tau]\) - \[Gamma]\ \[Tau]\^2\ \[Alpha]\_0\%2 - \(\
+\[Alpha]\_c\ \((\[ImaginaryI] + \[Alpha]\_c)\)\)\/\(2\ \[Gamma]\ \
+\[Alpha]\_0\%2\)\)\ \((2\ \[ExponentialE]\^\(\(\((\[ImaginaryI] + \
+\[Alpha]\_c)\)\ \((\(-2\)\ \[ImaginaryI]\ \[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 + \
+\[Alpha]\_c)\)\)\/\(2\ \[Gamma]\ \[Alpha]\_0\%2\)\)\ \((1 + \[ExponentialE]\^\
+\(2\ \[ImaginaryI]\ \[Tau]\ \[Alpha]\_c\))\)\ \@\[Gamma]\ \[Alpha]\_0 - \
+\[ExponentialE]\^\(\(1 + 4\ \[Gamma]\^2\ \[Tau]\^2\ \[Alpha]\_0\%4 + \[Alpha]\
+\_c\%2\)\/\(4\ \[Gamma]\ \[Alpha]\_0\%2\)\)\ \@\[Pi]\ \((Erf[\(\(-1\) + 2\ \
+\[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 + \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\
+\[Gamma]\ \[Alpha]\_0\)] + 
+                              Erfi[\(\[ImaginaryI] - 2\ \[ImaginaryI]\ \
+\[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 + \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \
+\[Alpha]\_0\)]\ \[Alpha]\_c + \[ExponentialE]\^\(\(\[ImaginaryI]\ \[Alpha]\_c\
+\)\/\(\[Gamma]\ \[Alpha]\_0\%2\)\)\ Erfi[\(\(-\[ImaginaryI]\) + 2\ \
+\[ImaginaryI]\ \[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 + \[Alpha]\_c\)\/\(2\ \@\
+\[Gamma]\ \[Alpha]\_0\)]\ \((\(-\[ImaginaryI]\) + \[Alpha]\_c)\))\))\))\)\) - \
+\[Alpha]\_c\ \((\(\[ExponentialE]\^\(\(-\[Tau]\) - \((\[ImaginaryI] + \
+\[Alpha]\_c)\)\^2\/\(4\ \[Beta]\ \[Alpha]\_0\%2\)\)\ \@\[Pi]\ \((\
+\[ExponentialE]\^\(\(\[ImaginaryI]\ \[Alpha]\_c\)\/\(\[Beta]\ \
+\[Alpha]\_0\%2\)\)\ Erf[\(\(-1\) + 2\ \[Beta]\ \[Tau]\ \[Alpha]\_0\%2 - \
+\[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Beta]\ \[Alpha]\_0\)] + Erf[\(\(-1\) + \
+2\ \[Beta]\ \[Tau]\ \[Alpha]\_0\%2 + \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\
+\[Beta]\ \[Alpha]\_0\)])\)\)\/\(2\ \@\[Beta]\ \[Alpha]\_0\) - \(Cos[\[Tau]\ \
+\[Alpha]\_c] + Sin[\[Tau]\ \[Alpha]\_c]\ \[Alpha]\_c\)\/\(1 + \
+\[Alpha]\_c\%2\) - \(\(1\/\(8\ \@\[Gamma]\ \[Alpha]\_0\%2\)\)\((\
+\[ExponentialE]\^\(\(-\[Gamma]\)\ \[Tau]\^2\ \[Alpha]\_0\%2 + \[Tau]\ \((\(-1\
+\) - \[ImaginaryI]\ \[Alpha]\_c)\) - \(\[Alpha]\_c\ \((2\ \[ImaginaryI] + \
+\[Alpha]\_c)\)\)\/\(4\ \[Gamma]\ \[Alpha]\_0\%2\)\)\ \((2\ \[ImaginaryI]\ \
+\[ExponentialE]\^\(\[Tau] + \(\[Alpha]\_c\ \((2\ \[ImaginaryI] + \[Alpha]\_c)\
+\)\)\/\(4\ \[Gamma]\ \[Alpha]\_0\%2\)\)\ \((\(-1\) + \[ExponentialE]\^\(2\ \
+\[ImaginaryI]\ \[Tau]\ \[Alpha]\_c\))\)\ \@\[Gamma]\ \[Alpha]\_0 + \
+\[ExponentialE]\^\(1\/\(4\ \[Gamma]\ \[Alpha]\_0\%2\) + \[Gamma]\ \[Tau]\^2\ \
+\[Alpha]\_0\%2 + \[ImaginaryI]\ \[Tau]\ \[Alpha]\_c\)\ \@\[Pi]\ \((\
+\[ExponentialE]\^\(\(\[ImaginaryI]\ \[Alpha]\_c\)\/\(\[Gamma]\ \[Alpha]\_0\%2\
+\)\)\ Erf[\(\(-1\) + 2\ \[Gamma]\ \[Tau]\ \[Alpha]\_0\%2 - \[ImaginaryI]\ \
+\[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \[Alpha]\_0\)]\ \((\(-\[ImaginaryI]\) + \
+\[Alpha]\_c)\) + 
+                                    Erf[\(\(-1\) + 2\ \[Gamma]\ \[Tau]\ \
+\[Alpha]\_0\%2 + \[ImaginaryI]\ \[Alpha]\_c\)\/\(2\ \@\[Gamma]\ \
+\[Alpha]\_0\)]\ \((\[ImaginaryI] + \[Alpha]\_c)\))\))\))\)\))\))\))\)\)], \
+"Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(j\_z = \(-j\_0\) \((Int21 - \((Cos[\[Alpha]\_c*\[Tau]]*\((1 - 
+                          2*Exp[\(-\[Beta]\)*\[Alpha]\_0^2*\[Tau]^2])\) - 
+                    Sin[\[Alpha]\_c*\[Tau]]*\((\((\(-\[Gamma]\))\)*\[Alpha]\_\
+0*\[Tau]*Exp[\(-\[Gamma]\)*\[Alpha]\_0^2*\[Tau]^2])\))\)*\((Int22 - 
+                    Int23 + \[Alpha]\_c*\((Int26 + Int27)\))\) - \((\((1 - 
+                          2*Exp[\(-\[Beta]\)*\[Alpha]\_0^2*\[Tau]^2])\)*
+                      Sin[\[Alpha]\_c*\[Tau]] + 
+                    Cos[\[Alpha]\_c*\[Tau]]*\((\((\(-\[Gamma]\))\)*\[Alpha]\_\
+0*\[Tau]*Exp[\(-\[Gamma]\)*\[Alpha]\_0^2*\[Tau]^2])\))\)*\((Int24 + 
+                    Int25 - \[Alpha]\_c*\((Int28 - 
+                          Int29)\))\))\);\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(j\_z = ReplaceAll[j\_z, \[Tau] \[Rule] t];\)\)], "Input"],
+
+Cell[BoxData[{
+    \(\(\(\(\[Alpha]\)\(=\)\);\)\), "\[IndentingNewLine]", 
+    \(\(\(\(\[Beta]\)\(=\)\);\)\), "\[IndentingNewLine]", 
+    \(\(\(\(\[Gamma]\)\(=\)\);\)\), "\[IndentingNewLine]", 
+    \(\(\(\(\[Alpha]\_c\)\(=\)\);\)\), "\[IndentingNewLine]", 
+    \(\(\(\(\[Alpha]\_0\)\(=\)\);\)\)}], "Input"],
+
+Cell[BoxData[
+    \(Q = NIntegrate[j\_z, {t, \(-10\), 10}]\)], "Input"]
+},
+FrontEndVersion->"5.1 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 655}},
+WindowSize->{1016, 621},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification->1
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 2053, 54, 93, "Text"],
+Cell[3810, 107, 455, 7, 45, "Input"],
+Cell[4268, 116, 1220, 23, 140, "Text"],
+Cell[5491, 141, 942, 17, 163, "Input"],
+Cell[6436, 160, 838, 18, 92, "Text"],
+Cell[7277, 180, 323, 5, 70, "Input"],
+Cell[7603, 187, 2102, 38, 288, "Text"],
+Cell[9708, 227, 1565, 27, 357, "Input"],
+Cell[11276, 256, 223, 5, 53, "Text"],
+Cell[11502, 263, 913, 16, 185, "Input"],
+
+Cell[CellGroupData[{
+Cell[12440, 283, 2694, 62, 536, "Input"],
+Cell[15137, 347, 35, 1, 29, "Output"],
+Cell[15175, 350, 646, 9, 74, "Output"],
+Cell[15824, 361, 1260, 18, 117, "Output"],
+Cell[17087, 381, 660, 9, 99, "Output"],
+Cell[17750, 392, 1208, 17, 119, "Output"],
+Cell[18961, 411, 655, 9, 74, "Output"],
+Cell[19619, 422, 1081, 15, 100, "Output"],
+Cell[20703, 439, 607, 8, 74, "Output"],
+Cell[21313, 449, 1112, 15, 100, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[22462, 469, 352, 6, 90, "Input"],
+Cell[22817, 477, 2524, 37, 369, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[25378, 519, 323, 5, 70, "Input"],
+Cell[25704, 526, 7267, 102, 1001, "Output"]
+}, Open  ]],
+Cell[32986, 631, 762, 11, 130, "Input"],
+Cell[33751, 644, 79, 1, 30, "Input"],
+Cell[33833, 647, 306, 5, 110, "Input"],
+Cell[34142, 654, 71, 1, 30, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

@@ -1,0 +1,125 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4231,        116]
+NotebookOptionsPosition[      3880,         99]
+NotebookOutlinePosition[      4223,        114]
+CellTagsIndexPosition[      4180,        111]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"list", " ", "=", " ", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\<C:\\\\Users\\\\user\\\\SkyDrive\\\\\:0414\:043e\:043a\:0443\:043c\
+\:0435\:043d\:0442\:044b\\\\Programming\\\\C++\\\\GrapheneSoliton\\\\Soliton\\\
+\\out_f.sgo\>\"", ",", "\"\<Table\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.55668337854548*^9, 3.5566834129444475`*^9}, {
+   3.556755978462705*^9, 3.5567560014790215`*^9}, 3.5590977339169064`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"list", "[", 
+        RowBox[{"[", 
+         RowBox[{
+          RowBox[{"t", "+", "1"}], ",", "All"}], "]"}], "]"}]}], "+", 
+      RowBox[{"list", "[", 
+       RowBox[{"[", 
+        RowBox[{"t", ",", "All"}], "]"}], "]"}]}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+     RowBox[{"Joined", "\[Rule]", "True"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "1", ",", 
+     RowBox[{
+      RowBox[{"Length", "[", "list", "]"}], "-", "1"}], ",", "1"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.556683427017252*^9, 3.5566835583067613`*^9}, {
+  3.556756395092535*^9, 3.55675641808385*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 3989, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 1, 3989, 1}}, Typeset`size$$ = {
+    608., {184., 188.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$3447$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$3447$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      ListPlot[-Part[$CellContext`list, $CellContext`t$$ + 1, All] + 
+        Part[$CellContext`list, $CellContext`t$$, All], PlotRange -> All, 
+        Joined -> True], "Specifications" :> {{$CellContext`t$$, 1, 3989, 1}},
+       "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{657., {230., 235.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.556683527609006*^9, 3.5566835587857885`*^9}, 
+   3.5566838215338173`*^9, 3.5566839695812845`*^9, 3.5566843440417027`*^9, 
+   3.556685470404127*^9, 3.5566855559970226`*^9, {3.556756398008702*^9, 
+   3.556756419458929*^9}, 3.556757378692794*^9, 3.5570383830650644`*^9, 
+   3.559098697453017*^9, 3.5591027552041073`*^9, 3.559104476135539*^9, 
+   3.559105403058556*^9, 3.559109873329241*^9, 3.5591122002563334`*^9, 
+   3.559113261190016*^9}]
+}, Open  ]]
+},
+WindowSize->{1138, 526},
+WindowMargins->{{3, Automatic}, {Automatic, 3}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 464, 9, 31, "Input"],
+Cell[CellGroupData[{
+Cell[1046, 33, 763, 22, 31, "Input"],
+Cell[1812, 57, 2052, 39, 482, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

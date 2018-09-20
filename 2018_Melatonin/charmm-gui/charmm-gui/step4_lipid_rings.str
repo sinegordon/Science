@@ -1,0 +1,16 @@
+* place dummy atoms at the center of each rings
+*
+
+set ncycles = 2
+
+read sequence POL @NCYCLES
+generate DUM warn
+
+coor set xdir   -2.454 ydir    0.309 zdir   -0.074 sele segid dum .and. resi 1 end
+coor set xdir   -0.980 ydir    1.905 zdir    0.049 sele segid dum .and. resi 2 end
+
+scalar wmain set 0
+scalar wmain set 1.0 sele segid HETA .and. resi 1 end
+
+return
+

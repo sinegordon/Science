@@ -1,0 +1,44 @@
+REMARK  CALC TOPAREA = 0                                                              
+REMARK  CALC BOTAREA = 0                                                              
+REMARK  CALC XMAX = 5.63609629                                                        
+REMARK  CALC XMIN = -4.49190371                                                       
+REMARK  CALC YMAX = 2.87038207                                                        
+REMARK  CALC YMIN = -2.68461793                                                       
+REMARK  CALC ZMAX = 1.074                                                             
+REMARK  CALC ZMIN = -1.48                                                             
+REMARK   DATE:     5/18/18      9:58:11      CREATED BY USER: apache                  
+ATOM      1  C11 ML1     1       0.051   1.505   0.500  1.00  0.04      HETA
+ATOM      2  C2  ML1     1      -0.194   2.766   0.110  1.00  0.04      HETA
+ATOM      3  H3  ML1     1       0.479   3.614   0.133  1.00  0.03      HETA
+ATOM      4  N2  ML1     1      -1.477   2.870  -0.353  1.00  0.03      HETA
+ATOM      5  C10 ML1     1      -2.106   1.646  -0.271  1.00  0.03      HETA
+ATOM      6  H16 ML1     1      -1.897   3.720  -0.702  1.00  0.00      HETA
+ATOM      7  C9  ML1     1      -3.384   1.205  -0.596  1.00  0.02      HETA
+ATOM      8  C13 ML1     1      -3.723  -0.118  -0.416  1.00  0.03      HETA
+ATOM      9  H13 ML1     1      -4.111   1.900  -0.990  1.00  0.00      HETA
+ATOM     10  H14 ML1     1      -4.709  -0.460  -0.693  1.00  0.00      HETA
+ATOM     11  C12 ML1     1      -2.805  -1.018   0.120  1.00  0.04      HETA
+ATOM     12  C8  ML1     1      -1.534  -0.598   0.458  1.00  0.04      HETA
+ATOM     13  H12 ML1     1      -0.823  -1.297   0.872  1.00  0.05      HETA
+ATOM     14  C7  ML1     1      -1.174   0.737   0.261  1.00  0.04      HETA
+ATOM     15  O1  ML1     1      -3.162  -2.317   0.310  1.00  0.04      HETA
+ATOM     16  C3  ML1     1      -4.492  -2.685  -0.062  1.00  0.03      HETA
+ATOM     17  H6  ML1     1      -4.630  -2.486  -1.146  1.00  0.00      HETA
+ATOM     18  H4  ML1     1      -5.222  -2.079   0.517  1.00  0.05      HETA
+ATOM     19  H5  ML1     1      -4.647  -3.767   0.134  1.00  0.04      HETA
+ATOM     20  C6  ML1     1       1.341   0.979   1.074  1.00  0.05      HETA
+ATOM     21  C1  ML1     1       2.185   0.366  -0.045  1.00  0.03      HETA
+ATOM     22  H10 ML1     1       1.115   0.207   1.840  1.00  0.06      HETA
+ATOM     23  H11 ML1     1       1.898   1.814   1.551  1.00  0.06      HETA
+ATOM     24  H2  ML1     1       2.411   1.138  -0.811  1.00  0.00      HETA
+ATOM     25  H1  ML1     1       1.628  -0.468  -0.522  1.00  0.01      HETA
+ATOM     26  N1  ML1     1       3.439  -0.145   0.513  1.00  0.04      HETA
+ATOM     27  C4  ML1     1       4.346  -0.732  -0.293  1.00  0.03      HETA
+ATOM     28  H15 ML1     1       3.576  -0.035   1.494  1.00  0.10      HETA
+ATOM     29  O2  ML1     1       4.124  -0.837  -1.480  1.00  0.00      HETA
+ATOM     30  C5  ML1     1       5.636  -1.258   0.282  1.00  0.04      HETA
+ATOM     31  H8  ML1     1       5.413  -2.034   1.045  1.00  0.06      HETA
+ATOM     32  H9  ML1     1       6.197  -0.429   0.765  1.00  0.05      HETA
+ATOM     33  H7  ML1     1       6.249  -1.712  -0.525  1.00  0.01      HETA
+TER      34      ML1      1
+END

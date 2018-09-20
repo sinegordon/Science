@@ -1,0 +1,418 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     16595,        409]
+NotebookOptionsPosition[     16276,        393]
+NotebookOutlinePosition[     16619,        408]
+CellTagsIndexPosition[     16576,        405]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"ettaminr", "=", "0.0001"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"ettamaxr", "=", 
+     RowBox[{"xmax", "*", "t"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"ettaminl", "=", "0.0001"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"ettamaxl", "=", 
+     RowBox[{
+      RowBox[{"-", "xmin"}], "*", "t"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"eq", " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"b", "^", "2"}], "*", 
+            RowBox[{"Sin", "[", 
+             RowBox[{"f", "[", "etta", "]"}], "]"}]}], ")"}], "/", 
+          RowBox[{"Sqrt", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"b", "^", "2"}], "*", 
+             RowBox[{"(", 
+              RowBox[{"1", " ", "-", " ", 
+               RowBox[{"Cos", "[", 
+                RowBox[{"f", "[", "etta", "]"}], "]"}]}], ")"}]}], " ", "+", 
+            " ", "1"}], "]"}]}], ")"}]}], " ", "+", " ", 
+       RowBox[{"etta", "*", 
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{"f", "[", "etta", "]"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"etta", ",", " ", "2"}], "}"}]}], "]"}]}], " ", "+", " ", 
+       "\n", "    ", 
+       RowBox[{"D", "[", 
+        RowBox[{
+         RowBox[{"f", "[", "etta", "]"}], ",", " ", 
+         RowBox[{"{", "etta", "}"}]}], "]"}]}], " ", "==", " ", "0"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"eq1", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"b", "^", "2"}], "*", 
+            RowBox[{"Sin", "[", 
+             RowBox[{"f", "[", "etta", "]"}], "]"}]}], ")"}], "/", 
+          RowBox[{"Sqrt", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"b", "^", "2"}], "*", 
+             RowBox[{"(", 
+              RowBox[{"1", " ", "-", " ", 
+               RowBox[{"Cos", "[", 
+                RowBox[{"f", "[", "etta", "]"}], "]"}]}], ")"}]}], " ", "+", 
+            " ", "1"}], "]"}]}], ")"}]}], " ", "-", " ", 
+       RowBox[{"etta", "*", 
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{"f", "[", "etta", "]"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"etta", ",", " ", "2"}], "}"}]}], "]"}]}], " ", "-", " ", 
+       "\n", "    ", 
+       RowBox[{"D", "[", 
+        RowBox[{
+         RowBox[{"f", "[", "etta", "]"}], ",", " ", 
+         RowBox[{"{", "etta", "}"}]}], "]"}]}], " ", "==", " ", "0"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"sol", "=", 
+     RowBox[{"f", "/.", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"NDSolve", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"eq", ",", 
+            RowBox[{
+             RowBox[{"f", "[", "ettaminr", "]"}], "\[Equal]", "f0"}], ",", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"f", "'"}], "[", "ettaminr", "]"}], "\[Equal]", 
+             "fp0"}]}], "}"}], ",", "f", ",", 
+          RowBox[{"{", 
+           RowBox[{"etta", ",", "ettaminr", ",", "ettamaxr"}], "}"}]}], "]"}],
+         "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"sol1", "=", 
+     RowBox[{"f", "/.", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"NDSolve", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"eq1", ",", 
+            RowBox[{
+             RowBox[{"f", "[", "ettaminl", "]"}], "\[Equal]", "f0"}], ",", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"f", "'"}], "[", "ettaminl", "]"}], "\[Equal]", 
+             "fp0"}]}], "}"}], ",", "f", ",", 
+          RowBox[{"{", 
+           RowBox[{"etta", ",", "ettaminl", ",", "ettamaxl"}], "}"}]}], "]"}],
+         "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"kink", "=", 
+     RowBox[{"Interpolation", "[", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"x", ",", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"x", "<", "0"}], ",", 
+            RowBox[{"sol1", "[", 
+             RowBox[{"-", "x"}], "]"}], ",", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"x", ">", "0"}], ",", 
+              RowBox[{"sol", "[", "x", "]"}], ",", "f0"}], "]"}]}], "]"}]}], 
+         "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", 
+          RowBox[{"-", "ettamaxl"}], ",", "ettamaxr", ",", "0.1"}], "}"}]}], 
+       "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Grid", "[", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Plot", "[", 
+         RowBox[{
+          RowBox[{"kink", "[", 
+           RowBox[{"x", "*", "t"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "xmin", ",", "xmax"}], "}"}], ",", 
+          RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+          RowBox[{"ImageSize", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"400", ",", "300"}], "}"}]}], ",", 
+          RowBox[{
+          "PlotLabel", "\[Rule]", 
+           "\"\<\:041f\:043e\:0442\:0435\:043d\:0446\:0438\:0430\:043b\>\""}]}\
+], "]"}], ",", 
+        RowBox[{"Plot", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"kink", "'"}], "[", 
+           RowBox[{"x", "*", "t"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "xmin", ",", "xmax"}], "}"}], ",", 
+          RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+          RowBox[{"ImageSize", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"400", ",", "300"}], "}"}]}], ",", 
+          RowBox[{
+          "PlotLabel", "\[Rule]", 
+           "\"\<\:041f\:0440\:043e\:0438\:0437\:0432\:043e\:0434\:043d\:0430\
+\:044f \:043f\:043e\:0442\:0435\:043d\:0446\:0438\:0430\:043b\:0430\>\""}]}], 
+         "]"}]}], "}"}], "}"}], "]"}]}], "\[IndentingNewLine]", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"t", ",", "1", ",", "\"\<\:0412\:0440\:0435\:043c\:044f\>\""}], 
+      "}"}], ",", "1", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "b", ",", "0.5", ",", 
+       "\"\<\!\(\*SubscriptBox[\(\[CapitalDelta]\), \
+\(1\)]\)/\[CapitalDelta]\>\""}], "}"}], ",", "0.00001", ",", " ", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "f0", ",", "0.1", ",", 
+       "\"\<\:041f\:043e\:0442\:0435\:043d\:0446\:0438\:0430\:043b \:043f\
+\:0440\:0438 t=0\>\""}], "}"}], ",", "0.0000001", ",", " ", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "fp0", ",", "0.1", ",", 
+       "\"\<\:041f\:0440\:043e\:0438\:0437\:0432\:043e\:0434\:043d\:0430\:044f\
+ \:043f\:043e\:0442\:0435\:043d\:0446\:0438\:0430\:043b\:0430 \:043f\:0440\
+\:0438 t=0\>\""}], "}"}], ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"xmin", ",", 
+       RowBox[{"-", "100"}], ",", 
+       "\"\<\:041b\:0435\:0432\:0430\:044f \:0433\:0440\:0430\:043d\:0438\
+\:0446\:0430\>\""}], "}"}], ",", 
+     RowBox[{"-", "1000"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "xmax", ",", "300", ",", 
+       "\"\<\:041f\:0440\:0430\:0432\:0430\:044f \:0433\:0440\:0430\:043d\
+\:0438\:0446\:0430\>\""}], "}"}], ",", "1", ",", "1000"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGCQAGIQrfJT9eWl5leOFt2an0H0l30LRS4D6eZgEwkQbeOu
+pAyiF65TVAPRZRr/5K4A6Vm/BDRA9NokTQMQ/fzRUWMQXeKtZweiK2LKvEG0
+QK2tP4he6VEOpoM6H4aBaDMtg3AQHbHvTSyIFlvCGgeiFzlIlt4B0vP+24Dp
+pETWBhAd4SHaBKLVpe26wOLvgyeD6GeRuotBdD0v60oQvdTTej2I9pujvQNM
+n357/ROQ5jljdR9Ex2UFvQLRdoKZ70D0u/N2lZ+B9Lp7/6pAtMP5JrZvQPrA
+xRIuEJ34KZQfRItHiEiB6FtSX2VBdJtqpQmIjjovYgOiX8R+BdP7CnV9QfRD
+1reRIPoD8/04EK2wVyYVRLPzfVb9AaQvavwD0wD6utD4
+  "]],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`b$$ = 0.5, $CellContext`f0$$ = 
+    0.1, $CellContext`fp0$$ = 0.1, $CellContext`t$$ = 1, $CellContext`xmax$$ =
+     804., $CellContext`xmin$$ = -641., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 1, "\:0412\:0440\:0435\:043c\:044f"}, 1, 
+      100}, {{
+       Hold[$CellContext`b$$], 0.5, 
+       "\!\(\*SubscriptBox[\(\[CapitalDelta]\), \(1\)]\)/\[CapitalDelta]"}, 
+      0.00001, 2}, {{
+       Hold[$CellContext`f0$$], 0.1, 
+       "\:041f\:043e\:0442\:0435\:043d\:0446\:0438\:0430\:043b \:043f\:0440\
+\:0438 t=0"}, 1.*^-7, 1}, {{
+       Hold[$CellContext`fp0$$], 0.1, 
+       "\:041f\:0440\:043e\:0438\:0437\:0432\:043e\:0434\:043d\:0430\:044f \
+\:043f\:043e\:0442\:0435\:043d\:0446\:0438\:0430\:043b\:0430 \:043f\:0440\
+\:0438 t=0"}, 0, 1}, {{
+       Hold[$CellContext`xmin$$], -100, 
+       "\:041b\:0435\:0432\:0430\:044f \:0433\:0440\:0430\:043d\:0438\:0446\
+\:0430"}, -1000, -1}, {{
+       Hold[$CellContext`xmax$$], 300, 
+       "\:041f\:0440\:0430\:0432\:0430\:044f \:0433\:0440\:0430\:043d\:0438\
+\:0446\:0430"}, 1, 1000}}, Typeset`size$$ = {821., {152., 157.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`t$9650$$ = 0, $CellContext`b$9651$$ = 
+    0, $CellContext`f0$9652$$ = 0, $CellContext`fp0$9653$$ = 
+    0, $CellContext`xmin$9654$$ = 0, $CellContext`xmax$9655$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`b$$ = 0.5, $CellContext`f0$$ = 
+        0.1, $CellContext`fp0$$ = 0.1, $CellContext`t$$ = 
+        1, $CellContext`xmax$$ = 300, $CellContext`xmin$$ = -100}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$9650$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$9651$$, 0], 
+        Hold[$CellContext`f0$$, $CellContext`f0$9652$$, 0], 
+        Hold[$CellContext`fp0$$, $CellContext`fp0$9653$$, 0], 
+        Hold[$CellContext`xmin$$, $CellContext`xmin$9654$$, 0], 
+        Hold[$CellContext`xmax$$, $CellContext`xmax$9655$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`ettaminr = 
+        0.0001; $CellContext`ettamaxr = $CellContext`xmax$$ $CellContext`t$$; \
+$CellContext`ettaminl = 
+        0.0001; $CellContext`ettamaxl = (-$CellContext`xmin$$) \
+$CellContext`t$$; $CellContext`eq = -(($CellContext`b$$^2 Sin[
+               $CellContext`f[$CellContext`etta]])/
+            Sqrt[$CellContext`b$$^2 (1 - Cos[
+                $CellContext`f[$CellContext`etta]]) + 1]) + $CellContext`etta 
+           D[
+             $CellContext`f[$CellContext`etta], {$CellContext`etta, 2}] + D[
+            $CellContext`f[$CellContext`etta], {$CellContext`etta}] == 
+         0; $CellContext`eq1 = -(($CellContext`b$$^2 Sin[
+               $CellContext`f[$CellContext`etta]])/
+            Sqrt[$CellContext`b$$^2 (1 - Cos[
+                $CellContext`f[$CellContext`etta]]) + 1]) - $CellContext`etta 
+          D[
+            $CellContext`f[$CellContext`etta], {$CellContext`etta, 2}] - D[
+           $CellContext`f[$CellContext`etta], {$CellContext`etta}] == 
+         0; $CellContext`sol = ReplaceAll[$CellContext`f, 
+          Part[
+           Part[
+            
+            NDSolve[{$CellContext`eq, $CellContext`f[$CellContext`ettaminr] == \
+$CellContext`f0$$, 
+              Derivative[
+               1][$CellContext`f][$CellContext`ettaminr] == \
+$CellContext`fp0$$}, $CellContext`f, {$CellContext`etta, \
+$CellContext`ettaminr, $CellContext`ettamaxr}], 1], 1]]; $CellContext`sol1 = 
+        ReplaceAll[$CellContext`f, 
+          Part[
+           Part[
+            
+            NDSolve[{$CellContext`eq1, $CellContext`f[$CellContext`ettaminl] == \
+$CellContext`f0$$, 
+              Derivative[
+               1][$CellContext`f][$CellContext`ettaminl] == \
+$CellContext`fp0$$}, $CellContext`f, {$CellContext`etta, \
+$CellContext`ettaminl, $CellContext`ettamaxl}], 1], 1]]; $CellContext`kink = 
+        Interpolation[
+          Table[{$CellContext`x, 
+            If[$CellContext`x < 0, 
+             $CellContext`sol1[-$CellContext`x], 
+             If[$CellContext`x > 0, 
+              $CellContext`sol[$CellContext`x], $CellContext`f0$$]]}, \
+{$CellContext`x, -$CellContext`ettamaxl, $CellContext`ettamaxr, 0.1}]]; Grid[{{
+           Plot[
+            $CellContext`kink[$CellContext`x $CellContext`t$$], \
+{$CellContext`x, $CellContext`xmin$$, $CellContext`xmax$$}, PlotRange -> All, 
+            ImageSize -> {400, 300}, PlotLabel -> 
+            "\:041f\:043e\:0442\:0435\:043d\:0446\:0438\:0430\:043b"], 
+           Plot[
+            Derivative[
+            1][$CellContext`kink][$CellContext`x $CellContext`t$$], \
+{$CellContext`x, $CellContext`xmin$$, $CellContext`xmax$$}, PlotRange -> All, 
+            ImageSize -> {400, 300}, PlotLabel -> 
+            "\:041f\:0440\:043e\:0438\:0437\:0432\:043e\:0434\:043d\:0430\
+\:044f \:043f\:043e\:0442\:0435\:043d\:0446\:0438\:0430\:043b\:0430"]}}]), 
+      "Specifications" :> {{{$CellContext`t$$, 1, 
+          "\:0412\:0440\:0435\:043c\:044f"}, 1, 
+         100}, {{$CellContext`b$$, 0.5, 
+          "\!\(\*SubscriptBox[\(\[CapitalDelta]\), \(1\)]\)/\[CapitalDelta]"},
+          0.00001, 
+         2}, {{$CellContext`f0$$, 0.1, 
+          "\:041f\:043e\:0442\:0435\:043d\:0446\:0438\:0430\:043b \
+\:043f\:0440\:0438 t=0"}, 1.*^-7, 
+         1}, {{$CellContext`fp0$$, 0.1, 
+          "\:041f\:0440\:043e\:0438\:0437\:0432\:043e\:0434\:043d\:0430\:044f \
+\:043f\:043e\:0442\:0435\:043d\:0446\:0438\:0430\:043b\:0430 \:043f\:0440\
+\:0438 t=0"}, 0, 
+         1}, {{$CellContext`xmin$$, -100, 
+          "\:041b\:0435\:0432\:0430\:044f \
+\:0433\:0440\:0430\:043d\:0438\:0446\:0430"}, -1000, -1}, \
+{{$CellContext`xmax$$, 300, 
+          "\:041f\:0440\:0430\:0432\:0430\:044f \
+\:0433\:0440\:0430\:043d\:0438\:0446\:0430"}, 1, 1000}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{870., {266., 271.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.558774912048443*^9, 3.558774978295232*^9, {3.5587750669403024`*^9, 
+   3.5587750895725965`*^9}, 3.558775198163808*^9, 3.5587762806147203`*^9, {
+   3.5587770823075747`*^9, 3.5587771535456495`*^9}, 3.558777247515024*^9, {
+   3.5587774449963193`*^9, 3.558777468660673*^9}, 3.558777531284255*^9, 
+   3.5587775857433696`*^9, {3.558794146360772*^9, 3.558794155429291*^9}, 
+   3.5587942576401367`*^9, {3.5587943803971577`*^9, 3.558794395412017*^9}, {
+   3.5587945280666046`*^9, 3.558794568923941*^9}, {3.5587946297544203`*^9, 
+   3.558794690164876*^9}, {3.558839976601762*^9, 3.5588400582794337`*^9}, {
+   3.558840121662059*^9, 3.558840181872503*^9}, {3.558841291587975*^9, 
+   3.558841304566717*^9}, 3.5588466556837835`*^9, 3.558846885120907*^9, {
+   3.558846945893383*^9, 3.558846952196743*^9}, 3.5588471118788767`*^9, 
+   3.558847151958169*^9, {3.5588472549480596`*^9, 3.55884727349312*^9}}]
+}, Open  ]]
+},
+WindowSize->{1096, 583},
+WindowMargins->{{2, Automatic}, {Automatic, 4}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 8081, 220, 332, "Input"],
+Cell[8663, 244, 7597, 146, 554, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
