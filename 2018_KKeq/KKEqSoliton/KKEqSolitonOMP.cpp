@@ -40,23 +40,53 @@ double x20;// Координата центра второго импульса
 double xb; // Координата дельта-барьера
 double mu; // Мощность дельта-барьера
 double l; // Обратная ширина дельта-барьера
+double a;// Амплитуда ВЧ-поля
 double b;// Параметр b (отношение энергий)
 double** f;// Массив значений потенциала
 double* xmas;// Массив точек по оси абсцисс в файле с таблично заданным кинком
 double* ymas;// Массив точек по оси ординат в файле с таблично заданным кинком
 double xmin_kink;// Минимальное значение интервала интерполяции
 double xmax_kink;// Максимальное значение интервала интерполяции
+double fmin_kink;// Минимальное значение потенциала при интерполяции
+double fmax_kink;// Максимальное значение потенциала при интерполяции
 int size_kink;// Количество точек в таблице задания кинка
-int divx;// Делитель количества точек по оси координта при сохранении в файл
+int divx;// Делитель количества точек по оси координата при сохранении в файл
 int divt;// Делитель количества точек по оси времени при сохранении в файл
 string str;
 real_1d_array xa;
 real_1d_array ya;
 barycentricinterpolant p;
 spline1dinterpolant s;
+double alpha_hf;// Вспомогательная переменная для потенциала при усреднении по периоду ВЧ поля
+double F0; //  F(0,a,b) в подкоренном выражении интеграла для усредненного кинка
+
+// Подынтегральная функция при усредении по периоду ВЧ поля
+void int_function_HF(double x, double xminusa, double bminusx, double &y, void *ptr) 
+{
+    y = sqrt(1 + b*b*(1 - cos(alpha_hf + a*sin(x))));
+}
+
+// Интеграл, определяющий значение функции в подкоренном выражении интеграла для кинка (F(alpha, a, b) в статье)
+double F(double alpha)
+{
+    autogkstate s;
+    double v = 0.0;
+    autogkreport rep;
+    autogksmooth(0, 2*pi, s);
+	alpha_hf = alpha;
+    alglib::autogkintegrate(s, int_function_HF);
+    autogkresults(s, v, rep);
+	return v/2.0/pi;
+}
+
+// Подынтегральная функция при неявном определении кинка усредненного по периоду ВЧ поля
+void int_function_av_kink(double x, double xminusa, double bminusx, double &y, void *ptr) 
+{
+    y = 1/sqrt(F(x) - F0);
+}
 
 // Подынтегральная функция при неявном определении кинка
-void int_function_1_func(double x, double xminusa, double bminusx, double &y, void *ptr) 
+void int_function_kink(double x, double xminusa, double bminusx, double &y, void *ptr) 
 {
     y = 1/sqrt(sqrt(1 + b*b*(1 - cos(x))) - 1);
 }
@@ -68,7 +98,19 @@ double Fun(double alpha)
     double v = 0.0;
     autogkreport rep;
     autogksmooth(pi, alpha, s);
-    alglib::autogkintegrate(s, int_function_1_func);
+    alglib::autogkintegrate(s, int_function_kink);
+    autogkresults(s, v, rep);
+	return v;
+}
+
+// Интеграл, определяющий значение усредененного кинка в неявном виде
+double FunHF(double alpha)
+{
+    autogkstate s;
+    double v = 0.0;
+    autogkreport rep;
+    autogksmooth(pi, alpha, s);
+    alglib::autogkintegrate(s, int_function_av_kink);
     autogkresults(s, v, rep);
 	return v;
 }
@@ -83,13 +125,13 @@ double f0_single_kink(const double x, const double t, const double v1, const dou
 
 	if(arg1 <= xmin_kink)
 	{
-		f1 = 0.0;
+		f1 = spline1dcalc(s, xmin_kink);
 	}
 	else
 	{
 		if (arg1 >= xmax_kink)
 		{
-			f1 = 2*pi;
+			f1 = spline1dcalc(s, xmax_kink);
 		}
 		else
 		{
@@ -144,6 +186,25 @@ double f0_double_kink(const double x, const double t, const double v1, const dou
 inline double delta_barrier(double x)
 {
 	return mu*l*exp(-sqr(l*(x - xb)))/sqrt(pi);
+}
+
+// Подынтегральная функция для тока усредненного по периоду ВЧ поля
+inline void int_function_av_current(double x, double xminusa, double bminusx, double &y, void *ptr) 
+{
+    y = b*b*sin(alpha_hf + a*sin(x))/sqrt(1 + b*b*(1 - cos(alpha_hf + a*sin(x))));
+}
+
+// Функция тока с усреднением по ВЧ полю
+inline double currentHF(double f)
+{
+	autogkstate s;
+    double v = 0.0;
+    autogkreport rep;
+    autogksmooth(0, 2*pi, s);
+	alpha_hf = f;
+    alglib::autogkintegrate(s, int_function_av_current);
+    autogkresults(s, v, rep);
+	return v/2.0/pi;
 }
 
 // Функция тока
@@ -203,17 +264,22 @@ int main(int argc, char *argv[])
 	getline(in_file, str);
 	getline(in_file, str);
 	mu = atof(str.data());
+	// Амплитуда ВЧ поля
+	getline(in_file, str);
+	getline(in_file, str);
+	a = atof(str.data());	
 	in_file.close();
 	l = 10;
 	cout << "Begin interpolation." << endl;
+	F0 = F(0);
 	double begin = omp_get_wtime();
 	// Построение таблично заданного кинка
 	// Строим неравномерную таблицу с помощью неявно заданной формы кинка
 	vector<double> xmas_temp; 
 	vector<double> ymas_temp;
-	for(double alpha = 0.000001; alpha < 2*pi; alpha += 0.000001)
+	for(double alpha = 0.000001; alpha < 2*pi; alpha += 0.0001)
 	{
-		xmas_temp.push_back(Fun(alpha)/2);
+		xmas_temp.push_back(FunHF(alpha)/2);
 		ymas_temp.push_back(alpha);
 	}
 	xmax_kink = max(xmas_temp[0], xmas_temp[xmas_temp.size()-1]);
@@ -226,7 +292,7 @@ int main(int argc, char *argv[])
 		xmas[i] = xmas_temp[i];
 		ymas[i] = ymas_temp[i];
 	}
-	// Строим сплайн, соответстующий таблично заданному кинку
+	// Строим сплайн, соответствующий таблично заданному кинку
 	xa.setcontent(size_kink, xmas);
 	ya.setcontent(size_kink, ymas);
 	spline1dbuildlinear(xa, ya, s);
