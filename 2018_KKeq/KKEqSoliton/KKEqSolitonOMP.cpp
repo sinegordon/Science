@@ -1,7 +1,7 @@
 // Soliton.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
+//#include "stdafx.h"
 #include <math.h>
 #include <iostream>
 #include <fstream>
@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <string>
 #include <limits>
-#include "alglib\src\interpolation.h"
+#include "alglib/src/interpolation.h"
 
 #define pi 3.1415926535897932385
 
@@ -141,9 +141,15 @@ double f0_double_kink(const double x, const double t, const double v1, const dou
 }
 
 // Функция структурного возмущения
-double delta_barrier(double x)
+inline double delta_barrier(double x)
 {
 	return mu*l*exp(-sqr(l*(x - xb)))/sqrt(pi);
+}
+
+// Функция тока
+inline double current(double f)
+{
+	return b*b*sin(f)/sqrt(1 + b*b*(1 - cos(f)));
 }
 
 int main(int argc, char *argv[])
@@ -199,13 +205,13 @@ int main(int argc, char *argv[])
 	mu = atof(str.data());
 	in_file.close();
 	l = 10;
-	cout << "Begin computation." << endl;
+	cout << "Begin interpolation." << endl;
 	double begin = omp_get_wtime();
 	// Построение таблично заданного кинка
 	// Строим неравномерную таблицу с помощью неявно заданной формы кинка
 	vector<double> xmas_temp; 
 	vector<double> ymas_temp;
-	for(double alpha = 0.00001; alpha < 2*pi; alpha += 0.00005)
+	for(double alpha = 0.000001; alpha < 2*pi; alpha += 0.000001)
 	{
 		xmas_temp.push_back(Fun(alpha)/2);
 		ymas_temp.push_back(alpha);
@@ -224,7 +230,8 @@ int main(int argc, char *argv[])
 	xa.setcontent(size_kink, xmas);
 	ya.setcontent(size_kink, ymas);
 	spline1dbuildlinear(xa, ya, s);
-
+	cout << "Done interpolation." << endl;
+	cout << "Begin solve wave equation." << endl;
 	//Начальные условия 
 	hx = (xmax-xmin)/(nx-1);
 	ht = hx/2;
@@ -270,7 +277,7 @@ int main(int argc, char *argv[])
 				for(int x = from_x; x < to_x; x++)
 				{
 					f[x][t] = (ht*ht)*(f[x-1][t-1]+f[x+1][t-1]-2*f[x][t-1])/(hx*hx)+2*f[x][t-1]-f[x][t-2]
-							- (1 + delta_barrier(xmin + x*hx))*b*b*ht*ht*sin(f[x][t-1])/sqrt(1 + b*b*(1 - cos(f[x][t-1])));
+							- (1 + delta_barrier(xmin + x*hx))*ht*ht*current(f[x][t-1]);
 				};
 				if(myid == 0)
 					f[0][t] = (2*f[1][t]-f[2][t]);
@@ -304,7 +311,8 @@ int main(int argc, char *argv[])
 		};
 	}
 	double end = omp_get_wtime();
-	cout << "Computation end in " << end - begin << " second(s)." << endl;
+	cout << "Done solve wave equation." << endl;
+	cout << "Computation took " << end - begin << " second(s)." << endl;
 	cin.get();
 	return 0;
 }
