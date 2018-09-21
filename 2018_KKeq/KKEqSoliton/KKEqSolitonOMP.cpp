@@ -47,23 +47,31 @@ double* xmas;// Массив точек по оси абсцисс в файле с таблично заданным кинком
 double* ymas;// Массив точек по оси ординат в файле с таблично заданным кинком
 double xmin_kink;// Минимальное значение интервала интерполяции
 double xmax_kink;// Максимальное значение интервала интерполяции
+double* xmas1;// Массив точек по оси абсцисс в файле с таблично заданным током
+double* ymas1;// Массив точек по оси ординат в файле с таблично заданным током
 double fmin_kink;// Минимальное значение потенциала при интерполяции
 double fmax_kink;// Максимальное значение потенциала при интерполяции
 int size_kink;// Количество точек в таблице задания кинка
 int divx;// Делитель количества точек по оси координата при сохранении в файл
 int divt;// Делитель количества точек по оси времени при сохранении в файл
 string str;
+double * alpha_hf;// Вспомогательная переменная для потенциала при усреднении по периоду ВЧ поля
+double F0; //  F(0,a,b) в подкоренном выражении интеграла для усредненного кинка
+// Пременные для построения сплайна кинка
 real_1d_array xa;
 real_1d_array ya;
 barycentricinterpolant p;
 spline1dinterpolant s;
-double alpha_hf;// Вспомогательная переменная для потенциала при усреднении по периоду ВЧ поля
-double F0; //  F(0,a,b) в подкоренном выражении интеграла для усредненного кинка
+// Пременные для построения сплайна тока
+real_1d_array xa1;
+real_1d_array ya1;
+barycentricinterpolant p1;
+spline1dinterpolant s1;
 
 // Подынтегральная функция при усредении по периоду ВЧ поля
 void int_function_HF(double x, double xminusa, double bminusx, double &y, void *ptr) 
 {
-    y = sqrt(1 + b*b*(1 - cos(alpha_hf + a*sin(x))));
+    y = sqrt(1 + b*b*(1 - cos(alpha_hf[myid] + a*sin(x))));
 }
 
 // Интеграл, определяющий значение функции в подкоренном выражении интеграла для кинка (F(alpha, a, b) в статье)
@@ -73,7 +81,7 @@ double F(double alpha)
     double v = 0.0;
     autogkreport rep;
     autogksmooth(0, 2*pi, s);
-	alpha_hf = alpha;
+	alpha_hf[myid] = alpha;
     alglib::autogkintegrate(s, int_function_HF);
     autogkresults(s, v, rep);
 	return v/2.0/pi;
@@ -188,30 +196,30 @@ inline double delta_barrier(double x)
 	return mu*l*exp(-sqr(l*(x - xb)))/sqrt(pi);
 }
 
+
 // Подынтегральная функция для тока усредненного по периоду ВЧ поля
-inline void int_function_av_current(double x, double xminusa, double bminusx, double &y, void *ptr) 
+void int_function_av_current(double x, double xminusa, double bminusx, double &y, void *ptr) 
 {
-    y = b*b*sin(alpha_hf + a*sin(x))/sqrt(1 + b*b*(1 - cos(alpha_hf + a*sin(x))));
-}
+	y = b*b*sin(alpha_hf[myid] + a*sin(x))/sqrt(1 + b*b*(1 - cos(alpha_hf[myid] + a*sin(x))));
+};
 
 // Функция тока с усреднением по ВЧ полю
-inline double currentHF(double f)
+double currentHF(double f)
 {
 	autogkstate s;
-    double v = 0.0;
-    autogkreport rep;
-    autogksmooth(0, 2*pi, s);
-	alpha_hf = f;
-    alglib::autogkintegrate(s, int_function_av_current);
-    autogkresults(s, v, rep);
+	double v = 0.0;
+	autogkreport rep;
+	autogksmooth(0, 2*pi, s);
+	alpha_hf[myid] = f;
+	alglib::autogkintegrate(s, int_function_av_current);
+	autogkresults(s, v, rep);
 	return v/2.0/pi;
-}
+};
 
-// Функция тока
-inline double current(double f)
+double current(double f)
 {
 	return b*b*sin(f)/sqrt(1 + b*b*(1 - cos(f)));
-}
+};
 
 int main(int argc, char *argv[])
 {
@@ -270,34 +278,52 @@ int main(int argc, char *argv[])
 	a = atof(str.data());	
 	in_file.close();
 	l = 10;
-	cout << "Begin interpolation." << endl;
+	cout << "Begin interpolation kink and current" << endl;
+	alpha_hf = new double[threads];
+	myid = 0;
 	F0 = F(0);
 	double begin = omp_get_wtime();
 	// Построение таблично заданного кинка
 	// Строим неравномерную таблицу с помощью неявно заданной формы кинка
 	vector<double> xmas_temp; 
 	vector<double> ymas_temp;
-	for(double alpha = 0.000001; alpha < 2*pi; alpha += 0.0001)
+	int k = 0;
+	for(double alpha = 0.000001; alpha < 2*pi; alpha += 0.0005)
 	{
 		xmas_temp.push_back(FunHF(alpha)/2);
 		ymas_temp.push_back(alpha);
+		if(k % 100 == 0)
+			cout << "Kink alpha = " << alpha << endl;
+		k += 1;
 	}
 	xmax_kink = max(xmas_temp[0], xmas_temp[xmas_temp.size()-1]);
 	xmin_kink = min(xmas_temp[0], xmas_temp[xmas_temp.size()-1]);
 	size_kink = xmas_temp.size();
 	xmas = new double[size_kink];
 	ymas = new double[size_kink];
+	xmas1 = new double[size_kink];
+	ymas1 = new double[size_kink];
+	k = 0;
 	for(int i = 0; i < size_kink; i++)
 	{
 		xmas[i] = xmas_temp[i];
 		ymas[i] = ymas_temp[i];
+		xmas1[i] = ymas_temp[i];
+		ymas1[i] = currentHF(xmas1[i]);
+		if(k % 100 == 0)
+			cout << "Current alpha = " << xmas1[i] << endl;
+		k += 1;
 	}
 	// Строим сплайн, соответствующий таблично заданному кинку
 	xa.setcontent(size_kink, xmas);
 	ya.setcontent(size_kink, ymas);
 	spline1dbuildlinear(xa, ya, s);
-	cout << "Done interpolation." << endl;
-	cout << "Begin solve wave equation." << endl;
+	// Строим сплайн, соответствующий таблично заданному току
+	xa1.setcontent(size_kink, xmas1);
+	ya1.setcontent(size_kink, ymas1);
+	spline1dbuildlinear(xa1, ya1, s1);
+	cout << "Done interpolation" << endl;
+	cout << "Begin solve wave equation" << endl;
 	//Начальные условия 
 	hx = (xmax-xmin)/(nx-1);
 	ht = hx/2;
@@ -324,7 +350,7 @@ int main(int argc, char *argv[])
 		};
 	omp_set_num_threads(threads);
 	// Включаем время
-	#pragma omp parallel private (myid) shared (f, threads, masnt, nx, divt, divx, nt, mu, xb, l)
+	#pragma omp parallel private (myid) shared (f, threads, masnt, nx, divt, divx, nt, mu, xb, l, alpha_hf)
 	{
 		myid = omp_get_thread_num();
 		int from_x, to_x;
@@ -343,7 +369,7 @@ int main(int argc, char *argv[])
 				for(int x = from_x; x < to_x; x++)
 				{
 					f[x][t] = (ht*ht)*(f[x-1][t-1]+f[x+1][t-1]-2*f[x][t-1])/(hx*hx)+2*f[x][t-1]-f[x][t-2]
-							- (1 + delta_barrier(xmin + x*hx))*ht*ht*current(f[x][t-1]);
+							- (1 + delta_barrier(xmin + x*hx))*ht*ht*spline1dcalc(s1, f[x][t-1]);//spline1dcalc - ток
 				};
 				if(myid == 0)
 					f[0][t] = (2*f[1][t]-f[2][t]);
@@ -377,8 +403,8 @@ int main(int argc, char *argv[])
 		};
 	}
 	double end = omp_get_wtime();
-	cout << "Done solve wave equation." << endl;
-	cout << "Computation took " << end - begin << " second(s)." << endl;
+	cout << "Done solve wave equation" << endl;
+	cout << "Computation took " << end - begin << " second(s)" << endl;
 	cin.get();
 	return 0;
 }
