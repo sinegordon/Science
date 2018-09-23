@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import subprocess
 from multiprocessing import Process
 import os
@@ -50,7 +53,7 @@ for a in np.arange(0.0, 3.0, 1.5):
         f.write(s)
     proc = subprocess.Popen(["chmod", "777", sh])
     proc.wait()
-    proc = subprocess.Popen(sh)
+    proc = subprocess.Popen(["sh", sh])
     #proc = subprocess.Popen(["open", "-a", "Terminal.app", sh])
     proc.wait()
     proc = subprocess.Popen(["rm", "-f", sh])
