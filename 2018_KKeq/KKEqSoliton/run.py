@@ -50,6 +50,10 @@ for a in np.arange(0.0, 3.0, 1.5):
         f.write(s)
     proc = subprocess.Popen(["chmod", "777", sh])
     proc.wait()
-    subprocess.Popen(["open", "-a", "Terminal.app", sh])
+    proc = subprocess.Popen(sh)
+    #proc = subprocess.Popen(["open", "-a", "Terminal.app", sh])
+    proc.wait()
+    proc = subprocess.Popen(["rm", "-f", sh])
+    proc.wait()
     count += 1
     #subprocess.call(['xterm', '-e', 'python bb.py'])
