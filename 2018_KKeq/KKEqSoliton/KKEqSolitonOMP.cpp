@@ -54,6 +54,7 @@ double fmax_kink;// Максимальное значение потенциала при интерполяции
 int size_kink;// Количество точек в таблице задания кинка
 int divx;// Делитель количества точек по оси координата при сохранении в файл
 int divt;// Делитель количества точек по оси времени при сохранении в файл
+double betta;// Коэффициент трения
 string str;
 double * alpha_hf;// Вспомогательная переменная для потенциала при усреднении по периоду ВЧ поля
 double F0; //  F(0,a,b) в подкоренном выражении интеграла для усредненного кинка
@@ -224,7 +225,7 @@ double current(double f)
 int main(int argc, char *argv[])
 {
 	//Параметры сетки и решения
-	in_file.open("inOMP.txt");
+	in_file.open(argv[1]);
 	getline(in_file, str);
 	getline(in_file, str);
 	tmin = atof(str.data());	
@@ -275,7 +276,11 @@ int main(int argc, char *argv[])
 	// Амплитуда ВЧ поля
 	getline(in_file, str);
 	getline(in_file, str);
-	a = atof(str.data());	
+	a = atof(str.data());
+	// Коэффициент трения
+	getline(in_file, str);
+	getline(in_file, str);
+	betta = atof(str.data());
 	in_file.close();
 	l = 10;
 	cout << "Begin interpolation kink and current" << endl;
@@ -369,6 +374,7 @@ int main(int argc, char *argv[])
 				for(int x = from_x; x < to_x; x++)
 				{
 					f[x][t] = (ht*ht)*(f[x-1][t-1]+f[x+1][t-1]-2*f[x][t-1])/(hx*hx)+2*f[x][t-1]-f[x][t-2]
+							- betta*ht*(f[x][t-1] - f[x][t-2])
 							- (1 + delta_barrier(xmin + x*hx))*ht*ht*spline1dcalc(s1, f[x][t-1]);//spline1dcalc - ток
 				};
 				if(myid == 0)
@@ -381,9 +387,9 @@ int main(int argc, char *argv[])
 			{
 				cout << "Saving iteration #" << k << " from " << nt / masnt << endl;
 				if(k == 0)
-					out_file.open("out_f.sgo");
+					out_file.open(argv[2]);
 				else
-					out_file.open("out_f.sgo", std::ios_base::app);
+					out_file.open(argv[2], std::ios_base::app);
 				for(int t = 0; t < masnt; t+=divt)
 				{
 					for(int x = 0; x < nx - 1; x+=divx)
@@ -405,7 +411,7 @@ int main(int argc, char *argv[])
 	double end = omp_get_wtime();
 	cout << "Done solve wave equation" << endl;
 	cout << "Computation took " << end - begin << " second(s)" << endl;
-	cin.get();
+	//cin.get();
 	return 0;
 }
 
