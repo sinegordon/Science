@@ -322,11 +322,11 @@ int main(int argc, char *argv[])
 	// —троим сплайн, соответствующий таблично заданному кинку
 	xa.setcontent(size_kink, xmas);
 	ya.setcontent(size_kink, ymas);
-	spline1dbuildlinear(xa, ya, s);
+	spline1dbuildcubic(xa, ya, s);
 	// —троим сплайн, соответствующий таблично заданному току
 	xa1.setcontent(size_kink, xmas1);
 	ya1.setcontent(size_kink, ymas1);
-	spline1dbuildlinear(xa1, ya1, s1);
+	spline1dbuildcubic(xa1, ya1, s1);
 	cout << "Done interpolation" << endl;
 	cout << "Begin solve wave equation" << endl;
 	//Ќачальные услови€ 

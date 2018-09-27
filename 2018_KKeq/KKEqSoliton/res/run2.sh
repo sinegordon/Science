@@ -1,1 +1,0 @@
-/Users/user/Documents/Work/Science/2018_KKeq/KKEqSoliton/a.out /Users/user/Documents/Work/Science/2018_KKeq/KKEqSoliton/res/in_1.5_2.0.txt /Users/user/Documents/Work/Science/2018_KKeq/KKEqSoliton/res/out_1.5_2.0.txt
