@@ -373,9 +373,9 @@ int main(int argc, char *argv[])
 			{
 				for(int x = from_x; x < to_x; x++)
 				{
-					f[x][t] = (ht*ht)*(f[x-1][t-1]+f[x+1][t-1]-2*f[x][t-1])/(hx*hx)+2*f[x][t-1]-f[x][t-2]
-							- betta*ht*(f[x][t-1] - f[x][t-2])
-							- (1 + delta_barrier(xmin + x*hx))*ht*ht*spline1dcalc(s1, f[x][t-1]);//spline1dcalc - ток
+					f[x][t] = 1.0/(1+betta*ht/2)*((ht*ht)*(f[x-1][t-1]+f[x+1][t-1]-2*f[x][t-1])/(hx*hx)+2*f[x][t-1]-f[x][t-2]
+							+ betta*ht*f[x][t-2]/2
+							- (1 + delta_barrier(xmin + x*hx))*ht*ht*spline1dcalc(s1, f[x][t-1]));//spline1dcalc - ток
 				};
 				if(myid == 0)
 					f[0][t] = (2*f[1][t]-f[2][t]);
@@ -390,13 +390,13 @@ int main(int argc, char *argv[])
 					out_file.open(argv[2]);
 				else
 					out_file.open(argv[2], std::ios_base::app);
-				for(int t = 0; t < masnt; t+=divt)
+				for(int t = 1; t < masnt; t+=divt)
 				{
 					for(int x = 0; x < nx - 1; x+=divx)
 					{
-						out_file << f[x][t] << " ";
+						out_file << (f[x][t] - f[x][t - 1])/ht << " ";
 					};
-					out_file << f[nx - 1][t] << endl;
+					out_file << (f[nx - 1][t] - f[nx - 1][t - 1])/ht << endl;
 				};
 				out_file.close();
 				for (int x = 0; x < nx; x++)
