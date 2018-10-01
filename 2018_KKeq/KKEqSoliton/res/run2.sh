@@ -1,1 +1,1 @@
-/Users/sinegordon/Programming/Science/2018_KKeq/KKEqSoliton/a.out /Users/sinegordon/Programming/Science/2018_KKeq/KKEqSoliton/res/in_1.5_2.0.txt /Users/sinegordon/Programming/Science/2018_KKeq/KKEqSoliton/res/out_1.5_2.0.txt
+/Users/sinegordon/Programming/Science/2018_KKeq/KKEqSoliton/a.out /Users/sinegordon/Programming/Science/2018_KKeq/KKEqSoliton/res/in_1.5_0.1.txt /Users/sinegordon/Programming/Science/2018_KKeq/KKEqSoliton/res/out_1.5_0.1.txt
