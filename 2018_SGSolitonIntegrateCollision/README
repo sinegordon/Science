@@ -1,0 +1,2 @@
+g++-7 -c -Ialglib/cpp/src/ -O2 ./alglib/cpp/src/*.cpp
+g++-7 ./alglib/obj/*.o ./KKEqSolitonOMP.cpp -Ialglib/src/ -fopenmp -O2
