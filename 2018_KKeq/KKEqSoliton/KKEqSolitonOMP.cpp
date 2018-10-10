@@ -55,6 +55,8 @@ int size_kink;// Количество точек в таблице задания кинка
 int divx;// Делитель количества точек по оси координата при сохранении в файл
 int divt;// Делитель количества точек по оси времени при сохранении в файл
 double betta;// Коэффициент трения
+double w;// Частота поля
+double tau;// Характерное время включения поля
 string str;
 double * alpha_hf;// Вспомогательная переменная для потенциала при усреднении по периоду ВЧ поля
 double F0; //  F(0,a,b) в подкоренном выражении интеграла для усредненного кинка
@@ -281,6 +283,15 @@ int main(int argc, char *argv[])
 	getline(in_file, str);
 	getline(in_file, str);
 	betta = atof(str.data());
+	// Частота поля
+	getline(in_file, str);
+	getline(in_file, str);
+	w = atof(str.data());
+	// Частота поля
+	getline(in_file, str);
+	getline(in_file, str);
+	tau = atof(str.data());
+
 	in_file.close();
 	l = 10;
 	cout << "Begin interpolation kink and current" << endl;
@@ -295,7 +306,7 @@ int main(int argc, char *argv[])
 	int k = 0;
 	for(double alpha = 0.000001; alpha < 2*pi; alpha += 0.0005)
 	{
-		xmas_temp.push_back(FunHF(alpha)/2);
+		xmas_temp.push_back(Fun(alpha)/2);
 		ymas_temp.push_back(alpha);
 		if(k % 100 == 0)
 			cout << "Kink alpha = " << alpha << endl;
@@ -357,6 +368,7 @@ int main(int argc, char *argv[])
 	// Включаем время
 	#pragma omp parallel private (myid) shared (f, threads, masnt, nx, divt, divx, nt, mu, xb, l, alpha_hf)
 	{
+		double mul = 0.0;
 		myid = omp_get_thread_num();
 		int from_x, to_x;
 		if(myid > 0)
@@ -373,9 +385,10 @@ int main(int argc, char *argv[])
 			{
 				for(int x = from_x; x < to_x; x++)
 				{
+					mul = (1 - exp(-(tmin + (t-1)*ht)/tau));
 					f[x][t] = 1.0/(1+betta*ht/2)*((ht*ht)*(f[x-1][t-1]+f[x+1][t-1]-2*f[x][t-1])/(hx*hx)+2*f[x][t-1]-f[x][t-2]
-							+ betta*ht*f[x][t-2]/2
-							- (1 + delta_barrier(xmin + x*hx))*ht*ht*spline1dcalc(s1, f[x][t-1]));//spline1dcalc - ток
+							+ betta*ht*f[x][t-2]/2 + 0*mul*ht*ht*a*w*w*sin(w*(tmin + (t-1)*ht)) - mul*ht*ht*betta*a*w*cos(w*(tmin + (t-1)*ht))
+							- (1 + delta_barrier(xmin + x*hx))*ht*ht*current(f[x][t-1] + mul*a*sin(w*(tmin + (t-1)*ht)))); //spline1dcalc(s1, f[x][t-1]));//spline1dcalc - ток
 				};
 				if(myid == 0)
 					f[0][t] = (2*f[1][t]-f[2][t]);

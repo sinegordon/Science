@@ -17,7 +17,9 @@
 			"chrono": "cpp",
 			"limits": "cpp",
 			"__locale": "cpp",
-			"iostream": "cpp"
-		}
+			"iostream": "cpp",
+			"*.tcc": "cpp"
+		},
+		"python.pythonPath": "/home/user/miniconda2/bin/python"
 	}
 }
