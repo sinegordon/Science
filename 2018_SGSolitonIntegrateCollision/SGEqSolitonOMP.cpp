@@ -37,6 +37,7 @@ double xb; // Координата дельта-барьера
 double mu; // Мощность дельта-барьера
 double l; // Обратная ширина дельта-барьера
 double a;// Амплитуда ВЧ-поля
+double w;// Частота ВЧ-поля
 double** f;// Массив значений потенциала
 int divx;// Делитель количества точек по оси координата при сохранении в файл
 int divt;// Делитель количества точек по оси времени при сохранении в файл
@@ -61,9 +62,13 @@ inline double delta_barrier(double x)
 inline double right_part(int x, int t)
 {
 	double sum = 0.0;
-	for(int t1 = 0; t1 <= t; t1++)
+	int t1b = t - intnt > -1 ? t - intnt : 0;
+	double A, A1;
+	A = a*sin(w*t*ht);
+	for(int t1 = t1b; t1 <= t; t1++)
 	{
-		sum += nu*ht*exp(-nu*(t-t1)*ht)*(sin(f[x][t1] - f[x][t]) + sin(f[x][t]));
+		A1 = a*sin(w*t1*ht);
+		sum += nu*ht*exp(-nu*(t-t1)*ht)*(sin(f[x][t1] + A1 - f[x][t] - A) + sin(f[x][t] + A));
 	}
 	return sum;
 }
@@ -114,6 +119,10 @@ int main(int argc, char *argv[])
 	getline(in_file, str);
 	getline(in_file, str);
 	a = atof(str.data());
+	// Частота ВЧ поля
+	getline(in_file, str);
+	getline(in_file, str);
+	w = atof(str.data());
 	// Коэффициент трения
 	getline(in_file, str);
 	getline(in_file, str);
@@ -153,13 +162,13 @@ int main(int argc, char *argv[])
 			to_x = (myid+1)*nx/threads;
 		else
 			to_x = nx-1;
-		int k = 1;
+		int k = 0;
 		for(int t = 2; t < nt; t++)
 		{
 			for(int x = from_x; x < to_x; x++)
 			{
 				f[x][t] = (ht*ht)*(f[x-1][t-1]+f[x+1][t-1]-2*f[x][t-1])/(hx*hx)+2*f[x][t-1]-f[x][t-2]
-						- ht*ht*((1 + delta_barrier(xmin + x*hx))*sin(f[x][t-1]) - right_part(x, t-1));
+						- ht*ht*((1 + delta_barrier(xmin + x*hx))*sin(f[x][t-1] + a*sin(w*t*ht)) - right_part(x, t-1));
 			};
 			if(myid == 0)
 				f[0][t] = (2*f[1][t]-f[2][t]);
@@ -173,11 +182,11 @@ int main(int argc, char *argv[])
 					out_file.open(argv[2]);
 				else
 					out_file.open(argv[2], std::ios_base::app);
-				for(int x = 0; x < nx - 1; x+=divx)
+				for(int x = 0; x < nx; x+=divx)
 				{
 					out_file << (f[x][t] - f[x][t - 1])/ht << " ";
 				};
-				out_file << (f[nx - 1][t] - f[nx - 1][t - 1])/ht << endl;
+				out_file << endl;
 				out_file.close();
 				k += 1;
 			};
