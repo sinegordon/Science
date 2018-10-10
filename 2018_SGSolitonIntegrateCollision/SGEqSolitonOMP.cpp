@@ -45,7 +45,7 @@ string str;
 
 // Начальный профиль
 // Одиночный кинк
-double f0_single_kink(const double x, const double t, const double v, const double x0)
+inline double f0_single_kink(const double x, const double t, const double v, const double x0)
 {
 	return 4*atan(exp((x-x0-v*t)/sqrt(1-v*v)));;
 }
@@ -60,7 +60,12 @@ inline double delta_barrier(double x)
 // Функция структурного возмущения
 inline double right_part(int x, int t)
 {
-	return 0;
+	double sum = 0.0;
+	for(int t1 = 0; t1 <= t; t1++)
+	{
+		sum += nu*ht*exp(-nu*(t-t1)*ht)*(sin(f[x][t1] - f[x][t]) + sin(f[x][t]));
+	}
+	return sum;
 }
 
 int main(int argc, char *argv[])
@@ -147,14 +152,14 @@ int main(int argc, char *argv[])
 		if(myid < threads-1)
 			to_x = (myid+1)*nx/threads;
 		else
-		to_x = nx-1;
+			to_x = nx-1;
 		int k = 1;
 		for(int t = 2; t < nt; t++)
 		{
 			for(int x = from_x; x < to_x; x++)
 			{
 				f[x][t] = (ht*ht)*(f[x-1][t-1]+f[x+1][t-1]-2*f[x][t-1])/(hx*hx)+2*f[x][t-1]-f[x][t-2]
-						- ht*ht*((1 + delta_barrier(xmin + x*hx))*sin(f[x][t-1]) + right_part(x, t-1));
+						- ht*ht*((1 + delta_barrier(xmin + x*hx))*sin(f[x][t-1]) - right_part(x, t-1));
 			};
 			if(myid == 0)
 				f[0][t] = (2*f[1][t]-f[2][t]);
