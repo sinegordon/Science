@@ -59,7 +59,7 @@ inline double delta_barrier(double x)
 }
 
 // Функция структурного возмущения
-inline double right_part(int x, int t)
+inline double right_part(double** f, int x, int t)
 {
 	double sum = 0.0;
 	int t1b = t - intnt > -1 ? t - intnt : 0;
@@ -148,6 +148,15 @@ int main(int argc, char *argv[])
 		f[x][0] = f0_single_kink(xmin+x*hx, tmin, v, x0);
 		f[x][1] = f0_single_kink(xmin+x*hx, tmin+ht, v, x0);
 	}
+	// Сохраняем начальный профиль
+	out_file.open(argv[2]);
+	for(int x = 0; x < nx; x+=divx)
+	{
+		out_file << (f[x][1] - f[x][0])/ht << " ";
+	};
+	out_file << endl;
+	out_file.close();
+
 	omp_set_num_threads(threads);
 	// Включаем время
 	#pragma omp parallel private (myid) shared (f, threads, nx, divt, divx, nt, mu, xb, l)
@@ -162,13 +171,13 @@ int main(int argc, char *argv[])
 			to_x = (myid+1)*nx/threads;
 		else
 			to_x = nx-1;
-		int k = 0;
+		int k = 1;
 		for(int t = 2; t < nt; t++)
 		{
 			for(int x = from_x; x < to_x; x++)
 			{
 				f[x][t] = (ht*ht)*(f[x-1][t-1]+f[x+1][t-1]-2*f[x][t-1])/(hx*hx)+2*f[x][t-1]-f[x][t-2]
-						- ht*ht*((1 + delta_barrier(xmin + x*hx))*sin(f[x][t-1] + a*sin(w*t*ht)) - right_part(x, t-1));
+						- ht*ht*((1 + delta_barrier(xmin + x*hx))*sin(f[x][t-1] + a*sin(w*t*ht)) - right_part(f, x, t-1));
 			};
 			if(myid == 0)
 				f[0][t] = (2*f[1][t]-f[2][t]);
@@ -178,10 +187,7 @@ int main(int argc, char *argv[])
 			if(myid == 0 && t % divt == 0)
 			{
 				cout << "Saving part #" << k << " from " << nt/divt  << endl;
-				if(k == 0)
-					out_file.open(argv[2]);
-				else
-					out_file.open(argv[2], std::ios_base::app);
+				out_file.open(argv[2], std::ios_base::app);
 				for(int x = 0; x < nx; x+=divx)
 				{
 					out_file << (f[x][t] - f[x][t - 1])/ht << " ";
