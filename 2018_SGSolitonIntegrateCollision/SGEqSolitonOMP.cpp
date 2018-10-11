@@ -186,7 +186,6 @@ int main(int argc, char *argv[])
 				f[0][t] = (2*f[1][t]-f[2][t]);
 			if(myid == threads-1)
 				f[nx-1][t] = (2*f[nx-2][t]-f[nx-3][t]);
-					if (myid == 0)
 			if(myid == 0 && t % divt == 0)
 			{
 				cout << "Saving part #" << k << " from " << nt/divt  << endl;
