@@ -66,21 +66,12 @@ inline double delta_barrier(double x)
 inline double right_part(double** f, int x, int t)
 {
 	double sum = 0.0;
-<<<<<<< HEAD
 	int t1b = t - intnt > -1 ? t - intnt : 0;
 	double A, A1;
 	A = a*sin(w*t*ht);
 	for(int t1 = t1b; t1 <= t; t1++)
 	{
 		A1 = a*sin(w*t1*ht);
-=======
-	double A1, A;
-	A = a*sin(w*ht*t);
-	double t1b = t - intnt >= 0 ? t - intnt : 0;
-	for(int t1 = 0; t1 <= t; t1++)
-	{
-		A1 = a*sin(w*ht*t1);
->>>>>>> d09f5b9f17a3309ccfa2fd290b0a5a0e263db1a7
 		sum += nu*ht*exp(-nu*(t-t1)*ht)*(sin(f[x][t1] + A1 - f[x][t] - A) + sin(f[x][t] + A));
 	}
 	return sum;
@@ -161,11 +152,7 @@ int main(int argc, char *argv[])
 		f[x][0] = f0_single_kink(xmin+x*hx, tmin, v, x0);
 		f[x][1] = f0_single_kink(xmin+x*hx, tmin+ht, v, x0);
 	}
-<<<<<<< HEAD
 	// Сохраняем начальный профиль
-=======
-	// Записываем начальный профиль в файл
->>>>>>> d09f5b9f17a3309ccfa2fd290b0a5a0e263db1a7
 	out_file.open(argv[2]);
 	for(int x = 0; x < nx; x+=divx)
 	{
@@ -173,10 +160,6 @@ int main(int argc, char *argv[])
 	};
 	out_file << endl;
 	out_file.close();
-<<<<<<< HEAD
-
-=======
->>>>>>> d09f5b9f17a3309ccfa2fd290b0a5a0e263db1a7
 	omp_set_num_threads(threads);
 	// Включаем время
 	#pragma omp parallel private (myid) shared (f, threads, nx, divt, divx, nt, mu, xb, l, a, w)
@@ -197,11 +180,7 @@ int main(int argc, char *argv[])
 			for(int x = from_x; x < to_x; x++)
 			{
 				f[x][t] = (ht*ht)*(f[x-1][t-1]+f[x+1][t-1]-2*f[x][t-1])/(hx*hx)+2*f[x][t-1]-f[x][t-2]
-<<<<<<< HEAD
 						- ht*ht*((1 + delta_barrier(xmin + x*hx))*sin(f[x][t-1] + a*sin(w*t*ht)) - right_part(f, x, t-1));
-=======
-						- ht*ht*((1 + delta_barrier(xmin + x*hx))*sin(f[x][t-1] + a*sin(w*ht*(t-1))) - right_part(f, x, t-1));
->>>>>>> d09f5b9f17a3309ccfa2fd290b0a5a0e263db1a7
 			};
 			if(myid == 0)
 				f[0][t] = (2*f[1][t]-f[2][t]);
@@ -210,11 +189,7 @@ int main(int argc, char *argv[])
 					if (myid == 0)
 			if(myid == 0 && t % divt == 0)
 			{
-<<<<<<< HEAD
 				cout << "Saving part #" << k << " from " << nt/divt  << endl;
-=======
-				cout << "Saving step #" << k << " from " << nt/divt  << endl;
->>>>>>> d09f5b9f17a3309ccfa2fd290b0a5a0e263db1a7
 				out_file.open(argv[2], std::ios_base::app);
 				for(int x = 0; x < nx; x+=divx)
 				{
