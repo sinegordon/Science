@@ -65,7 +65,7 @@ inline double right_part(double** f, int x, int t)
 	double A1, A;
 	A = a*sin(w*ht*t);
 	double t1b = t - intnt >= 0 ? t - intnt : 0;
-	for(int t1 = 0; t1 <= t; t1++)
+	for(int t1 = t1b; t1 <= t; t1++)
 	{
 		A1 = a*sin(w*ht*t1);
 		sum += nu*ht*exp(-nu*(t-t1)*ht)*(sin(f[x][t1] + A1 - f[x][t] - A) + sin(f[x][t] + A));
