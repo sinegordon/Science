@@ -42,6 +42,7 @@ double** f;// Массив значений потенциала
 int divx;// Делитель количества точек по оси координата при сохранении в файл
 int divt;// Делитель количества точек по оси времени при сохранении в файл
 double nu;// Коэффициент трения
+double tau; // Время включения поля
 string str;
 
 // Начальный профиль
@@ -62,13 +63,14 @@ inline double delta_barrier(double x)
 inline double right_part(double** f, int x, int t)
 {
 	double sum = 0.0;
-	double A1, A;
-	A = a*sin(w*ht*t);
-	double t1b = t - intnt >= 0 ? t - intnt : 0;
+	int t1b = t - intnt > -1 ? t - intnt : 0;
+	double A, A1, mul;
+	mul = (1 - exp(- ht*t / tau));
+	A = mul*a*sin(w*t*ht);
 	for(int t1 = t1b; t1 <= t; t1++)
 	{
-		A1 = a*sin(w*ht*t1);
-		sum += nu*ht*exp(-nu*(t-t1)*ht)*(sin(f[x][t1] + A1 - f[x][t] - A) + sin(f[x][t] + A));
+		A1 = a*sin(w*t1*ht);
+		sum += nu*ht*exp(-nu*(t-t1)*ht)*(sin(f[x][t1] + mul*A1 - f[x][t] - mul*A) + sin(f[x][t] + mul*A));
 	}
 	return sum;
 }
@@ -127,6 +129,10 @@ int main(int argc, char *argv[])
 	getline(in_file, str);
 	getline(in_file, str);
 	nu = atof(str.data());
+	// Коэффициент трения
+	getline(in_file, str);
+	getline(in_file, str);
+	tau = atof(str.data());
 	in_file.close();
 	l = 10;
 	myid = 0;
@@ -148,7 +154,7 @@ int main(int argc, char *argv[])
 		f[x][0] = f0_single_kink(xmin+x*hx, tmin, v, x0);
 		f[x][1] = f0_single_kink(xmin+x*hx, tmin+ht, v, x0);
 	}
-	// Записываем начальный профиль в файл
+	// Сохраняем начальный профиль
 	out_file.open(argv[2]);
 	for(int x = 0; x < nx; x+=divx)
 	{
@@ -171,21 +177,23 @@ int main(int argc, char *argv[])
 		else
 			to_x = nx-1;
 		int k = 1;
+		double mul = 0.0;
 		for(int t = 2; t < nt; t++)
 		{
+			mul = (1 - exp(- ht*t / tau));
 			for(int x = from_x; x < to_x; x++)
 			{
 				f[x][t] = (ht*ht)*(f[x-1][t-1]+f[x+1][t-1]-2*f[x][t-1])/(hx*hx)+2*f[x][t-1]-f[x][t-2]
-						- ht*ht*((1 + delta_barrier(xmin + x*hx))*sin(f[x][t-1] + a*sin(w*ht*(t-1))) - right_part(f, x, t-1));
+						- ht*ht*((1 + delta_barrier(xmin + x*hx))*sin(f[x][t-1] + mul*a*sin(w*t*ht)) - right_part(f, x, t-1));
 			};
 			if(myid == 0)
 				f[0][t] = (2*f[1][t]-f[2][t]);
 			if(myid == threads-1)
 				f[nx-1][t] = (2*f[nx-2][t]-f[nx-3][t]);
-					if (myid == 0)
+			#pragma omp barrier
 			if(myid == 0 && t % divt == 0)
 			{
-				cout << "Saving step #" << k << " from " << nt/divt  << endl;
+				cout << "Saving part #" << k << " from " << nt/divt  << endl;
 				out_file.open(argv[2], std::ios_base::app);
 				for(int x = 0; x < nx; x+=divx)
 				{

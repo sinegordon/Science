@@ -1,0 +1,1 @@
+/Users/sinegordon/Programming/Science/2018_SGSolitonIntegrateCollision/a.out /Users/sinegordon/Programming/Science/2018_SGSolitonIntegrateCollision/res/in_2.0.txt /Users/sinegordon/Programming/Science/2018_SGSolitonIntegrateCollision/res/out_2.0.txt
