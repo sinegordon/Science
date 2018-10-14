@@ -66,7 +66,7 @@ inline double right_part(double** f, int x, int t)
 	int t1b = t - intnt > -1 ? t - intnt : 0;
 	double A, A1, mul;
 	mul = (1 - exp(- ht*t / tau));
-	A = mul*a*sin(w*t*ht);
+	A = a*sin(w*t*ht);
 	for(int t1 = t1b; t1 <= t; t1++)
 	{
 		A1 = a*sin(w*t1*ht);
@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
 	getline(in_file, str);
 	getline(in_file, str);
 	nu = atof(str.data());
-	// Коэффициент трения
+	// Время включения поля
 	getline(in_file, str);
 	getline(in_file, str);
 	tau = atof(str.data());

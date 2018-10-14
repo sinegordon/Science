@@ -4,7 +4,7 @@
 import subprocess
 from multiprocessing import Process
 import os
-#import numpy as np
+import numpy as np
 
 def f (program, in_filename, out_filename):
     subprocess.run([program, in_filename, out_filename], shell=True)
@@ -15,10 +15,10 @@ with open("./inTEMPLATE.txt") as f:
 var_mas = {}
 
 var_mas['tmin'] = 0.0 #По времени нижняя граница
-var_mas['tmax'] = 20.0 #По времени верхняя граница
-var_mas['xmin'] = -30.0 #По пространству нижняя граница
-var_mas['xmax'] = 30.0 #По пространству верхняя граница
-var_mas['nx'] = 3000 #По пространству число шагов
+var_mas['tmax'] = 40.0 #По времени верхняя граница
+var_mas['xmin'] = -40.0 #По пространству нижняя граница
+var_mas['xmax'] = 40.0 #По пространству верхняя граница
+var_mas['nx'] = 4000 #По пространству число шагов
 var_mas['threads'] = 1 #Количестов расчетных потоков
 var_mas['intnt'] = 1000 #Число точек для интегрирования по оси времени
 var_mas['divx'] = 10 #Делитель количества точек по оси координаты для сохранения в файл
@@ -28,8 +28,9 @@ var_mas['x0'] = -10.0 #Координата центра первого нача
 var_mas['xb'] = 0.0 #Координата дельта-барьера
 var_mas['mu'] = 0.0 #Мощность дельта-барьера
 var_mas['a'] = 0.0 #Амплитуда ВЧ поля
-var_mas['w'] = 10.0 #Частота ВЧ поля
-var_mas['nu'] = 0.05 #Коэффициент трения
+var_mas['w'] = 20.0 #Частота ВЧ поля
+var_mas['nu'] = 0.01 #Коэффициент трения
+var_mas['tau'] = 10.0 #Время включения поля
 
 if(not os.path.exists("./res/")):
     os.makedirs("./res/")
@@ -55,14 +56,14 @@ for a in [0.0, 1.0, 2.0, 3.0]:
         f.write(exe)
     with open(in_filename, "w") as f:
         f.write(s)
-    #proc = subprocess.Popen(["chmod", "777", sh])
-    #proc.wait()
+    proc = subprocess.Popen(["chmod", "777", sh])
+    proc.wait()
     #proc = subprocess.Popen(["sh", sh])
-    #proc = subprocess.Popen(["open", "-a", "Terminal.app", sh])
-    #proc.wait()
-    #proc = subprocess.Popen(["rm", "-f", sh])
-    #proc.wait()
-    print(sh)
-    proc = subprocess.Popen(sh)
-    #subprocess.call(['xterm', '-e', sh])
+    proc = subprocess.Popen(["open", "-a", "Terminal.app", sh])
+    # if os.name == "nt":
+    #     proc = subprocess.Popen(sh)
+    # elif os.name == "posix":
+    #     proc = subprocess.Popen(["open", "-a", "Terminal.app", sh])
+    # elif os.name == "linux":
+    #     proc = subprocess.call(['xterm', '-e', sh])
     count += 1

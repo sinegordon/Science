@@ -20,6 +20,6 @@
 			"iostream": "cpp",
 			"*.tcc": "cpp"
 		},
-		"python.pythonPath": "/home/user/miniconda2/bin/python"
+		"python.pythonPath": "/Users/sinegordon/anaconda2/bin/python"
 	}
 }
