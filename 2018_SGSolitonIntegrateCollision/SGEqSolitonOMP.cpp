@@ -130,7 +130,7 @@ int main(int argc, char *argv[])
 	getline(in_file, str);
 	getline(in_file, str);
 	nu = atof(str.data());
-	// Коэффициент трения
+	// Адиабатическая постоянная времени для поля
 	getline(in_file, str);
 	getline(in_file, str);
 	tau = atof(str.data());

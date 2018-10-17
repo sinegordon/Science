@@ -20,6 +20,6 @@
 			"iostream": "cpp",
 			"*.tcc": "cpp"
 		},
-		"python.pythonPath": "/home/user/miniconda2/bin/python"
+		"python.pythonPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\Anaconda2_64\\python.exe"
 	}
 }
