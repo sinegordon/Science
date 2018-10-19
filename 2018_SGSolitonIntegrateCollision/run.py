@@ -29,7 +29,7 @@ var_mas['xb'] = 0.0 #Координата дельта-барьера
 var_mas['mu'] = 0.0 #Мощность дельта-барьера
 var_mas['a'] = 0.0 #Амплитуда ВЧ поля
 var_mas['w'] = 20.0 #Частота ВЧ поля
-var_mas['nu'] = 0.5 #Коэффициент трения
+var_mas['nu'] = 0.02 #Коэффициент трения
 var_mas['tau'] = 10 #Адиабатическая постоянная времени для поля
 
 
@@ -45,12 +45,12 @@ for a in [2.4, 5.4, 5.8, 0.0]:
     dir = os.getcwd()
     if os.name == "nt":
         in_filename = "{dir}\\res\\in_{a}.txt".format(dir = dir, a = var_mas['a'])
-        out_filename = "{dir}\\res\\out_{a}.txt".format(dir = dir, a = var_mas['a'])
+        out_filename = "{dir}\\res\\out_{a}_{nu}.txt".format(dir = dir, a = var_mas['a'], nu = var_mas['nu'])
         exe = "{dir}\\a.out {in_filename} {out_filename}".format(dir = dir, in_filename = in_filename, out_filename = out_filename)
         sh = "{dir}\\res\\run{n}.bat".format(dir = dir, n = count)
     else:
         in_filename = "{dir}/res/in_{a}.txt".format(dir = dir, a = var_mas['a'])
-        out_filename = "{dir}/res/out_{a}.txt".format(dir = dir, a = var_mas['a'])
+        out_filename = "{dir}/res/out_{a}_{nu}.txt".format(dir = dir, a = var_mas['a'], nu = var_mas['nu'])
         exe = "{dir}/a.out {in_filename} {out_filename}".format(dir = dir, in_filename = in_filename, out_filename = out_filename)
         sh = "{dir}/res/run{n}.sh".format(dir = dir, n = count)
     with open(sh, "w") as f:
