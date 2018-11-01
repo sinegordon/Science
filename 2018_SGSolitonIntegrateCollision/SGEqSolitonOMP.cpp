@@ -71,6 +71,7 @@ inline double right_part(double** f, int x, int t)
 	{
 		A1 = a*sin(w*t1*ht);
 		sum += nu*ht*exp(-nu*(t-t1)*ht)*(sin(f[x][t1] + mul*A1 - f[x][t] - mul*A) + sin(f[x][t] + mul*A));
+		//sum += nu*ht*exp(-nu*(t-t1)*ht)*sin(f[x][t1] + A1 - f[x][t] - A);
 	}
 	return sum;
 }
@@ -129,7 +130,11 @@ int main(int argc, char *argv[])
 	getline(in_file, str);
 	getline(in_file, str);
 	nu = atof(str.data());
+<<<<<<< HEAD
 	// Время включения поля
+=======
+	// Адиабатическая постоянная времени для поля
+>>>>>>> 688c3f7288b1b2b4f13409c0f18d4c24f74bb731
 	getline(in_file, str);
 	getline(in_file, str);
 	tau = atof(str.data());
@@ -185,6 +190,8 @@ int main(int argc, char *argv[])
 			{
 				f[x][t] = (ht*ht)*(f[x-1][t-1]+f[x+1][t-1]-2*f[x][t-1])/(hx*hx)+2*f[x][t-1]-f[x][t-2]
 						- ht*ht*((1 + delta_barrier(xmin + x*hx))*sin(f[x][t-1] + mul*a*sin(w*t*ht)) - right_part(f, x, t-1));
+				//f[x][t] = (ht*ht)*(f[x-1][t-1]+f[x+1][t-1]-2*f[x][t-1])/(hx*hx)+2*f[x][t-1]-f[x][t-2]
+				//		+ ht*ht*right_part(f, x, t-1);
 			};
 			if(myid == 0)
 				f[0][t] = (2*f[1][t]-f[2][t]);
