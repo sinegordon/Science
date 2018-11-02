@@ -70,7 +70,8 @@ inline double right_part(double** f, int x, int t)
 	for(int t1 = t1b; t1 <= t; t1++)
 	{
 		A1 = a*sin(w*t1*ht);
-		sum += nu*ht*exp(-nu*(t-t1)*ht)*(sin(f[x][t1] + mul*A1 - f[x][t] - mul*A) + sin(f[x][t] + mul*A));
+		sum += nu*ht*exp(-nu*(t-t1)*ht)*(sin(f[x][t1] + mul*A1 - f[x][t] - mul*A));
+		//sum += nu*ht*exp(-nu*(t-t1)*ht)*(sin(f[x][t1] + mul*A1 - f[x][t] - mul*A) + sin(f[x][t] + mul*A));
 		//sum += nu*ht*exp(-nu*(t-t1)*ht)*sin(f[x][t1] + A1 - f[x][t] - A);
 	}
 	return sum;
@@ -185,7 +186,7 @@ int main(int argc, char *argv[])
 			for(int x = from_x; x < to_x; x++)
 			{
 				f[x][t] = (ht*ht)*(f[x-1][t-1]+f[x+1][t-1]-2*f[x][t-1])/(hx*hx)+2*f[x][t-1]-f[x][t-2]
-						- ht*ht*((1 + delta_barrier(xmin + x*hx))*sin(f[x][t-1] + mul*a*sin(w*t*ht)) - right_part(f, x, t-1));
+						- ht*ht*((1 + delta_barrier(xmin + x*hx))*sin(f[x][t-1] + mul*a*sin(w*(t-1)*ht))*exp(-nu*ht*(t-1)) - right_part(f, x, t-1));
 				//f[x][t] = (ht*ht)*(f[x-1][t-1]+f[x+1][t-1]-2*f[x][t-1])/(hx*hx)+2*f[x][t-1]-f[x][t-2]
 				//		+ ht*ht*right_part(f, x, t-1);
 			};

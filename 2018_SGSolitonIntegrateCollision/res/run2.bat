@@ -1,1 +1,1 @@
-C:\Users\user\Documents\Science\2018_SGSolitonIntegrateCollision\a.out C:\Users\user\Documents\Science\2018_SGSolitonIntegrateCollision\res\in_5.4.txt C:\Users\user\Documents\Science\2018_SGSolitonIntegrateCollision\res\out_5.4_0.02.txt
+C:\Users\user\Documents\Science\2018_SGSolitonIntegrateCollision\a.out C:\Users\user\Documents\Science\2018_SGSolitonIntegrateCollision\res\in_5.4.txt C:\Users\user\Documents\Science\2018_SGSolitonIntegrateCollision\res\out_5.4_0.5.txt

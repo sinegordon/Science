@@ -1,0 +1,446 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18165,        436]
+NotebookOptionsPosition[     17054,        398]
+NotebookOutlinePosition[     17399,        413]
+CellTagsIndexPosition[     17356,        410]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tmin", "=", 
+   RowBox[{"-", "20.0"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tmax", "=", "20.0"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.750063478746958*^9, 3.750063480158949*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", "Kink", "*)"}]], "Input",
+ CellChangeTimes->{{3.555829669020353*^9, 3.5558296802119927`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"F", "[", "alpha_", "]"}], ":=", 
+  RowBox[{"NIntegrate", "[", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"1", "-", 
+       RowBox[{
+        RowBox[{"Sin", "[", "x", "]"}], "^", "2"}]}], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "alpha"}], "}"}], ",", 
+    RowBox[{"MaxRecursion", "\[Rule]", "1000"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.555833323786659*^9, 3.555833396051792*^9}, {
+   3.5558335946741524`*^9, 3.555833599117407*^9}, {3.555859158006002*^9, 
+   3.5558592265339217`*^9}, 3.556685044992795*^9, {3.7500635479539247`*^9, 
+   3.7500635718529463`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"list", "=", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"F", "[", "alpha", "]"}], ",", "alpha"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"alpha", ",", 
+        RowBox[{"10", "^", 
+         RowBox[{"-", "5"}]}], ",", 
+        RowBox[{"2", "*", "Pi"}], ",", "0.0005"}], "}"}]}], "]"}]}], ";"}], "//",
+   "Timing"}]], "Input",
+ CellChangeTimes->{{3.555833747574898*^9, 3.5558338773253193`*^9}, 
+   3.5558339487114024`*^9, {3.5558339895887403`*^9, 3.555834020089485*^9}, {
+   3.555842529247181*^9, 3.5558425325703707`*^9}, {3.5558426395784917`*^9, 
+   3.5558426570954933`*^9}, 3.5558582627867985`*^9, {3.5558586657138443`*^9, 
+   3.555858689100182*^9}, 3.555858795174249*^9, 3.555858924059621*^9, {
+   3.555858968315152*^9, 3.555858976893643*^9}, {3.5558593154780087`*^9, 
+   3.555859317868146*^9}, 3.5566850343121843`*^9, 3.5566851302126694`*^9, {
+   3.55668533723851*^9, 3.5566853375645294`*^9}, {3.750063579454939*^9, 
+   3.7500635796049204`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "slwcon"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Numerical integration converging too slowly; suspect one \
+of the following: singularity, value of the integration is 0, highly \
+oscillatory integrand, or WorkingPrecision too small. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/NIntegrate/slwcon\\\", ButtonNote -> \
+\\\"NIntegrate::slwcon\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.7500635907409096`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "eincr"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The global error of the strategy GlobalAdaptive has \
+increased more than \[NoBreak]\\!\\(\\*RowBox[{\\\"400\\\"}]\\)\[NoBreak] \
+times. The global error is expected to decrease monotonically after a number \
+of integrand evaluations. Suspect one of the following: the working precision \
+is insufficient for the specified precision goal; the integrand is highly \
+oscillatory or it is not a (piecewise) smooth function; or the true value of \
+the integral is 0. Increasing the value of the GlobalAdaptive option \
+MaxErrorIncreases might lead to a convergent numerical integration. \
+NIntegrate obtained \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"91.89134571438213`\\\"}]\\)\[NoBreak] and \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"1.7646497554585858`\\\"}]\\)\[NoBreak] for the \
+integral and error estimates. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/NIntegrate/eincr\\\", ButtonNote -> \
+\\\"NIntegrate::eincr\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.750063590976907*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "slwcon"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Numerical integration converging too slowly; suspect one \
+of the following: singularity, value of the integration is 0, highly \
+oscillatory integrand, or WorkingPrecision too small. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/NIntegrate/slwcon\\\", ButtonNote -> \
+\\\"NIntegrate::slwcon\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.750063591023946*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "eincr"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The global error of the strategy GlobalAdaptive has \
+increased more than \[NoBreak]\\!\\(\\*RowBox[{\\\"400\\\"}]\\)\[NoBreak] \
+times. The global error is expected to decrease monotonically after a number \
+of integrand evaluations. Suspect one of the following: the working precision \
+is insufficient for the specified precision goal; the integrand is highly \
+oscillatory or it is not a (piecewise) smooth function; or the true value of \
+the integral is 0. Increasing the value of the GlobalAdaptive option \
+MaxErrorIncreases might lead to a convergent numerical integration. \
+NIntegrate obtained \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"85.92731150132279`\\\"}]\\)\[NoBreak] and \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"1.3617905207891503`\\\"}]\\)\[NoBreak] for the \
+integral and error estimates. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/NIntegrate/eincr\\\", ButtonNote -> \
+\\\"NIntegrate::eincr\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.7500635912429075`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "slwcon"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Numerical integration converging too slowly; suspect one \
+of the following: singularity, value of the integration is 0, highly \
+oscillatory integrand, or WorkingPrecision too small. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/NIntegrate/slwcon\\\", ButtonNote -> \
+\\\"NIntegrate::slwcon\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.7500635912769065`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \
+\[NoBreak]\\!\\(\\*StyleBox[RowBox[{\\\"NIntegrate\\\", \\\"::\\\", \
+\\\"slwcon\\\"}], \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during \
+this calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.7500635913029194`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "eincr"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The global error of the strategy GlobalAdaptive has \
+increased more than \[NoBreak]\\!\\(\\*RowBox[{\\\"400\\\"}]\\)\[NoBreak] \
+times. The global error is expected to decrease monotonically after a number \
+of integrand evaluations. Suspect one of the following: the working precision \
+is insufficient for the specified precision goal; the integrand is highly \
+oscillatory or it is not a (piecewise) smooth function; or the true value of \
+the integral is 0. Increasing the value of the GlobalAdaptive option \
+MaxErrorIncreases might lead to a convergent numerical integration. \
+NIntegrate obtained \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"79.57127190793234`\\\"}]\\)\[NoBreak] and \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"0.3174220035800293`\\\"}]\\)\[NoBreak] for the \
+integral and error estimates. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/NIntegrate/eincr\\\", ButtonNote -> \
+\\\"NIntegrate::eincr\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.750063591537907*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \
+\[NoBreak]\\!\\(\\*StyleBox[RowBox[{\\\"NIntegrate\\\", \\\"::\\\", \\\"eincr\
+\\\"}], \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
+calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.750063591564911*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "zeroregion"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Integration region \[NoBreak]\\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"1.570796326794897`15.954589770191005\\\", \
+\\\",\\\", \\\"1.570796326794897`15.954589770191005\\\"}], \\\"}\\\"}], \\\"}\
+\\\"}]\\)\[NoBreak] cannot be further subdivided at the specified working \
+precision. NIntegrate assumes zero integral there and on any further \
+indivisible regions. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/NIntegrate\\\", ButtonNote -> \
+\\\"NIntegrate::zeroregion\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.750063593666908*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "zeroregion"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Integration region \[NoBreak]\\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"1.570796326794897`15.954589770191005\\\", \
+\\\",\\\", \\\"1.570796326794896`15.954589770191005\\\"}], \\\"}\\\"}], \\\"}\
+\\\"}]\\)\[NoBreak] cannot be further subdivided at the specified working \
+precision. NIntegrate assumes zero integral there and on any further \
+indivisible regions. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/NIntegrate\\\", ButtonNote -> \
+\\\"NIntegrate::zeroregion\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.750063593998935*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "zeroregion"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Integration region \[NoBreak]\\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"1.570796326794897`15.954589770191005\\\", \
+\\\",\\\", \\\"1.570796326794897`15.954589770191005\\\"}], \\\"}\\\"}], \\\"}\
+\\\"}]\\)\[NoBreak] cannot be further subdivided at the specified working \
+precision. NIntegrate assumes zero integral there and on any further \
+indivisible regions. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/NIntegrate\\\", ButtonNote -> \
+\\\"NIntegrate::zeroregion\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.7500635943539057`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \
+\[NoBreak]\\!\\(\\*StyleBox[RowBox[{\\\"NIntegrate\\\", \\\"::\\\", \
+\\\"zeroregion\\\"}], \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed \
+during this calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.7500635943789206`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fun", "=", 
+  RowBox[{"Interpolation", "[", 
+   RowBox[{"list", ",", 
+    RowBox[{"InterpolationOrder", "\[Rule]", "1"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.5558341475717764`*^9, 3.555834159205442*^9}, 
+   3.5558342287644205`*^9, {3.5558424882408357`*^9, 3.5558425077389507`*^9}, 
+   3.5558425825122275`*^9, {3.55584272906361*^9, 3.555842729979662*^9}, {
+   3.5558575018712764`*^9, 3.555857596095666*^9}, 3.555857829632023*^9, {
+   3.555858338030102*^9, 3.555858342858378*^9}, {3.5558584065810227`*^9, 
+   3.555858459204033*^9}, {3.555858545501969*^9, 3.555858556557601*^9}, {
+   3.5558587263133106`*^9, 3.5558587799213767`*^9}, {3.5558588408468614`*^9, 
+   3.555858873320719*^9}, 3.556685210281249*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"InterpolatingFunction", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "64.54541800819024`"}], ",", "50.22551968135251`"}], 
+      "}"}], "}"}], ",", "\<\"<>\"\>"}], "]"}],
+  False,
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.5558424902349496`*^9, 3.555842508202977*^9}, {
+   3.5558425658862762`*^9, 3.5558425840293145`*^9}, 3.555842695288678*^9, 
+   3.5558575984618015`*^9, 3.5558578312341146`*^9, 3.555858269008154*^9, 
+   3.5558583435074153`*^9, {3.555858410889269*^9, 3.5558584595050497`*^9}, {
+   3.5558585467440395`*^9, 3.555858556990626*^9}, {3.5558586733092785`*^9, 
+   3.5558586963845987`*^9}, 3.5558587290224657`*^9, {3.5558587614073176`*^9, 
+   3.555858780731423*^9}, {3.555858830277257*^9, 3.5558588738247476`*^9}, 
+   3.5558589590326214`*^9, 3.555859014574798*^9, 3.555862375768814*^9, 
+   3.555931037548419*^9, 3.5565053460805354`*^9, 3.5565282864990177`*^9, 
+   3.556683930814068*^9, 3.55668422195072*^9, 3.556684522536912*^9, 
+   3.5566847855809574`*^9, 3.55668521100029*^9, 3.5566854098976665`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"maxKsi", "=", 
+   RowBox[{"Max", "[", 
+    RowBox[{"list", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "1"}], "]"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"minKsi", "=", 
+   RowBox[{"Min", "[", 
+    RowBox[{"list", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "1"}], "]"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kink", "[", "x_", "]"}], ":=", 
+  RowBox[{"Piecewise", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"fun", "[", "x", "]"}], ",", 
+       RowBox[{
+        RowBox[{"x", "\[LessEqual]", " ", "maxKsi"}], "&&", 
+        RowBox[{"x", "\[GreaterEqual]", " ", "minKsi"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"N", "[", 
+        RowBox[{"2", "*", "Pi"}], "]"}], ",", 
+       RowBox[{"x", "\[GreaterEqual]", "maxKsi"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.0", ",", 
+       RowBox[{"x", "\[LessEqual]", "minKsi"}]}], "}"}]}], "}"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"listk", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"kink", "[", "x", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "xmin", ",", "xmax", ",", "0.1"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"k", "=", 
+  RowBox[{"Interpolation", "[", 
+   RowBox[{"listk", ",", 
+    RowBox[{"InterpolationOrder", "\[Rule]", "1"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.555859336406206*^9, 3.5558594731550274`*^9}, {
+   3.5558596944316835`*^9, 3.555859816765681*^9}, {3.5559001881936064`*^9, 
+   3.555900265494028*^9}, {3.555907153242133*^9, 3.5559071566303267`*^9}, {
+   3.556592276019783*^9, 3.5565922836582203`*^9}, {3.5566836722712793`*^9, 
+   3.5566837052211647`*^9}, {3.5566839348833003`*^9, 
+   3.5566839362313776`*^9}, {3.5566840043392725`*^9, 
+   3.5566840136228037`*^9}, {3.5566840949284544`*^9, 3.556684099711728*^9}, {
+   3.5566842395787277`*^9, 3.556684261052956*^9}, {3.5566844156497984`*^9, 
+   3.556684471483992*^9}, {3.5566846567005863`*^9, 3.5566846742525897`*^9}, 
+   3.556684889715914*^9, 3.5566852369207726`*^9, {3.556685267204505*^9, 
+   3.5566852677775373`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"InterpolatingFunction", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "100.`"}], ",", "100.`"}], "}"}], "}"}], 
+    ",", "\<\"<>\"\>"}], "]"}],
+  False,
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.5559002595576887`*^9, 3.5559002660030575`*^9}, {
+   3.5559071462177315`*^9, 3.55590715721336*^9}, 3.5559072119014883`*^9, 
+   3.555931038709485*^9, 3.556505347421612*^9, 3.55652828812411*^9, 
+   3.556592287337431*^9, 3.5566837077343082`*^9, 3.556683939874586*^9, 
+   3.556684030965796*^9, 3.556684102059862*^9, 3.55668422300778*^9, 
+   3.556684268651391*^9, 3.5566844747391787`*^9, 3.5566845234849663`*^9, 
+   3.55668465974576*^9, 3.5566847867500243`*^9, 3.55668489070897*^9, {
+   3.556685213020406*^9, 3.5566852374428024`*^9}, 3.5566852685485816`*^9, 
+   3.5566854126418233`*^9}]
+}, Open  ]]
+},
+WindowSize->{1167, 646},
+WindowMargins->{{Automatic, 352}, {Automatic, 73}},
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 234, 6, 52, "Input"],
+Cell[795, 28, 122, 2, 31, "Input"],
+Cell[920, 32, 660, 16, 31, "Input"],
+Cell[CellGroupData[{
+Cell[1605, 52, 1052, 23, 31, "Input"],
+Cell[2660, 77, 580, 11, 21, "Message"],
+Cell[3243, 90, 1183, 20, 91, "Message"],
+Cell[4429, 112, 578, 11, 21, "Message"],
+Cell[5010, 125, 1185, 20, 91, "Message"],
+Cell[6198, 147, 580, 11, 21, "Message"],
+Cell[6781, 160, 569, 12, 21, "Message"],
+Cell[7353, 174, 1183, 20, 91, "Message"],
+Cell[8539, 196, 566, 12, 21, "Message"],
+Cell[9108, 210, 768, 14, 40, "Message"],
+Cell[9879, 226, 768, 14, 40, "Message"],
+Cell[10650, 242, 770, 14, 40, "Message"],
+Cell[11423, 258, 573, 12, 21, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12033, 275, 735, 12, 31, "Input"],
+Cell[12771, 289, 1101, 21, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13909, 315, 2262, 59, 112, "Input"],
+Cell[16174, 376, 864, 19, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
