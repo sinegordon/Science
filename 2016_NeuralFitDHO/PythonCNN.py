@@ -112,7 +112,7 @@ print("Done generate data.")
 
 # In[34]:
 
-# Train for only two epochs
+# Train for several epochs
 network.train(x_train, y_train, x_test, y_test, epochs=4)
 
 

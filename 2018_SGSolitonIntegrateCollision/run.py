@@ -15,17 +15,10 @@ with open("./inTEMPLATE.txt") as f:
 var_mas = {}
 
 var_mas['tmin'] = 0.0 #По времени нижняя граница
-<<<<<<< HEAD
-var_mas['tmax'] = 40.0 #По времени верхняя граница
-var_mas['xmin'] = -40.0 #По пространству нижняя граница
-var_mas['xmax'] = 40.0 #По пространству верхняя граница
-var_mas['nx'] = 4000 #По пространству число шагов
-=======
 var_mas['tmax'] = 20.0 #По времени верхняя граница
 var_mas['xmin'] = -80.0 #По пространству нижняя граница
 var_mas['xmax'] = 80.0 #По пространству верхняя граница
 var_mas['nx'] = 16000 #По пространству число шагов
->>>>>>> 688c3f7288b1b2b4f13409c0f18d4c24f74bb731
 var_mas['threads'] = 1 #Количестов расчетных потоков
 var_mas['intnt'] = 2000 #Число точек для интегрирования по оси времени
 var_mas['divx'] = 10 #Делитель количества точек по оси координаты для сохранения в файл
@@ -36,14 +29,9 @@ var_mas['xb'] = 0.0 #Координата дельта-барьера
 var_mas['mu'] = 0.0 #Мощность дельта-барьера
 var_mas['a'] = 0.0 #Амплитуда ВЧ поля
 var_mas['w'] = 20.0 #Частота ВЧ поля
-<<<<<<< HEAD
-var_mas['nu'] = 0.01 #Коэффициент трения
-var_mas['tau'] = 10.0 #Время включения поля
-=======
 var_mas['nu'] = 0.02 #Коэффициент трения
 var_mas['tau'] = 10 #Адиабатическая постоянная времени для поля
 
->>>>>>> 688c3f7288b1b2b4f13409c0f18d4c24f74bb731
 
 if(not os.path.exists("./res/")):
     os.makedirs("./res/")
@@ -72,15 +60,6 @@ for a in [2.4, 5.4, 5.8, 0.0]:
     proc = subprocess.Popen(["chmod", "777", sh])
     proc.wait()
     #proc = subprocess.Popen(["sh", sh])
-<<<<<<< HEAD
-    proc = subprocess.Popen(["open", "-a", "Terminal.app", sh])
-    # if os.name == "nt":
-    #     proc = subprocess.Popen(sh)
-    # elif os.name == "posix":
-    #     proc = subprocess.Popen(["open", "-a", "Terminal.app", sh])
-    # elif os.name == "linux":
-    #     proc = subprocess.call(['xterm', '-e', sh])
-=======
     #proc = subprocess.Popen(["open", "-a", "Terminal.app", sh])
     #proc.wait()
     #proc = subprocess.Popen(["rm", "-f", sh])
@@ -88,5 +67,4 @@ for a in [2.4, 5.4, 5.8, 0.0]:
     #print(sh)
     proc = subprocess.Popen(sh)
     #subprocess.call(['xterm', '-e', sh])
->>>>>>> 688c3f7288b1b2b4f13409c0f18d4c24f74bb731
     count += 1
