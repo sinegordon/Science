@@ -5,15 +5,18 @@ import numpy as np
 import sys
 
 hex_rad = 1.0
-rad_mul = float(sys.argv[1])
-iters_count1 = int(sys.argv[2])
-iters_count2 = int(sys.argv[3])
-if len(sys.argv) == 5:
-    gpuid = sys.argv[4]
-sin30 = rad_mul*hex_rad*sin(pi/6)
-sin60 = rad_mul*hex_rad*sin(pi/3)
-hex_line1 = [[0, rad_mul*hex_rad], [-sin60, sin30], [-sin60, -sin30], [0, -rad_mul*hex_rad], [sin60, -sin30], [sin60, sin30], [0, rad_mul*hex_rad]]
-hex_line2 = [[0, rad_mul*hex_rad], [-sin60, sin30], [-sin60, -sin30], [0, -rad_mul*hex_rad], [sin60, -sin30], [sin60, sin30], [0, rad_mul*hex_rad]]
+rad_mul1 = float(sys.argv[1])
+rad_mul2 = float(sys.argv[2])
+iters_count1 = int(sys.argv[3])
+iters_count2 = int(sys.argv[4])
+if len(sys.argv) == 6:
+    gpuid = sys.argv[5]
+sin301 = rad_mul1*hex_rad*sin(pi/6)
+sin601 = rad_mul1*hex_rad*sin(pi/3)
+sin302 = rad_mul2*hex_rad*sin(pi/6)
+sin602 = rad_mul2*hex_rad*sin(pi/3)
+hex_line1 = [[0, rad_mul1*hex_rad], [-sin601, sin301], [-sin601, -sin301], [0, -rad_mul1*hex_rad], [sin601, -sin301], [sin601, sin301], [0, rad_mul1*hex_rad]]
+hex_line2 = [[0, rad_mul2*hex_rad], [-sin602, sin302], [-sin602, -sin302], [0, -rad_mul2*hex_rad], [sin602, -sin302], [sin602, sin302], [0, rad_mul2*hex_rad]]
 
 def hex_flake_step(old_line):
     new_line = []
@@ -54,7 +57,7 @@ for i in range(iters_count1):
     hex_line1 = hex_flake_step(hex_line1)
 for i in range(iters_count2):
     hex_line2 = hex_flake_step(hex_line2)
-if len(sys.argv) == 5:
+if len(sys.argv) == 6:
     hoomd.context.initialize("--mode=gpu --gpu="+gpuid)
 else:
     hoomd.context.initialize("--mode=gpu")
@@ -88,13 +91,13 @@ uc = hoomd.lattice.unitcell(N=2,
 
 system = hoomd.init.create_lattice(unitcell=uc, n=[128, 128])
 if iters_count1 == 0 and iters_count2 == 0:
-	mc = hoomd.hpmc.integrate.convex_polygon(d=0.01, a=0.01, seed=4636722)
+	mc = hoomd.hpmc.integrate.convex_polygon(d=0.01, a=0.01, seed=4632346722)
 else:
-	mc = hoomd.hpmc.integrate.simple_polygon(d=0.01, a=0.01, seed=4633252)
+	mc = hoomd.hpmc.integrate.simple_polygon(d=0.01, a=0.01, seed=4633223452)
 hex_verts1 = coordsK1
 hex_verts2 = coordsK2
 mc.shape_param.set('A', vertices=hex_verts1)
 mc.shape_param.set('B', vertices=hex_verts2)
 hoomd.run(9000000)
-d = hoomd.dump.gsd("hex_flake_"+str(rad_mul)+"_"+str(iters_count)+".gsd", period=10000, group=hoomd.group.all(), overwrite=True)
+d = hoomd.dump.gsd("hex_flake_"+str(rad_mul1)+"_"+str(iters_count1)+"_"+str(rad_mul2)+"_"+str(iters_count2)+".gsd", period=10000, group=hoomd.group.all(), overwrite=True)
 hoomd.run(1000000)

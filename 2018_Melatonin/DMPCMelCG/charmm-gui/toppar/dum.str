@@ -1,0 +1,19 @@
+read rtf card append
+*generate
+36   1
+MASS  115  DUM    0.00000 ! dummy atom
+RESI DUM  0.0
+ATOM DUM DUM 0.00
+END
+
+read para card flex append
+*dummy
+*
+ATOMS
+MASS  115  DUM    0.00000
+
+NONBONDED
+DUM 0  0 0 
+
+END
+return

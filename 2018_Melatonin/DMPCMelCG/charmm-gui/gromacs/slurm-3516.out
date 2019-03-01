@@ -1,0 +1,247 @@
+/tmp/slurmd/job03516/slurm_script: line 20: cd: /home/sinegordon/Science/2018_Melatonone/DMPCMelCG/charmm-gui/gromacs/: Нет такого файла или каталога
+                      :-) GROMACS - gmx grompp, 2016.3 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx grompp, version 2016.3
+Executable:   /home/citrux/software/bin/gmx
+Data prefix:  /home/citrux/software
+Working dir:  /home/sinegordon/Science/2018_Melatonin/DMPCMelCG/charmm-gui/gromacs
+Command line:
+  gmx grompp -f step7_production.mdp -o step7_production.tpr -c step6.6_equilibration.gro -p system.top -n index.ndx
+
+
+Back Off! I just backed up mdout.mdp to ./#mdout.mdp.9#
+
+WARNING 1 [file step7_production.mdp]:
+  For proper integration of the Parrinello-Rahman barostat, tau-p (5)
+  should be at least 20 times larger than nstpcouple*dt (0.4)
+
+Setting the LD random seed to 523671371
+Generated 1 of the 741 non-bonded parameter combinations
+Excluding 1 bonded neighbours molecule type 'CHOL'
+Excluding 1 bonded neighbours molecule type 'DLPC'
+Excluding 1 bonded neighbours molecule type 'CHOL'
+Excluding 1 bonded neighbours molecule type 'DLPC'
+Excluding 1 bonded neighbours molecule type 'PW'
+Cleaning up constraints and constant bonded interactions with virtual sites
+Removing all charge groups because cutoff-scheme=Verlet
+Number of degrees of freedom in T-Coupling group MEMBRANE is 31859.13
+Number of degrees of freedom in T-Coupling group SOLUTE is 78054.87
+Determining Verlet buffer for a tolerance of 0.005 kJ/mol/ps at 310.15 K
+
+NOTE 1 [file step7_production.mdp]:
+  There are 228 non-linear virtual site constructions. Their contribution
+  to the energy error is approximated. In most cases this does not affect
+  the error significantly.
+
+Calculated rlist for 1x1 atom pair-list as 1.456 nm, buffer size 0.356 nm
+Set rlist, assuming 4x4 atom pair-list, to 1.348 nm, buffer size 0.248 nm
+Note that mdrun will redetermine rlist based on the actual pair-list setup
+This run will generate roughly 11 Mb of data
+
+There was 1 note
+
+There was 1 warning
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2016.3
+Source file: src/gromacs/gmxpreprocess/grompp.cpp (line 2325)
+
+Fatal error:
+Too many warnings (1).
+If you are sure all warnings are harmless, use the -maxwarn option.
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+                      :-) GROMACS - gmx mdrun, 2016.3 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2016.3
+Executable:   /home/citrux/software/bin/gmx
+Data prefix:  /home/citrux/software
+Working dir:  /home/sinegordon/Science/2018_Melatonin/DMPCMelCG/charmm-gui/gromacs
+Command line:
+  gmx mdrun -deffnm step7_production -ntomp 6 -v
+
+
+-------------------------------------------------------
+Program:     gmx mdrun, version 2016.3
+Source file: src/gromacs/options/options.cpp (line 258)
+Function:    void gmx::Options::finish()
+
+Error in user input:
+Invalid input values
+  In option s
+    Required option was not provided, and the default file 'topol' does not
+    exist or is not accessible.
+    The following extensions were tried to complete the file name:
+      .tpr
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+                      :-) GROMACS - gmx grompp, 2016.3 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx grompp, version 2016.3
+Executable:   /home/citrux/software/bin/gmx
+Data prefix:  /home/citrux/software
+Working dir:  /home/sinegordon/Science/2018_Melatonin/DMPCMelCG/charmm-gui/gromacs
+Command line:
+  gmx grompp -f step8_production.mdp -o step8_production.tpr -c step7_production.gro -p system.top -n index.ndx
+
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2016.3
+Source file: src/gromacs/commandline/cmdlineparser.cpp (line 235)
+Function:    void gmx::CommandLineParser::parse(int *, char **)
+
+Error in user input:
+Invalid command-line options
+  In command-line option -c
+    File 'step7_production.gro' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+                      :-) GROMACS - gmx mdrun, 2016.3 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2016.3
+Executable:   /home/citrux/software/bin/gmx
+Data prefix:  /home/citrux/software
+Working dir:  /home/sinegordon/Science/2018_Melatonin/DMPCMelCG/charmm-gui/gromacs
+Command line:
+  gmx mdrun -deffnm step8_production -ntomp 6 -v
+
+
+-------------------------------------------------------
+Program:     gmx mdrun, version 2016.3
+Source file: src/gromacs/options/options.cpp (line 258)
+Function:    void gmx::Options::finish()
+
+Error in user input:
+Invalid input values
+  In option s
+    Required option was not provided, and the default file 'topol' does not
+    exist or is not accessible.
+    The following extensions were tried to complete the file name:
+      .tpr
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+Traceback (most recent call last):
+  File "/home/sinegordon/local/bin/dynsf", line 269, in <module>
+    f0, f1 = islice(get_itraj(options.trajectory, step=options.step),
+  File "/home/sinegordon/local/lib64/python2.7/site-packages/dsf/trajectory.py", line 63, in get_itraj
+    raise IOError('File "%s" does not exist' % filename)
+IOError: File "./step8_production.trr" does not exist

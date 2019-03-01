@@ -1,0 +1,1497 @@
+/tmp/slurmd/job03517/slurm_script: line 20: cd: /home/sinegordon/Science/2018_Melatonone/DMPCMelCG/charmm-gui/gromacs/: Нет такого файла или каталога
+                      :-) GROMACS - gmx grompp, 2016.3 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx grompp, version 2016.3
+Executable:   /home/citrux/software/bin/gmx
+Data prefix:  /home/citrux/software
+Working dir:  /home/sinegordon/Science/2018_Melatonin/DMPCMelCG/charmm-gui/gromacs
+Command line:
+  gmx grompp -f step7_production.mdp -o step7_production.tpr -c step6.6_equilibration.gro -p system.top -n index.ndx -maxwarn 5
+
+
+Back Off! I just backed up mdout.mdp to ./#mdout.mdp.10#
+
+WARNING 1 [file step7_production.mdp]:
+  For proper integration of the Parrinello-Rahman barostat, tau-p (5)
+  should be at least 20 times larger than nstpcouple*dt (0.4)
+
+Setting the LD random seed to -1553089198
+Generated 1 of the 741 non-bonded parameter combinations
+Excluding 1 bonded neighbours molecule type 'CHOL'
+Excluding 1 bonded neighbours molecule type 'DLPC'
+Excluding 1 bonded neighbours molecule type 'CHOL'
+Excluding 1 bonded neighbours molecule type 'DLPC'
+Excluding 1 bonded neighbours molecule type 'PW'
+Cleaning up constraints and constant bonded interactions with virtual sites
+Removing all charge groups because cutoff-scheme=Verlet
+Number of degrees of freedom in T-Coupling group MEMBRANE is 31859.13
+Number of degrees of freedom in T-Coupling group SOLUTE is 78054.87
+Determining Verlet buffer for a tolerance of 0.005 kJ/mol/ps at 310.15 K
+
+NOTE 1 [file step7_production.mdp]:
+  There are 228 non-linear virtual site constructions. Their contribution
+  to the energy error is approximated. In most cases this does not affect
+  the error significantly.
+
+Calculated rlist for 1x1 atom pair-list as 1.456 nm, buffer size 0.356 nm
+Set rlist, assuming 4x4 atom pair-list, to 1.348 nm, buffer size 0.248 nm
+Note that mdrun will redetermine rlist based on the actual pair-list setup
+This run will generate roughly 11 Mb of data
+
+There was 1 note
+
+There was 1 warning
+
+GROMACS reminds you: "There's no way you can rely on an experiment" (Gerrit Groenhof)
+
+                      :-) GROMACS - gmx mdrun, 2016.3 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2016.3
+Executable:   /home/citrux/software/bin/gmx
+Data prefix:  /home/citrux/software
+Working dir:  /home/sinegordon/Science/2018_Melatonin/DMPCMelCG/charmm-gui/gromacs
+Command line:
+  gmx mdrun -deffnm step7_production -ntomp 6 -v
+
+
+Running on 1 node with total 24 cores, 24 logical cores
+Hardware detected on host node51.cluster (the node of MPI rank 0):
+  CPU info:
+    Vendor: Intel
+    Brand:  Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz
+    SIMD instructions most likely to fit this hardware: AVX2_256
+    SIMD instructions selected at GROMACS compile time: AVX2_256
+
+  Hardware topology: Only logical processor count
+
+Reading file step7_production.tpr, VERSION 2016.3 (single precision)
+Using 1 MPI process
+Using 6 OpenMP threads 
+
+
+Non-default thread affinity set probably by the OpenMP library,
+disabling internal thread affinity
+starting mdrun 'Martini system'
+1000000 steps,  20000.0 ps.
+step 0step 100, will finish Thu Dec 13 15:29:35 2018step 200, will finish Thu Dec 13 15:27:01 2018step 300, will finish Thu Dec 13 15:26:17 2018step 400, will finish Thu Dec 13 15:25:54 2018step 500, will finish Thu Dec 13 15:25:39 2018step 600, will finish Thu Dec 13 15:25:29 2018step 700, will finish Thu Dec 13 15:25:22 2018step 800, will finish Thu Dec 13 15:25:16 2018step 900, will finish Thu Dec 13 15:25:13 2018step 1000, will finish Thu Dec 13 15:25:11 2018step 1100, will finish Thu Dec 13 15:25:09 2018step 1200, will finish Thu Dec 13 15:25:07 2018step 1300, will finish Thu Dec 13 15:25:06 2018step 1400, will finish Thu Dec 13 15:25:04 2018step 1500, will finish Thu Dec 13 15:25:01 2018step 1600, will finish Thu Dec 13 15:24:58 2018step 1700, will finish Thu Dec 13 15:24:56 2018step 1800, will finish Thu Dec 13 15:24:54 2018step 1900, will finish Thu Dec 13 15:24:50 2018step 2000, will finish Thu Dec 13 15:24:47 2018step 2100, will finish Thu Dec 13 15:24:46 2018step 2200, will finish Thu Dec 13 16:17:46 2018step 2300, will finish Thu Dec 13 16:15:43 2018step 2400, will finish Thu Dec 13 16:13:35 2018step 2500, will finish Thu Dec 13 16:11:37 2018step 2600, will finish Thu Dec 13 16:09:47 2018step 2700, will finish Thu Dec 13 16:08:06 2018step 2800, will finish Thu Dec 13 16:06:33 2018step 2900, will finish Thu Dec 13 16:05:06 2018step 3000, will finish Thu Dec 13 16:03:45 2018step 3100, will finish Thu Dec 13 16:02:29 2018step 3200, will finish Thu Dec 13 16:01:18 2018step 3300, will finish Thu Dec 13 16:00:12 2018step 3400, will finish Thu Dec 13 15:59:09 2018step 3500, will finish Thu Dec 13 15:58:09 2018step 3600, will finish Thu Dec 13 15:57:13 2018step 3700, will finish Thu Dec 13 15:56:20 2018step 3800, will finish Thu Dec 13 15:55:29 2018step 3900, will finish Thu Dec 13 15:54:42 2018step 4000, will finish Thu Dec 13 15:53:56 2018step 4100, will finish Thu Dec 13 15:53:13 2018step 4200, will finish Thu Dec 13 15:52:31 2018step 4300, will finish Thu Dec 13 15:51:52 2018step 4400, will finish Thu Dec 13 15:51:14 2018step 4500, will finish Thu Dec 13 15:50:38 2018step 4600, will finish Thu Dec 13 15:50:04 2018step 4700, will finish Thu Dec 13 15:49:31 2018step 4800, will finish Thu Dec 13 15:49:00 2018step 4900, will finish Thu Dec 13 15:48:30 2018step 5000, will finish Thu Dec 13 15:48:01 2018step 5100, will finish Thu Dec 13 15:47:33 2018step 5200, will finish Thu Dec 13 15:47:06 2018step 5300, will finish Thu Dec 13 15:46:40 2018step 5400, will finish Thu Dec 13 15:46:16 2018step 5500, will finish Thu Dec 13 15:45:52 2018step 5600, will finish Thu Dec 13 15:45:29 2018step 5700, will finish Thu Dec 13 15:45:06 2018step 5800, will finish Thu Dec 13 15:44:45 2018step 5900, will finish Thu Dec 13 15:44:24 2018step 6000, will finish Thu Dec 13 15:44:04 2018step 6100, will finish Thu Dec 13 15:43:45 2018step 6200, will finish Thu Dec 13 15:43:26 2018step 6300, will finish Thu Dec 13 15:43:08 2018step 6400, will finish Thu Dec 13 15:42:50 2018step 6500, will finish Thu Dec 13 15:42:33 2018step 6600, will finish Thu Dec 13 15:42:16 2018step 6700, will finish Thu Dec 13 15:42:00 2018step 6800, will finish Thu Dec 13 15:41:44 2018step 6900, will finish Thu Dec 13 15:41:29 2018step 7000, will finish Thu Dec 13 15:41:14 2018step 7100, will finish Thu Dec 13 15:41:00 2018step 7200, will finish Thu Dec 13 15:40:46 2018step 7300, will finish Thu Dec 13 15:40:33 2018step 7400, will finish Thu Dec 13 15:40:20 2018step 7500, will finish Thu Dec 13 15:40:07 2018step 7600, will finish Thu Dec 13 15:39:54 2018step 7700, will finish Thu Dec 13 15:39:42 2018step 7800, will finish Thu Dec 13 15:39:31 2018step 7900, will finish Thu Dec 13 15:39:19 2018step 8000, will finish Thu Dec 13 15:39:08 2018step 8100, will finish Thu Dec 13 15:38:57 2018step 8200, will finish Thu Dec 13 15:38:46 2018step 8300, will finish Thu Dec 13 15:38:36 2018step 8400, will finish Thu Dec 13 15:38:26 2018step 8500, will finish Thu Dec 13 15:38:16 2018step 8600, will finish Thu Dec 13 15:38:07 2018step 8700, will finish Thu Dec 13 15:37:57 2018step 8800, will finish Thu Dec 13 15:37:48 2018step 8900, will finish Thu Dec 13 15:37:39 2018step 9000, will finish Thu Dec 13 15:37:30 2018step 9100, will finish Thu Dec 13 15:37:21 2018step 9200, will finish Thu Dec 13 15:37:12 2018step 9300, will finish Thu Dec 13 15:37:04 2018step 9400, will finish Thu Dec 13 15:36:56 2018step 9500, will finish Thu Dec 13 15:36:48 2018step 9600, will finish Thu Dec 13 15:36:40 2018step 9700, will finish Thu Dec 13 15:36:33 2018step 9800, will finish Thu Dec 13 15:36:25 2018step 9900, will finish Thu Dec 13 15:36:18 2018step 10000, will finish Thu Dec 13 15:36:11 2018step 10100, will finish Thu Dec 13 17:25:38 2018step 10200, will finish Thu Dec 13 17:57:18 2018step 10300, will finish Thu Dec 13 17:55:49 2018step 10400, will finish Thu Dec 13 17:54:22 2018step 10500, will finish Thu Dec 13 17:52:56 2018step 10600, will finish Thu Dec 13 17:51:32 2018step 10700, will finish Thu Dec 13 17:50:09 2018step 10800, will finish Thu Dec 13 17:48:48 2018step 10900, will finish Thu Dec 13 17:47:29 2018step 11000, will finish Thu Dec 13 17:46:11 2018step 11100, will finish Thu Dec 13 17:44:54 2018step 11200, will finish Thu Dec 13 17:43:39 2018step 11300, will finish Thu Dec 13 17:42:25 2018step 11400, will finish Thu Dec 13 17:41:12 2018step 11500, will finish Thu Dec 13 17:40:01 2018step 11600, will finish Thu Dec 13 17:38:51 2018step 11700, will finish Thu Dec 13 17:37:42 2018step 11800, will finish Thu Dec 13 17:36:34 2018step 11900, will finish Thu Dec 13 17:35:27 2018step 12000, will finish Thu Dec 13 17:34:21 2018step 12100, will finish Thu Dec 13 17:33:17 2018step 12200, will finish Thu Dec 13 17:32:13 2018step 12300, will finish Thu Dec 13 17:31:11 2018step 12400, will finish Thu Dec 13 17:30:10 2018step 12500, will finish Thu Dec 13 17:29:10 2018step 12600, will finish Thu Dec 13 17:28:10 2018step 12700, will finish Thu Dec 13 17:27:12 2018step 12800, will finish Thu Dec 13 17:26:14 2018step 12900, will finish Thu Dec 13 17:25:18 2018step 13000, will finish Thu Dec 13 17:24:22 2018step 13100, will finish Thu Dec 13 17:23:27 2018step 13200, will finish Thu Dec 13 17:22:32 2018step 13300, will finish Thu Dec 13 17:21:39 2018step 13400, will finish Thu Dec 13 17:20:46 2018step 13500, will finish Thu Dec 13 17:19:55 2018step 13600, will finish Thu Dec 13 17:19:04 2018step 13700, will finish Thu Dec 13 17:18:13 2018step 13800, will finish Thu Dec 13 17:17:24 2018step 13900, will finish Thu Dec 13 17:16:35 2018step 14000, will finish Thu Dec 13 17:15:47 2018step 14100, will finish Thu Dec 13 17:15:00 2018step 14200, will finish Thu Dec 13 17:14:13 2018step 14300, will finish Thu Dec 13 17:13:27 2018step 14400, will finish Thu Dec 13 17:12:42 2018step 14500, will finish Thu Dec 13 17:11:57 2018step 14600, will finish Thu Dec 13 17:11:13 2018step 14700, will finish Thu Dec 13 17:10:29 2018step 14800, will finish Thu Dec 13 17:09:46 2018step 14900, will finish Thu Dec 13 17:09:04 2018step 15000, will finish Thu Dec 13 17:08:22 2018step 15100, will finish Thu Dec 13 17:07:41 2018step 15200, will finish Thu Dec 13 17:07:00 2018step 15300, will finish Thu Dec 13 17:06:20 2018step 15400, will finish Thu Dec 13 17:05:40 2018step 15500, will finish Thu Dec 13 17:05:01 2018step 15600, will finish Thu Dec 13 17:04:23 2018step 15700, will finish Thu Dec 13 17:03:45 2018step 15800, will finish Thu Dec 13 17:03:07 2018step 15900, will finish Thu Dec 13 17:02:30 2018step 16000, will finish Thu Dec 13 17:01:53 2018step 16100, will finish Thu Dec 13 17:01:17 2018step 16200, will finish Thu Dec 13 17:00:41 2018step 16300, will finish Thu Dec 13 17:00:05 2018step 16400, will finish Thu Dec 13 16:59:30 2018step 16500, will finish Thu Dec 13 16:58:56 2018step 16600, will finish Thu Dec 13 16:58:21 2018step 16700, will finish Thu Dec 13 16:57:48 2018step 16800, will finish Thu Dec 13 16:57:14 2018step 16900, will finish Thu Dec 13 16:56:41 2018step 17000, will finish Thu Dec 13 16:56:09 2018step 17100, will finish Thu Dec 13 16:55:42 2018step 17200, will finish Thu Dec 13 16:55:12 2018step 17300, will finish Thu Dec 13 16:54:41 2018step 17400, will finish Thu Dec 13 16:54:10 2018step 17500, will finish Thu Dec 13 16:53:39 2018step 17600, will finish Thu Dec 13 16:53:09 2018step 17700, will finish Thu Dec 13 16:52:38 2018step 17800, will finish Thu Dec 13 16:52:09 2018step 17900, will finish Thu Dec 13 16:51:39 2018step 18000, will finish Thu Dec 13 16:51:10 2018step 18100, will finish Thu Dec 13 16:50:41 2018step 18200, will finish Thu Dec 13 16:50:13 2018step 18300, will finish Thu Dec 13 16:49:45 2018step 18400, will finish Thu Dec 13 16:49:17 2018step 18500, will finish Thu Dec 13 16:48:49 2018step 18600, will finish Thu Dec 13 16:48:22 2018step 18700, will finish Thu Dec 13 16:47:55 2018step 18800, will finish Thu Dec 13 16:47:29 2018step 18900, will finish Thu Dec 13 16:47:02 2018step 19000, will finish Thu Dec 13 16:46:36 2018step 19100, will finish Thu Dec 13 16:46:10 2018step 19200, will finish Thu Dec 13 16:45:45 2018step 19300, will finish Thu Dec 13 16:45:20 2018step 19400, will finish Thu Dec 13 16:44:55 2018step 19500, will finish Thu Dec 13 16:44:30 2018step 19600, will finish Thu Dec 13 16:44:06 2018step 19700, will finish Thu Dec 13 16:43:41 2018step 19800, will finish Thu Dec 13 16:43:17 2018step 19900, will finish Thu Dec 13 16:42:54 2018step 20000, will finish Thu Dec 13 16:42:30 2018step 20100, will finish Thu Dec 13 16:42:07 2018step 20200, will finish Thu Dec 13 16:41:44 2018step 20300, will finish Thu Dec 13 16:41:21 2018step 20400, will finish Thu Dec 13 16:40:58 2018step 20500, will finish Thu Dec 13 16:40:36 2018step 20600, will finish Thu Dec 13 16:40:14 2018step 20700, will finish Thu Dec 13 16:39:52 2018step 20800, will finish Thu Dec 13 16:39:30 2018step 20900, will finish Thu Dec 13 16:39:08 2018step 21000, will finish Thu Dec 13 16:38:47 2018step 21100, will finish Thu Dec 13 16:38:26 2018step 21200, will finish Thu Dec 13 16:38:05 2018step 21300, will finish Thu Dec 13 16:37:44 2018step 21400, will finish Thu Dec 13 16:37:24 2018step 21500, will finish Thu Dec 13 16:37:04 2018step 21600, will finish Thu Dec 13 16:36:43 2018step 21700, will finish Thu Dec 13 16:36:24 2018step 21800, will finish Thu Dec 13 16:36:04 2018step 21900, will finish Thu Dec 13 16:35:44 2018step 22000, will finish Thu Dec 13 16:35:25 2018step 22100, will finish Thu Dec 13 16:35:06 2018step 22200, will finish Thu Dec 13 16:34:47 2018step 22300, will finish Thu Dec 13 16:34:28 2018step 22400, will finish Thu Dec 13 16:34:09 2018step 22500, will finish Thu Dec 13 16:33:51 2018step 22600, will finish Thu Dec 13 16:33:32 2018step 22700, will finish Thu Dec 13 16:33:14 2018step 22800, will finish Thu Dec 13 16:32:56 2018step 22900, will finish Thu Dec 13 16:32:38 2018step 23000, will finish Thu Dec 13 16:32:20 2018step 23100, will finish Thu Dec 13 16:32:03 2018step 23200, will finish Thu Dec 13 16:31:45 2018step 23300, will finish Thu Dec 13 16:31:28 2018step 23400, will finish Thu Dec 13 16:31:11 2018step 23500, will finish Thu Dec 13 16:30:54 2018step 23600, will finish Thu Dec 13 16:30:37 2018step 23700, will finish Thu Dec 13 16:30:21 2018step 23800, will finish Thu Dec 13 16:30:04 2018step 23900, will finish Thu Dec 13 16:29:47 2018step 24000, will finish Thu Dec 13 16:29:31 2018step 24100, will finish Thu Dec 13 16:29:15 2018step 24200, will finish Thu Dec 13 16:28:59 2018step 24300, will finish Thu Dec 13 16:28:43 2018step 24400, will finish Thu Dec 13 16:28:27 2018step 24500, will finish Thu Dec 13 16:28:11 2018step 24600, will finish Thu Dec 13 16:27:56 2018step 24700, will finish Thu Dec 13 16:27:41 2018step 24800, will finish Thu Dec 13 16:27:25 2018step 24900, will finish Thu Dec 13 16:27:10 2018step 25000, will finish Thu Dec 13 16:26:55 2018step 25100, will finish Thu Dec 13 16:26:40 2018step 25200, will finish Thu Dec 13 16:26:25 2018step 25300, will finish Thu Dec 13 16:26:10 2018step 25400, will finish Thu Dec 13 16:25:56 2018step 25500, will finish Thu Dec 13 16:25:41 2018step 25600, will finish Thu Dec 13 16:26:21 2018step 25700, will finish Thu Dec 13 16:26:08 2018step 25800, will finish Thu Dec 13 16:25:53 2018step 25900, will finish Thu Dec 13 16:26:31 2018step 26000, will finish Thu Dec 13 16:26:18 2018step 26100, will finish Thu Dec 13 16:26:04 2018step 26200, will finish Thu Dec 13 16:25:50 2018step 26300, will finish Thu Dec 13 16:26:12 2018step 26400, will finish Thu Dec 13 16:26:00 2018step 26500, will finish Thu Dec 13 16:25:46 2018step 26600, will finish Thu Dec 13 16:25:32 2018step 26700, will finish Thu Dec 13 16:25:18 2018step 26800, will finish Thu Dec 13 16:29:14 2018step 26900, will finish Thu Dec 13 16:29:01 2018step 27000, will finish Thu Dec 13 16:28:46 2018step 27100, will finish Thu Dec 13 16:28:32 2018step 27200, will finish Thu Dec 13 16:28:18 2018step 27300, will finish Thu Dec 13 16:28:04 2018step 27400, will finish Thu Dec 13 16:27:50 2018step 27500, will finish Thu Dec 13 16:27:36 2018step 27600, will finish Thu Dec 13 16:27:22 2018step 27700, will finish Thu Dec 13 16:27:09 2018step 27800, will finish Thu Dec 13 16:26:55 2018step 27900, will finish Thu Dec 13 16:26:42 2018step 28000, will finish Thu Dec 13 16:26:28 2018step 28100, will finish Thu Dec 13 16:26:15 2018step 28200, will finish Thu Dec 13 16:26:37 2018step 28300, will finish Thu Dec 13 16:26:25 2018step 28400, will finish Thu Dec 13 16:26:12 2018step 28500, will finish Thu Dec 13 16:25:59 2018step 28600, will finish Thu Dec 13 16:25:46 2018step 28700, will finish Thu Dec 13 16:25:33 2018step 28800, will finish Thu Dec 13 16:25:20 2018step 28900, will finish Thu Dec 13 16:25:08 2018step 29000, will finish Thu Dec 13 16:24:55 2018step 29100, will finish Thu Dec 13 16:24:43 2018step 29200, will finish Thu Dec 13 16:24:30 2018step 29300, will finish Thu Dec 13 16:24:18 2018step 29400, will finish Thu Dec 13 16:24:06 2018step 29500, will finish Thu Dec 13 16:23:54 2018step 29600, will finish Thu Dec 13 16:23:47 2018step 29700, will finish Thu Dec 13 16:23:36 2018step 29800, will finish Thu Dec 13 16:23:25 2018step 29900, will finish Thu Dec 13 16:23:13 2018step 30000, will finish Thu Dec 13 16:23:01 2018step 30100, will finish Thu Dec 13 16:22:49 2018step 30200, will finish Thu Dec 13 16:22:38 2018step 30300, will finish Thu Dec 13 16:23:03 2018step 30400, will finish Thu Dec 13 16:22:53 2018step 30500, will finish Thu Dec 13 16:22:41 2018step 30600, will finish Thu Dec 13 16:22:30 2018step 30700, will finish Thu Dec 13 16:22:18 2018step 30800, will finish Thu Dec 13 16:22:07 2018step 30900, will finish Thu Dec 13 16:21:56 2018step 31000, will finish Thu Dec 13 16:21:45 2018step 31100, will finish Thu Dec 13 16:21:34 2018step 31200, will finish Thu Dec 13 16:21:23 2018step 31300, will finish Thu Dec 13 16:21:12 2018step 31400, will finish Thu Dec 13 16:28:03 2018step 31500, will finish Thu Dec 13 16:27:53 2018step 31600, will finish Thu Dec 13 16:27:41 2018step 31700, will finish Thu Dec 13 16:27:29 2018step 31800, will finish Thu Dec 13 16:27:17 2018step 31900, will finish Thu Dec 13 16:27:05 2018step 32000, will finish Thu Dec 13 16:27:26 2018step 32100, will finish Thu Dec 13 16:27:16 2018step 32200, will finish Thu Dec 13 16:27:04 2018step 32300, will finish Thu Dec 13 16:26:52 2018step 32400, will finish Thu Dec 13 16:26:41 2018step 32500, will finish Thu Dec 13 16:26:29 2018step 32600, will finish Thu Dec 13 16:26:18 2018step 32700, will finish Thu Dec 13 16:26:07 2018step 32800, will finish Thu Dec 13 16:25:55 2018step 32900, will finish Thu Dec 13 16:25:44 2018step 33000, will finish Thu Dec 13 16:25:33 2018step 33100, will finish Thu Dec 13 16:25:22 2018step 33200, will finish Thu Dec 13 16:25:11 2018step 33300, will finish Thu Dec 13 16:25:00 2018step 33400, will finish Thu Dec 13 16:24:49 2018step 33500, will finish Thu Dec 13 16:24:51 2018step 33600, will finish Thu Dec 13 16:24:42 2018step 33700, will finish Thu Dec 13 16:24:31 2018step 33800, will finish Thu Dec 13 16:24:20 2018step 33900, will finish Thu Dec 13 16:24:10 2018step 34000, will finish Thu Dec 13 16:23:59 2018step 34100, will finish Thu Dec 13 16:23:49 2018step 34200, will finish Thu Dec 13 16:23:38 2018step 34300, will finish Thu Dec 13 16:23:28 2018step 34400, will finish Thu Dec 13 16:23:18 2018step 34500, will finish Thu Dec 13 16:23:07 2018step 34600, will finish Thu Dec 13 16:22:57 2018step 34700, will finish Thu Dec 13 16:22:47 2018step 34800, will finish Thu Dec 13 16:22:53 2018step 34900, will finish Thu Dec 13 16:22:44 2018step 35000, will finish Thu Dec 13 16:22:34 2018step 35100, will finish Thu Dec 13 16:22:24 2018step 35200, will finish Thu Dec 13 16:22:14 2018step 35300, will finish Thu Dec 13 16:22:04 2018step 35400, will finish Thu Dec 13 16:21:55 2018step 35500, will finish Thu Dec 13 16:21:45 2018step 35600, will finish Thu Dec 13 16:21:35 2018step 35700, will finish Thu Dec 13 16:21:26 2018step 35800, will finish Thu Dec 13 16:21:16 2018step 35900, will finish Thu Dec 13 16:21:07 2018step 36000, will finish Thu Dec 13 16:20:57 2018step 36100, will finish Thu Dec 13 16:20:48 2018step 36200, will finish Thu Dec 13 16:20:38 2018step 36300, will finish Thu Dec 13 16:20:29 2018step 36400, will finish Thu Dec 13 16:20:20 2018step 36500, will finish Thu Dec 13 16:20:11 2018step 36600, will finish Thu Dec 13 16:20:02 2018step 36700, will finish Thu Dec 13 16:19:53 2018step 36800, will finish Thu Dec 13 16:19:44 2018step 36900, will finish Thu Dec 13 16:19:35 2018
+Step 36982, time 739.64 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000548, max 0.022635 (between atoms 22220 and 22222)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+  11753  11754   32.6    0.1390   0.1420      0.1400
+  11753  11755   30.9    0.1404   0.1381      0.1400
+  22220  22221   36.2    0.1403   0.1371      0.1400
+  33182  33184   31.5    0.1402   0.1388      0.1400
+
+Step 36983, time 739.66 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000406, max 0.020726 (between atoms 22220 and 22222)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+  11753  11754   32.5    0.1432   0.1406      0.1400
+
+Step 36984, time 739.68 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000294, max 0.007329 (between atoms 11753 and 11755)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+  11753  11754   30.3    0.1436   0.1399      0.1400
+
+Step 36985, time 739.7 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000260, max 0.005211 (between atoms 29411 and 29412)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+  11753  11754   31.9    0.1437   0.1398      0.1400
+  37559  37561   30.2    0.1402   0.1401      0.1400
+
+Step 36986, time 739.72 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000279, max 0.014896 (between atoms 11753 and 11755)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+  11753  11754   35.1    0.1432   0.1401      0.1400
+
+Step 36987, time 739.74 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000297, max 0.019706 (between atoms 11753 and 11755)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+  11753  11754   37.1    0.1421   0.1403      0.1400
+
+Step 36988, time 739.76 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000281, max 0.011769 (between atoms 11753 and 11755)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+  11753  11754   35.3    0.1399   0.1392      0.1400
+
+Step 36990, time 739.8 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.000307, max 0.013809 (between atoms 22220 and 22222)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+  22220  22221   31.5    0.1411   0.1417      0.1400
+step 37000, will finish Thu Dec 13 16:19:26 2018
+Step 37002, time 740.04 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 0.049177, max 3.591942 (between atoms 18278 and 18280)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+  11906  11907   36.0    0.1404   0.1457      0.1400
+  11906  11908   32.2    0.1415   0.1454      0.1400
+  12314  12316   41.6    0.1408   0.1413      0.1400
+  12584  12585   55.6    0.1414   0.1584      0.1400
+  12584  12586   50.0    0.1405   0.1595      0.1400
+  12683  12684   90.0    0.1404   0.2579      0.1400
+  12683  12685   90.0    0.1406   0.2799      0.1400
+  12842  12843   32.5    0.1412   0.1426      0.1400
+  12842  12844   30.4    0.1410   0.1407      0.1400
+  13031  13032   90.0    0.1407   0.2479      0.1400
+  13031  13033   90.0    0.0488   0.2911      0.1400
+  13412  13413   90.6    0.1408   0.1456      0.1400
+  13412  13414   90.4    0.1232   0.1559      0.1400
+  13598  13600   32.9    0.1404   0.1377      0.1400
+  13709  13710   36.7    0.1409   0.1353      0.1400
+  13709  13711   37.8    0.1411   0.1349      0.1400
+  14177  14178   32.1    0.1418   0.1391      0.1400
+  14495  14497   30.4    0.1411   0.1381      0.1400
+  14723  14724   38.0    0.1410   0.1405      0.1400
+  14723  14725   45.6    0.1406   0.1405      0.1400
+  14876  14877   90.0    0.1406   0.1866      0.1400
+  14876  14878   90.0    0.1407   0.1900      0.1400
+  14921  14922   47.6    0.1417   0.1290      0.1400
+  14921  14923   87.2    0.1418   0.1277      0.1400
+  15059  15060   54.0    0.1405   0.1537      0.1400
+  15059  15061   43.2    0.1418   0.1527      0.1400
+  15155  15156   35.3    0.1418   0.1398      0.1400
+  15155  15157   36.2    0.1405   0.1433      0.1400
+  15434  15435   35.2    0.1415   0.1397      0.1400
+  15434  15436   35.6    0.1408   0.1438      0.1400
+  15443  15445   30.0    0.1423   0.1392      0.1400
+  15659  15660   38.6    0.1416   0.1356      0.1400
+  15659  15661   45.3    0.1405   0.1459      0.1400
+  15689  15691   30.6    0.1412   0.1384      0.1400
+  16520  16521   42.9    0.1423   0.1771      0.1400
+  16520  16522   90.0    0.1406   0.1700      0.1400
+  16991  16992   51.9    0.1412   0.1488      0.1400
+  16991  16993   42.0    0.1408   0.1362      0.1400
+  17150  17151   31.8    0.1422   0.1437      0.1400
+  17150  17152   71.3    0.1405   0.1499      0.1400
+  17360  17361   30.6    0.1667   0.1396      0.1400
+  17507  17508   41.9    0.1404   0.1364      0.1400
+  17507  17509   41.5    0.1414   0.1412      0.1400
+  17705  17706   90.0    0.1409   0.1462      0.1400
+  17705  17707   53.9    0.1422   0.1727      0.1400
+  17801  17802   90.0    0.1412   0.1905      0.1400
+  17801  17803   90.0    0.1406   0.1277      0.1400
+  18278  18279   90.0    0.1408   0.6192      0.1400
+  18278  18280   90.0    0.0631   0.6429      0.1400
+  18395  18396   33.2    0.1534   0.1405      0.1400
+  18494  18495   55.6    0.1407   0.1516      0.1400
+  18494  18496   59.4    0.1406   0.1528      0.1400
+  18608  18609   36.7    0.1414   0.1432      0.1400
+  18704  18705   41.2    0.1405   0.1439      0.1400
+  18704  18706   38.4    0.1412   0.1428      0.1400
+  18734  18735   90.0    0.1406   0.2750      0.1400
+  18734  18736   90.0    0.1405   0.2363      0.1400
+  18815  18816   73.7    0.1410   0.1531      0.1400
+  18815  18817   90.0    0.1406   0.1587      0.1400
+  19436  19437   42.3    0.1405   0.1410      0.1400
+  19436  19438   35.8    0.1407   0.1417      0.1400
+  19529  19530   34.8    0.1406   0.1399      0.1400
+  19529  19531   35.6    0.1406   0.1420      0.1400
+  19811  19812   44.7    0.1405   0.1252      0.1400
+  19811  19813   46.8    0.1406   0.1246      0.1400
+  20321  20322   31.7    0.1415   0.1432      0.1400
+  20321  20323   33.4    0.1410   0.1356      0.1400
+  20531  20532   30.7    0.1310   0.1399      0.1400
+  20651  20652   84.1    0.1406   0.1366      0.1400
+  20651  20653   66.8    0.1411   0.1557      0.1400
+  20897  20898   30.3    0.1405   0.1425      0.1400
+  20897  20899   33.3    0.1405   0.1403      0.1400
+  20957  20958   33.8    0.1415   0.1425      0.1400
+  20957  20959   35.7    0.1405   0.1427      0.1400
+  21140  21141   32.2    0.1407   0.1387      0.1400
+  21140  21142   45.8    0.1410   0.1416      0.1400
+  21563  21564   89.7    0.1422   0.0911      0.1400
+  21563  21565   87.9    0.1412   0.0988      0.1400
+  21971  21972   39.1    0.1404   0.1389      0.1400
+  21971  21973   32.2    0.0606   0.1407      0.1400
+  22064  22065   45.3    0.1413   0.1328      0.1400
+  22064  22066   43.0    0.1405   0.1297      0.1400
+  22097  22099   30.1    0.1408   0.1349      0.1400
+  22172  22174   89.5    0.1416   0.1142      0.1400
+  22322  22323   36.5    0.1411   0.1255      0.1400
+  22322  22324   37.4    0.1407   0.1260      0.1400
+  22541  22542   90.0    0.1411   0.2652      0.1400
+  22541  22543   44.9    0.1418   0.1794      0.1400
+  22745  22746   57.5    0.1406   0.1573      0.1400
+  22745  22747   56.6    0.1405   0.1582      0.1400
+  22790  22791   36.3    0.1420   0.1406      0.1400
+  22790  22792   39.1    0.1407   0.1437      0.1400
+  23213  23214   61.7    0.1408   0.1377      0.1400
+  23213  23215   43.8    0.0343   0.1557      0.1400
+  23273  23274   90.0    0.1411   0.4193      0.1400
+  23273  23275   90.0    0.1414   0.3148      0.1400
+  23345  23347   35.0    0.1408   0.1408      0.1400
+  23393  23394   58.1    0.1173   0.1592      0.1400
+  23393  23395   53.5    0.1694   0.1623      0.1400
+  23603  23605   30.8    0.1417   0.1381      0.1400
+  23696  23697   57.5    0.1418   0.1238      0.1400
+  23696  23698   53.0    0.1412   0.1552      0.1400
+  23795  23796   36.0    0.1405   0.1389      0.1400
+  24221  24222   31.0    0.1420   0.1364      0.1400
+  24221  24223   35.8    0.1088   0.1432      0.1400
+  24299  24300   90.0    0.1408   0.3334      0.1400
+  24299  24301   90.0    0.1413   0.2771      0.1400
+  24341  24342   89.8    0.1404   0.2024      0.1400
+  24341  24343   89.8    0.1412   0.1900      0.1400
+  24488  24489   50.4    0.1416   0.1459      0.1400
+  24488  24490   90.0    0.1406   0.1967      0.1400
+  24779  24780   43.4    0.1164   0.1383      0.1400
+  24779  24781   42.3    0.0915   0.1386      0.1400
+  24830  24831   31.9    0.1405   0.1373      0.1400
+  25208  25209   46.9    0.1406   0.1440      0.1400
+  25208  25210   40.0    0.1417   0.1409      0.1400
+  25322  25323   37.4    0.1109   0.1395      0.1400
+  25346  25347   55.4    0.1407   0.1531      0.1400
+  25346  25348   54.4    0.1409   0.1489      0.1400
+  25421  25422   61.1    0.1417   0.1533      0.1400
+  25421  25423   57.4    0.1420   0.1524      0.1400
+  25754  25755   36.3    0.1414   0.1360      0.1400
+  25754  25756   31.3    0.1414   0.1438      0.1400
+  26117  26119   55.7    0.0582   0.1479      0.1400
+  26522  26524   30.2    0.1419   0.1421      0.1400
+  26555  26556   33.3    0.1406   0.1432      0.1400
+  26717  26718   42.8    0.1413   0.1433      0.1400
+  26717  26719   52.3    0.1404   0.1476      0.1400
+  26813  26814   50.4    0.1406   0.1353      0.1400
+  26813  26815   60.6    0.1404   0.1400      0.1400
+  27317  27318   90.0    0.0867   0.3787      0.1400
+  27317  27319   90.0    0.1406   0.3466      0.1400
+  27488  27489   89.3    0.0647   0.0665      0.1400
+  27488  27490   89.6    0.1410   0.0768      0.1400
+  27839  27840   47.1    0.1418   0.1371      0.1400
+  27839  27841   48.4    0.1408   0.1364      0.1400
+  27848  27849   44.3    0.1417   0.1392      0.1400
+  27848  27850   44.4    0.1409   0.1351      0.1400
+  27854  27855   90.0    0.0505   0.2918      0.1400
+  27854  27856   90.0    0.1420   0.1151      0.1400
+  27908  27909   42.2    0.1405   0.1315      0.1400
+  27908  27910   38.0    0.0880   0.1359      0.1400
+  28172  28173   47.8    0.1407   0.1371      0.1400
+  28172  28174   44.1    0.0898   0.1413      0.1400
+  28439  28440   89.7    0.1405   0.2152      0.1400
+  28439  28441   89.9    0.1405   0.2354      0.1400
+  28643  28644   31.0    0.1406   0.1416      0.1400
+  28727  28728   58.4    0.1406   0.1442      0.1400
+  28727  28729   64.1    0.1407   0.1476      0.1400
+  29024  29026   33.5    0.1411   0.1332      0.1400
+  29876  29878   44.6    0.1405   0.1374      0.1400
+  30473  30475   35.8    0.1610   0.1440      0.1400
+  30710  30712   32.2    0.1406   0.1381      0.1400
+  30734  30735   51.2    0.1405   0.1510      0.1400
+  30734  30736   48.8    0.1413   0.1521      0.1400
+  30758  30759   38.8    0.0523   0.1370      0.1400
+  30758  30760   39.6    0.0674   0.1345      0.1400
+  31016  31018   35.2    0.1409   0.1415      0.1400
+  31079  31081   45.1    0.1405   0.1434      0.1400
+  31217  31218   80.6    0.1708   0.1856      0.1400
+  31217  31219   90.0    0.1554   0.2235      0.1400
+  31223  31224   30.9    0.1406   0.1407      0.1400
+  31223  31225   38.1    0.1416   0.1400      0.1400
+  31373  31374   33.7    0.0623   0.1426      0.1400
+  31580  31581   30.2    0.1405   0.1382      0.1400
+  31976  31977   43.5    0.1405   0.1433      0.1400
+  32156  32157   46.5    0.1409   0.1380      0.1400
+  32537  32539   31.5    0.1408   0.1420      0.1400
+  32909  32910   32.8    0.1404   0.1417      0.1400
+  33236  33237   42.6    0.1406   0.1469      0.1400
+  33236  33238   39.8    0.1412   0.1461      0.1400
+  33329  33330   46.3    0.1072   0.1554      0.1400
+  33329  33331   90.0    0.1406   0.2701      0.1400
+  33509  33511   39.9    0.1404   0.1434      0.1400
+  33626  33628   33.9    0.1410   0.1402      0.1400
+  33878  33879   37.8    0.1406   0.1418      0.1400
+  33878  33880   30.8    0.1413   0.1386      0.1400
+  34229  34231   41.5    0.1405   0.1369      0.1400
+  34355  34356   51.9    0.1405   0.1444      0.1400
+  34355  34357   32.6    0.1417   0.1463      0.1400
+  34934  34935   31.5    0.1405   0.1401      0.1400
+  35108  35109   49.7    0.1406   0.1446      0.1400
+  35108  35110   39.0    0.1408   0.1384      0.1400
+  35528  35530   34.0    0.1405   0.1417      0.1400
+  35702  35703   45.9    0.1421   0.1429      0.1400
+  35702  35704   49.0    0.1405   0.1462      0.1400
+  35909  35910   43.7    0.1417   0.1522      0.1400
+  35909  35911   64.7    0.1408   0.1197      0.1400
+  35954  35955   90.0    0.1421   0.2150      0.1400
+  35954  35956   90.0    0.1404   0.2276      0.1400
+  36062  36063   35.5    0.1418   0.1374      0.1400
+  36062  36064   41.4    0.1405   0.1363      0.1400
+  36347  36348   90.0    0.1413   0.2352      0.1400
+  36347  36349   90.0    0.1408   0.1949      0.1400
+  37049  37050   48.0    0.1410   0.1319      0.1400
+  37049  37051   50.1    0.1408   0.1364      0.1400
+  37154  37155   35.0    0.1405   0.1434      0.1400
+  37154  37156   36.6    0.1415   0.1429      0.1400
+  37220  37222   33.1    0.1412   0.1414      0.1400
+  37340  37341   34.2    0.0251   0.1191      0.1400
+  37340  37342   67.2    0.1406   0.1174      0.1400
+  37403  37405   35.0    0.1414   0.1401      0.1400
+  37559  37560   32.7    0.1405   0.1431      0.1400
+  37559  37561   41.8    0.1407   0.1456      0.1400
+  37571  37573   49.2    0.1407   0.1377      0.1400
+  37709  37710   90.0    0.1405   0.1866      0.1400
+  37709  37711   90.0    0.1404   0.2019      0.1400
+  37889  37890   38.3    0.1416   0.1419      0.1400
+  37889  37891   33.7    0.1415   0.1405      0.1400
+  38021  38022   90.0    0.0656   0.3316      0.1400
+  38021  38023   90.0    0.1408   0.3099      0.1400
+  38102  38103   33.3    0.1420   0.1417      0.1400
+  38189  38191   30.4    0.1413   0.1422      0.1400
+  38423  38424   90.0    0.1406   0.2192      0.1400
+  38423  38425   90.0    0.1407   0.2371      0.1400
+  39467  39468   62.6    0.1409   0.1291      0.1400
+  39467  39469   37.0    0.0480   0.1444      0.1400
+  39689  39690   53.7    0.1423   0.1265      0.1400
+  39935  39936   35.0    0.1405   0.1407      0.1400
+  39935  39937   33.2    0.1408   0.1413      0.1400
+  39938  39939   30.3    0.1417   0.1382      0.1400
+  40373  40375   35.4    0.1405   0.1409      0.1400
+  40466  40468   33.9    0.1405   0.1405      0.1400
+  40952  40953   38.1    0.1405   0.1392      0.1400
+  40952  40954   33.2    0.1406   0.1400      0.1400
+  41054  41055   45.6    0.1410   0.1428      0.1400
+  41054  41056   45.9    0.1409   0.1401      0.1400
+  41330  41331   40.8    0.1416   0.1453      0.1400
+  41330  41332   40.2    0.1408   0.1364      0.1400
+  41555  41556   39.4    0.1405   0.1444      0.1400
+  41555  41557   37.0    0.1409   0.1439      0.1400
+  41627  41628   36.4    0.1405   0.1354      0.1400
+  41627  41629   34.7    0.1422   0.1397      0.1400
+  41804  41805   39.2    0.1155   0.1337      0.1400
+  41975  41976   39.8    0.1405   0.1416      0.1400
+  42227  42228   39.4    0.1268   0.1473      0.1400
+  42227  42229   45.0    0.1103   0.1465      0.1400
+  42368  42370   32.0    0.1405   0.1397      0.1400
+  43118  43119   56.5    0.1410   0.1502      0.1400
+  43118  43120   31.4    0.1405   0.1517      0.1400
+  43214  43215   46.0    0.1405   0.1444      0.1400
+  43214  43216   54.4    0.1405   0.1431      0.1400
+  43217  43219   34.8    0.1410   0.1398      0.1400
+  43316  43317   34.7    0.1091   0.1401      0.1400
+  43520  43521   48.9    0.1408   0.1357      0.1400
+  43520  43522   46.7    0.1412   0.1430      0.1400
+  43589  43590   47.8    0.1414   0.1635      0.1400
+  43589  43591   67.1    0.1411   0.1544      0.1400
+Wrote pdb files with previous and current coordinates
+
+Step 37003, time 740.06 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 804.558044, max 60841.906250 (between atoms 23273 and 23274)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+  11558  11559   90.0    0.1400   4.8928      0.1400
+  11558  11560   90.0    0.1400   5.0549      0.1400
+  11618  11619   90.0    0.1400   2.9496      0.1400
+  11618  11620   90.0    0.1400   2.9348      0.1400
+  11789  11790   78.5    0.1400 8516.5986      0.1400
+  11789  11791  127.1    0.1400 8517.5410      0.1400
+  11867  11868   89.9    0.1395   0.1690      0.1400
+  11867  11869   90.0    0.1400   0.2720      0.1400
+  12314  12316   44.0    0.1413   0.1436      0.1400
+  12584  12585   89.9    0.1584   0.1895      0.1400
+  12584  12586   89.9    0.1595   0.2104      0.1400
+  12683  12684   88.7    0.2579   1.6077      0.1400
+  12683  12685   88.8    0.2799   1.3211      0.1400
+  13031  13032   90.3    0.2479   0.5946      0.1400
+  13031  13033   90.1    0.2972   0.7170      0.1400
+  13178  13180   34.5    0.1399   0.1395      0.1400
+  13184  13185   90.0    0.1400   1.0663      0.1400
+  13184  13186   90.0    0.1400   0.7667      0.1400
+  13283  13284   91.6    0.1400   2.2870      0.1400
+  13283  13285   88.4    0.1400   2.1817      0.1400
+  13412  13413   54.8    0.1456   0.1364      0.1400
+  13412  13414   64.3    0.1615   0.1424      0.1400
+  13607  13608   39.6    0.1401   0.1454      0.1400
+  13607  13609   33.7    0.1401   0.1428      0.1400
+  13709  13711   32.1    0.1349   0.1368      0.1400
+  14450  14451   90.0    0.1400   0.1621      0.1400
+  14450  14452   90.0    0.1400   0.1729      0.1400
+  14495  14497   30.5    0.1381   0.1394      0.1400
+  14723  14725   34.1    0.1405   0.1388      0.1400
+  14876  14877   34.3    0.1866   0.1395      0.1400
+  14921  14922   89.6    0.1290   0.1567      0.1400
+  14921  14923   48.3    0.1277   0.1103      0.1400
+  15059  15060   33.2    0.1537   0.1367      0.1400
+  15125  15126   44.7    0.1400   0.1358      0.1400
+  15125  15127   50.8    0.1400   0.1300      0.1400
+  15155  15157   33.4    0.1433   0.1389      0.1400
+  15659  15661   35.7    0.1459   0.1402      0.1400
+  15995  15996   31.5    0.1400   0.1417      0.1400
+  16400  16401   43.3    0.1400   0.1418      0.1400
+  16520  16521   36.2    0.1771   0.1417      0.1400
+  17120  17121   90.0    0.1401   1.4207      0.1400
+  17120  17122   90.0    0.1400   1.1089      0.1400
+  17150  17152   41.8    0.1499   0.1416      0.1400
+  17360  17361   35.5    0.1381   0.1407      0.1400
+  17507  17509   35.1    0.1412   0.1383      0.1400
+  17705  17706   92.1    0.1462   0.1410      0.1400
+  17705  17707   80.0    0.1727   0.1465      0.1400
+  17801  17802   66.9    0.1905   0.1383      0.1400
+  18278  18279   97.2    0.6192   0.2553      0.1400
+  18278  18280   94.4    0.6492   0.3813      0.1400
+  18395  18396   37.6    0.1407   0.1396      0.1400
+  18494  18496   36.4    0.1528   0.1361      0.1400
+  18626  18627   45.0    0.1400   8.3914      0.1400
+  18626  18628  125.1    0.1400   6.0023      0.1400
+  18704  18705   37.0    0.1439   0.1407      0.1400
+  18704  18706   32.4    0.1428   0.1394      0.1400
+  18734  18735   91.3    0.2750   0.2122      0.1400
+  18734  18736   40.2    0.2363   0.1253      0.1400
+  18815  18816   32.1    0.1531   0.1328      0.1400
+  18815  18817   47.5    0.1587   0.1403      0.1400
+  19436  19437   39.0    0.1410   0.1390      0.1400
+  19436  19438   32.2    0.1417   0.1394      0.1400
+  19529  19530   30.8    0.1399   0.1390      0.1400
+  19529  19531   35.4    0.1420   0.1404      0.1400
+  19811  19812   37.0    0.1252   0.1306      0.1400
+  19811  19813   40.7    0.1246   0.1315      0.1400
+  19850  19851   89.8    0.1400   8.2350      0.1400
+  19850  19852   90.0    0.1400   7.3714      0.1400
+  20321  20322   34.5    0.1432   0.1403      0.1400
+  20651  20652   44.7    0.1366   0.1384      0.1400
+  20651  20653   40.8    0.1557   0.1389      0.1400
+  20897  20898   31.0    0.1425   0.1404      0.1400
+  21140  21142   37.9    0.1416   0.1402      0.1400
+  21563  21564   90.7    0.0911   0.1756      0.1400
+  21563  21565   81.6    0.0988   0.1671      0.1400
+  21971  21972   32.5    0.1389   0.1405      0.1400
+  21989  21990   58.7    0.1400   0.1585      0.1400
+  21989  21991   59.9    0.1400   0.1610      0.1400
+  22064  22065   40.6    0.1328   0.1353      0.1400
+  22064  22066   33.1    0.1297   0.1322      0.1400
+  22172  22173   82.0    0.1249   0.1423      0.1400
+  22172  22174   66.2    0.1142   0.1161      0.1400
+  22322  22323   33.4    0.1255   0.1350      0.1400
+  22322  22324   35.2    0.1260   0.1357      0.1400
+  22541  22542   89.7    0.2652   3.9097      0.1400
+  22541  22543   89.6    0.1794   4.1471      0.1400
+  22559  22560   39.3    0.1400   0.1422      0.1400
+  22559  22561   45.1    0.1400   0.1371      0.1400
+  22790  22791   34.9    0.1406   0.1395      0.1400
+  22790  22792   42.6    0.1437   0.1421      0.1400
+  23213  23214   31.9    0.1377   0.1414      0.1400
+  23273  23274  164.8    0.4193 8518.0068      0.1400
+  23273  23275  145.0    0.3148 8517.9570      0.1400
+  23345  23347   39.1    0.1408   0.1445      0.1400
+  23696  23698   50.1    0.1552   0.1421      0.1400
+  24107  24108  110.7    0.1400  16.2398      0.1400
+  24107  24109  101.3    0.1400  16.0114      0.1400
+  24299  24300   89.9    0.3334   0.8281      0.1400
+  24299  24301   90.1    0.2771   0.7059      0.1400
+  24341  24342   89.1    0.2024   0.9671      0.1400
+  24341  24343   87.7    0.1900   0.3221      0.1400
+  24488  24489   92.9    0.1459   0.1672      0.1400
+  24488  24490   91.7    0.1967   0.1433      0.1400
+  24698  24700   31.6    0.1411   0.1381      0.1400
+  24830  24832   33.6    0.1440   0.1416      0.1400
+  24884  24885   32.2    0.1400   0.1459      0.1400
+  24884  24886   38.1    0.1400   0.1458      0.1400
+  25208  25209   47.7    0.1440   0.1428      0.1400
+  25208  25210   37.2    0.1409   0.1407      0.1400
+  25346  25347   32.8    0.1531   0.1398      0.1400
+  25346  25348   31.5    0.1489   0.1434      0.1400
+  25421  25422   39.3    0.1533   0.1397      0.1400
+  25754  25756   34.7    0.1438   0.1421      0.1400
+  26717  26719   41.9    0.1476   0.1402      0.1400
+  26813  26814   40.4    0.1353   0.1320      0.1400
+  26813  26815   63.1    0.1400   0.1406      0.1400
+  27317  27318   72.9    0.3850   9.8782      0.1400
+  27317  27319   89.9    0.3466   9.3810      0.1400
+  27488  27489   43.0    0.0721   0.1633      0.1400
+  27488  27490   73.3    0.0768   0.1345      0.1400
+  27839  27840   37.3    0.1371   0.1341      0.1400
+  27839  27841   37.6    0.1364   0.1339      0.1400
+  27854  27856   90.0    0.1151   0.1325      0.1400
+  27872  27873   90.0    0.1400   0.2990      0.1400
+  27872  27874   90.0    0.1400   0.2621      0.1400
+  28172  28173   31.8    0.1371   0.1388      0.1400
+  28439  28440   88.9    0.2152   1.3747      0.1400
+  28439  28441   89.2    0.2354   1.3264      0.1400
+  28595  28596   49.4    0.1415   0.1550      0.1400
+  28595  28597   40.4    0.1399   0.1286      0.1400
+  28727  28728   36.0    0.1442   0.1328      0.1400
+  28727  28729   47.7    0.1476   0.1359      0.1400
+  29024  29026   31.2    0.1332   0.1382      0.1400
+  29579  29580   90.4    0.1400   0.3927      0.1400
+  29579  29581   90.5    0.1400   0.3766      0.1400
+  30323  30324   33.6    0.1400   0.1414      0.1400
+  30323  30325   44.2    0.1400   0.1407      0.1400
+  30473  30474   42.1    0.1437   0.1437      0.1400
+  30473  30475   42.6    0.1445   0.1441      0.1400
+  30710  30712   32.4    0.1381   0.1404      0.1400
+  30734  30735   32.7    0.1510   0.1375      0.1400
+  31079  31081   46.7    0.1434   0.1417      0.1400
+  31217  31218   57.2    0.1901   0.1794      0.1400
+  31217  31219   90.0    0.2291   0.1377      0.1400
+  31223  31225   31.7    0.1400   0.1385      0.1400
+  31976  31977   42.9    0.1433   0.1416      0.1400
+  32156  32157   51.2    0.1380   0.1452      0.1400
+  33329  33330   90.0    0.1581   0.3858      0.1400
+  33329  33331   89.9    0.2701   0.2083      0.1400
+  33878  33879   32.5    0.1418   0.1387      0.1400
+  34229  34231   41.5    0.1369   0.1400      0.1400
+  34355  34356   41.2    0.1444   0.1412      0.1400
+  35108  35109   50.3    0.1446   0.1407      0.1400
+  35594  35595   90.0    0.1400   0.1265      0.1400
+  35594  35596   73.7    0.1400   0.1215      0.1400
+  35702  35703   30.7    0.1429   0.1370      0.1400
+  35702  35704   39.6    0.1462   0.1390      0.1400
+  35909  35910  121.9    0.1522   8.2252      0.1400
+  35909  35911  126.8    0.1197   7.1293      0.1400
+  35954  35955  117.4    0.2150  14.3536      0.1400
+  35954  35956  172.6    0.2276  14.7472      0.1400
+  36062  36064   31.1    0.1363   0.1374      0.1400
+  36494  36495   90.0    0.1400   0.5720      0.1400
+  36494  36496   90.0    0.1400   0.6246      0.1400
+  37049  37050   36.3    0.1319   0.1320      0.1400
+  37049  37051   44.8    0.1364   0.1361      0.1400
+  37154  37155   32.0    0.1434   0.1393      0.1400
+  37154  37156   32.2    0.1429   0.1389      0.1400
+  37220  37222   34.0    0.1414   0.1400      0.1400
+  37340  37342   41.1    0.1174   0.1428      0.1400
+  37403  37405   34.8    0.1401   0.1401      0.1400
+  37559  37561   34.1    0.1456   0.1396      0.1400
+  37571  37573   41.8    0.1377   0.1414      0.1400
+  37709  37710   90.5    0.1866   0.2777      0.1400
+  37709  37711   90.4    0.2019   0.3118      0.1400
+  37838  37839   90.0    0.1400   0.1590      0.1400
+  37838  37840   90.0    0.1400   0.1620      0.1400
+  37889  37890   33.4    0.1419   0.1404      0.1400
+  38021  38022   90.4    0.3380   1.7000      0.1400
+  38021  38023   90.1    0.3099   1.7215      0.1400
+  38096  38097   44.1    0.1399   0.1458      0.1400
+  38096  38098   42.5    0.1416   0.1449      0.1400
+  38102  38103   34.9    0.1417   0.1423      0.1400
+  38423  38424   91.2    0.2192   0.2262      0.1400
+  38423  38425   91.1    0.2371   0.2208      0.1400
+  39467  39468   31.7    0.1291   0.1406      0.1400
+  39689  39691   30.1    0.1334   0.1374      0.1400
+  40373  40375   35.0    0.1409   0.1406      0.1400
+  40664  40665   90.0    0.1400   0.3414      0.1400
+  40664  40666   90.0    0.1400   0.3229      0.1400
+  40952  40953   32.1    0.1392   0.1396      0.1400
+  41054  41055   38.3    0.1428   0.1387      0.1400
+  41054  41056   34.3    0.1401   0.1369      0.1400
+  41330  41331   35.1    0.1453   0.1402      0.1400
+  41555  41556   35.3    0.1444   0.1394      0.1400
+  41555  41557   32.5    0.1439   0.1393      0.1400
+  41975  41976   30.1    0.1416   0.1412      0.1400
+  42368  42370   31.1    0.1397   0.1397      0.1400
+  43118  43119   34.9    0.1502   0.1367      0.1400
+  43214  43216   36.8    0.1431   0.1352      0.1400
+  43475  43477   33.5    0.1400   0.1417      0.1400
+  43514  43515   89.9    0.1400   0.4131      0.1400
+  43514  43516   89.8    0.1400   0.5482      0.1400
+  43520  43521   38.9    0.1357   0.1338      0.1400
+  43520  43522   46.6    0.1430   0.1394      0.1400
+  43793  43794   90.0    0.1400   0.7711      0.1400
+  43793  43795   90.0    0.1427   0.7727      0.1400
+Wrote pdb files with previous and current coordinates
+
+Step 37004, time 740.08 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 17184749568.000000, max 1299434045440.000000 (between atoms 17120 and 17121)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+  11564  11565   33.8    0.1400   0.1412      0.1400
+  11618  11619   89.5    2.9496   3.3887      0.1400
+  11618  11620   89.5    2.9348   3.6546      0.1400
+  11624  11625   90.0    0.1400   1.6743      0.1400
+  11624  11626   90.0    0.1400   1.6308      0.1400
+  11732  11733   40.0    0.1400   0.1415      0.1400
+  11867  11868   89.8    0.1691   0.2114      0.1400
+  11867  11869   89.6    0.2720   0.3288      0.1400
+  12314  12316   36.6    0.1436   0.1384      0.1400
+  12584  12585   90.9    0.1895   0.1639      0.1400
+  12584  12586   52.4    0.2104   0.1493      0.1400
+  12683  12684   78.8    1.6077 2879.1409      0.1400
+  12683  12685   93.1    1.3211 2878.7786      0.1400
+  13031  13032   89.2    0.5946   2.5043      0.1400
+  13031  13033   89.0    0.7165   2.3237      0.1400
+  13178  13180   36.5    0.1395   0.1415      0.1400
+  13184  13185   64.4    1.0663  35.4868      0.1400
+  13184  13186  125.2    0.7667  32.0520      0.1400
+  13283  13284   91.8    2.2870   3.9509      0.1400
+  13283  13285   84.2    2.1817   0.5673      0.1400
+  13412  13413   66.2    0.1364   0.1254      0.1400
+  13412  13414   90.4    0.1472   0.1803      0.1400
+  13607  13608   38.6    0.1454   0.1406      0.1400
+  13709  13711   30.3    0.1368   0.1391      0.1400
+  13988  13989   90.0    0.1400   0.5196      0.1400
+  13988  13990   90.0    0.1400   0.6795      0.1400
+  14450  14451   64.8    0.1621   0.1283      0.1400
+  14450  14452   77.9    0.1729   0.1374      0.1400
+  14495  14497   30.5    0.1394   0.1405      0.1400
+  14876  14877   48.1    0.1395   0.1383      0.1400
+  14921  14922   66.8    0.1567   0.1361      0.1400
+  14921  14923   32.3    0.1103   0.1535      0.1400
+  15059  15060   38.8    0.1367   0.1394      0.1400
+  15125  15126   42.6    0.1358   0.1362      0.1400
+  15155  15157   32.8    0.1389   0.1394      0.1400
+  15659  15661   37.6    0.1402   0.1400      0.1400
+  15995  15996   33.0    0.1417   0.1408      0.1400
+  16400  16401   43.8    0.1418   0.1434      0.1400
+  16520  16521   46.5    0.1417   0.1436      0.1400
+  17120  17121  113.1    1.4207 181920776192.0000      0.1400
+  17120  17122  111.8    1.1089 181920776192.0000      0.1400
+  17150  17151   33.8    0.1456   0.1466      0.1400
+  17150  17152   43.4    0.1416   0.1376      0.1400
+  17360  17361   41.1    0.1424   0.1434      0.1400
+  17705  17706   92.3    0.1410   0.1595      0.1400
+  17705  17707   92.5    0.1465   0.1619      0.1400
+  17801  17802   90.0    0.1383   0.1679      0.1400
+  17801  17803   36.3    0.1299   0.1684      0.1400
+  18158  18159   90.0    0.1400   3.9424      0.1400
+  18158  18160   90.0    0.1400   1.8161      0.1400
+  18278  18279  105.2    0.2553 1296036096.0000      0.1400
+  18278  18280  111.3    0.3816 1296036096.0000      0.1400
+  18395  18396   35.4    0.1438   0.1398      0.1400
+  18494  18496   36.9    0.1361   0.1396      0.1400
+  18608  18609   34.0    0.1381   0.1391      0.1400
+  18626  18627   38.7    8.3851  29.1240      0.1400
+  18626  18628   54.7    5.9971  23.6242      0.1400
+  18704  18705   31.5    0.1407   0.1401      0.1400
+  18734  18735   90.0    0.2122   0.2033      0.1400
+  18815  18817   53.1    0.1403   0.1393      0.1400
+  19436  19437   31.1    0.1390   0.1394      0.1400
+  19811  19812   41.0    0.1306   0.1400      0.1400
+  19811  19813   31.2    0.1315   0.1410      0.1400
+  19850  19851   89.9    8.2374  10.0377      0.1400
+  19850  19852  134.1    7.3725  13.0923      0.1400
+  20321  20322   45.4    0.1403   0.1400      0.1400
+  20651  20652   44.5    0.1384   0.1397      0.1400
+  20651  20653   47.4    0.1389   0.1393      0.1400
+  21530  21531   84.9    0.1400 181920776192.0000      0.1400
+  22064  22065   39.2    0.1353   0.1398      0.1400
+  22172  22173   58.8    0.1423   0.1386      0.1400
+  22172  22174   31.8    0.1161   0.1382      0.1400
+  22322  22323   32.4    0.1350   0.1408      0.1400
+  22322  22324   32.8    0.1357   0.1409      0.1400
+  22367  22368   32.3    0.1400   0.1413      0.1400
+  22541  22542  106.8    3.9097   0.7234      0.1400
+  22541  22543  105.4    4.1471   0.7444      0.1400
+  22745  22746   39.0    0.1365   0.1372      0.1400
+  22790  22792   44.0    0.1421   0.1400      0.1400
+  23159  23160   30.9    0.1400   0.1371      0.1400
+  23393  23395   32.0    0.1418   0.1377      0.1400
+  23696  23698   65.9    0.1421   0.1407      0.1400
+  24245  24246   90.0    0.1401   1.3971      0.1400
+  24245  24247   90.0    0.1402   1.3975      0.1400
+  24299  24300  160.7    0.8281  24.5612      0.1400
+  24299  24301  157.6    0.7059  24.6401      0.1400
+  24341  24342   91.0    0.9671  20.8639      0.1400
+  24341  24343   53.1    0.3221  22.3774      0.1400
+  24488  24489   90.1    0.1672   0.2040      0.1400
+  24488  24490   90.1    0.1433   0.1895      0.1400
+  24602  24603   30.8    0.1400   0.1408      0.1400
+  24602  24604   33.2    0.1397   0.1380      0.1400
+  24830  24832   38.4    0.1416   0.1402      0.1400
+  24872  24873   30.9    0.1400   0.1425      0.1400
+  24872  24874   34.4    0.1400   0.1389      0.1400
+  24884  24885   88.5    0.1459   0.1597      0.1400
+  24884  24886   89.3    0.1458   0.1627      0.1400
+  25013  25014   89.8    0.1398   6.1960      0.1400
+  25013  25015   90.0    0.1400   4.6326      0.1400
+  25208  25209   40.0    0.1428   0.1396      0.1400
+  25376  25377   31.1    0.1399   0.1406      0.1400
+  25376  25378   37.9    0.1401   0.1427      0.1400
+  25421  25422   49.5    0.1397   0.1439      0.1400
+  25754  25756   39.4    0.1421   0.1393      0.1400
+  25826  25828   32.1    0.1398   0.1412      0.1400
+  26144  26145   35.7    0.1400   0.1422      0.1400
+  26144  26146   37.3    0.1400   0.1411      0.1400
+  26717  26719   44.8    0.1402   0.1395      0.1400
+  26813  26815   57.8    0.1406   0.1357      0.1400
+  26966  26967   30.1    0.1400 72930.2500      0.1400
+  26966  26968  119.6    0.1400 72931.0000      0.1400
+  27317  27318   88.3    9.8811   6.2499      0.1400
+  27317  27319   88.8    9.3833   5.8298      0.1400
+  27401  27402   90.2    0.1400   0.5424      0.1400
+  27401  27403   89.5    0.1400   0.5162      0.1400
+  27488  27489   49.1    0.1673   0.1555      0.1400
+  27488  27490   65.3    0.1345   0.1535      0.1400
+  27839  27840   37.6    0.1341   0.1387      0.1400
+  27839  27841   34.9    0.1339   0.1380      0.1400
+  27854  27855   38.1    0.1484   0.1428      0.1400
+  27872  27873   88.2    0.2990   3.0196      0.1400
+  27872  27874   87.7    0.2621   1.9451      0.1400
+  28172  28173   30.3    0.1388   0.1397      0.1400
+  28439  28440   92.8    1.3747   1.7885      0.1400
+  28439  28441   93.3    1.3264   1.6495      0.1400
+  28595  28596   62.7    0.1562   0.1447      0.1400
+  28727  28728   31.0    0.1328   0.1358      0.1400
+  28727  28729   44.8    0.1359   0.1395      0.1400
+  29315  29316  155.0    0.1400 1296036096.0000      0.1400
+  29315  29317  132.1    0.1400 1296036096.0000      0.1400
+  29579  29580   95.9    0.3927  23.4663      0.1400
+  29579  29581   93.1    0.3766  23.5212      0.1400
+  30245  30246  103.5    0.1400  15.0181      0.1400
+  30245  30247  136.8    0.1400  13.1742      0.1400
+  30323  30325   30.9    0.1407   0.1400      0.1400
+  30710  30712   33.3    0.1404   0.1413      0.1400
+  30992  30993  120.6    0.1400  18.0767      0.1400
+  30992  30994   88.3    0.1400  18.2824      0.1400
+  31079  31081   47.1    0.1417   0.1413      0.1400
+  31217  31218   91.0    0.1799   0.1806      0.1400
+  31217  31219   90.9    0.1410   0.1915      0.1400
+  31238  31239   90.0    0.1400   0.2166      0.1400
+  31238  31240   90.0    0.1400   0.2255      0.1400
+  31547  31549   60.0    0.1397   0.1217      0.1400
+  31976  31977   43.6    0.1416   0.1413      0.1400
+  31991  31992   90.0    0.1400   2.7343      0.1400
+  31991  31993   90.0    0.1400   2.8851      0.1400
+  32084  32085   35.6    0.1398   0.1384      0.1400
+  32084  32086   33.2    0.1398   0.1388      0.1400
+  32156  32157   44.0    0.1452   0.1411      0.1400
+  32303  32304  134.7    0.1400  15.2279      0.1400
+  32735  32736   55.0    0.1400  20.6044      0.1400
+  32735  32737   82.5    0.1400  22.1567      0.1400
+  32975  32976   57.8    0.1400   0.1288      0.1400
+  33059  33060   90.0    0.1398   2.1064      0.1400
+  33059  33061   90.0    0.1400   1.7023      0.1400
+  33101  33102   56.8    0.1396 2880.7725      0.1400
+  33101  33103   59.9    0.1388 2879.8325      0.1400
+  33329  33330   89.9    0.3853   7.8528      0.1400
+  33329  33331   90.1    0.2083   7.8514      0.1400
+  33509  33510   45.9    0.1393   0.1411      0.1400
+  33878  33879   37.4    0.1387   0.1406      0.1400
+  34229  34231   37.6    0.1400   0.1403      0.1400
+  34355  34357   33.3    0.1420   0.1411      0.1400
+  35108  35109   35.7    0.1407   0.1400      0.1400
+  35594  35595   91.7    0.1265   0.1494      0.1400
+  35594  35596   91.9    0.1215   0.1766      0.1400
+  35702  35704   33.9    0.1390   0.1396      0.1400
+  35909  35910   37.0    8.2187  31.4476      0.1400
+  35909  35911   51.5    7.1239  28.7924      0.1400
+  36347  36348   51.3    0.1404   0.1469      0.1400
+  36347  36349   46.3    0.1390   0.1368      0.1400
+  36494  36495  142.3    0.5720 72930.1484      0.1400
+  36494  36496  143.0    0.6246 72929.2266      0.1400
+  36644  36645   89.9    0.1398   0.3668      0.1400
+  36644  36646   89.9    0.1399   0.3636      0.1400
+  37049  37051   44.5    0.1361   0.1398      0.1400
+  37220  37222   34.8    0.1400   0.1399      0.1400
+  37346  37347   90.0    0.1400   0.1765      0.1400
+  37346  37348   90.0    0.1400   0.1460      0.1400
+  37403  37405   33.5    0.1401   0.1400      0.1400
+  37466  37467   31.6    0.1399   0.1375      0.1400
+  37466  37468   34.3    0.1400   0.1375      0.1400
+  37571  37572   44.8    0.1410   0.1394      0.1400
+  37571  37573   33.5    0.1414   0.1370      0.1400
+  37598  37599   90.0    0.1400   0.4895      0.1400
+  37598  37600   90.0    0.1400   0.3764      0.1400
+  37709  37710   89.2    0.2777   2.4703      0.1400
+  37709  37711   89.2    0.3118   2.4822      0.1400
+  37838  37839   70.1    0.1590   0.1408      0.1400
+  37838  37840   56.5    0.1620   0.1310      0.1400
+  38021  38022   97.2    1.6996   0.7540      0.1400
+  38021  38023   96.5    1.7215   0.8496      0.1400
+  38096  38097   32.2    0.1458   0.1391      0.1400
+  38096  38098   31.0    0.1474   0.1384      0.1400
+  38423  38424   92.3    0.2262   0.2713      0.1400
+  38423  38425   92.6    0.2208   0.2507      0.1400
+  38477  38478   39.5    0.1400   0.1419      0.1400
+  38477  38479   30.8    0.1400   0.1406      0.1400
+  38732  38733   32.7    0.1401   0.1408      0.1400
+  39026  39028   33.9    0.1399   0.1388      0.1400
+  39233  39234   90.0    0.1399   2.6425      0.1400
+  39233  39235   90.0    0.1401   2.5985      0.1400
+  39569  39570   89.7    0.1400   0.2264      0.1400
+  39569  39571   89.6    0.1400   0.3400      0.1400
+  39689  39690   90.3    0.1356   0.1637      0.1400
+  39689  39691   90.3    0.1374   0.2356      0.1400
+  41054  41055   32.6    0.1387   0.1395      0.1400
+  41330  41331   32.0    0.1402   0.1402      0.1400
+  41528  41529   90.8    0.1400   0.4924      0.1400
+  41528  41530   88.7    0.1400   0.3818      0.1400
+  41975  41977   32.4    0.1410   0.1418      0.1400
+  42368  42370   30.3    0.1397   0.1397      0.1400
+  43118  43119   36.5    0.1367   0.1394      0.1400
+  43214  43216   36.4    0.1352   0.1402      0.1400
+  43229  43230   57.4    0.1400   0.1323      0.1400
+  43229  43231   63.7    0.1400   0.1477      0.1400
+  43475  43477   33.7    0.1417   0.1402      0.1400
+  43514  43515  124.1    0.4131  16.0371      0.1400
+  43514  43516   83.1    0.5482  14.6890      0.1400
+  43520  43522   51.9    0.1394   0.1399      0.1400
+  43793  43794   89.7    0.7711   2.3329      0.1400
+  43793  43795   89.5    0.7733   2.3522      0.1400
+  44018  44019   90.0    0.1400   3.0659      0.1400
+  44018  44020   90.0    0.1400   3.0135      0.1400
+  44108  44109   59.2    0.1400  37.5946      0.1400
+  44108  44110  117.1    0.1400  38.0481      0.1400
+Wrote pdb files with previous and current coordinates
+
+Step 37005, time 740.1 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 34369499136.000000, max 2598868090880.000000 (between atoms 17120 and 17121)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+  11558  11559   90.5    5.1083   4.1204      0.1400
+  11558  11560   87.5    3.6806   0.1558      0.1400
+  11564  11565   34.9    0.1412   0.1406      0.1400
+  11618  11619   91.5    3.3913   4.1535      0.1400
+  11618  11620   91.6    3.6576   3.8088      0.1400
+  11624  11625   99.2    1.6743   0.1915      0.1400
+  11624  11626   95.8    1.6308   0.7380      0.1400
+  11732  11733   30.7    0.1415   0.1415      0.1400
+  11867  11868   82.1    0.2136   0.1774      0.1400
+  11867  11869   90.6    0.3288   0.1662      0.1400
+  12314  12316   34.7    0.1384   0.1390      0.1400
+  12584  12585   90.5    0.1639   0.1932      0.1400
+  12584  12586   90.9    0.1493   0.2031      0.1400
+  13031  13032   79.0    2.4999  26.9611      0.1400
+  13031  13033  118.5    2.3256  25.1348      0.1400
+  13178  13180   40.7    0.1415   0.1409      0.1400
+  13283  13284   90.0    3.9544   4.0125      0.1400
+  13283  13285   90.0    0.5673   2.8190      0.1400
+  13337  13338   34.7    0.1401   0.1432      0.1400
+  13337  13339   33.3    0.1401   0.1440      0.1400
+  13412  13414   90.2    0.1771   0.1401      0.1400
+  13607  13608   39.7    0.1406   0.1385      0.1400
+  13610  13611   90.0    0.1400   2.8490      0.1400
+  13610  13612   90.0    0.1400   1.3530      0.1400
+  13709  13710   32.7    0.1389   0.1414      0.1400
+  13709  13711   35.8    0.1391   0.1408      0.1400
+  13766  13767   90.0    0.1400   2.4574      0.1400
+  13766  13768   89.6    0.1400   2.6141      0.1400
+  13988  13989   70.4    0.5196  35.9026      0.1400
+  13988  13990   37.1    0.6795  36.5653      0.1400
+  14450  14451   90.1    0.1283   0.1719      0.1400
+  14450  14452   90.1    0.1374   0.2066      0.1400
+  14495  14497   33.4    0.1405   0.1402      0.1400
+  14876  14877   44.3    0.1383   0.1375      0.1400
+  14879  14881   82.6    0.1400   4.7008      0.1400
+  14921  14922   89.5    0.1361   0.1625      0.1400
+  14921  14923   31.9    0.1535   0.1561      0.1400
+  15059  15060   42.4    0.1394   0.1424      0.1400
+  15125  15126   90.0    0.1362   0.1926      0.1400
+  15125  15127   37.2    0.1319   0.1528      0.1400
+  15137  15138   49.7    0.1400   0.1446      0.1400
+  15137  15139   41.2    0.1400   0.1347      0.1400
+  15155  15157   40.9    0.1394   0.1412      0.1400
+  15401  15402   34.4    0.1401   0.1421      0.1400
+  15401  15403   40.7    0.1400   0.1402      0.1400
+  15434  15436   33.3    0.1400   0.1399      0.1400
+  15659  15661   37.2    0.1400   0.1402      0.1400
+  15995  15996   33.0    0.1408   0.1401      0.1400
+  16400  16401   36.4    0.1434   0.1385      0.1400
+  17150  17152   33.7    0.1376   0.1339      0.1400
+  17360  17361   39.3    0.1484   0.1370      0.1400
+  17801  17802   50.3    0.1679   0.1364      0.1400
+  17801  17803   42.3    0.1684   0.1494      0.1400
+  18158  18159   92.2    3.9427   8.0506      0.1400
+  18158  18160  119.8    1.8193   7.7054      0.1400
+  18494  18496   31.4    0.1396   0.1395      0.1400
+  18608  18609   37.0    0.1391   0.1407      0.1400
+  18704  18705   33.1    0.1401   0.1404      0.1400
+  18734  18735   89.6    0.2033   0.2272      0.1400
+  18734  18736   50.2    0.1516   0.1670      0.1400
+  18815  18817   50.0    0.1393   0.1395      0.1400
+  19418  19419   90.4    0.1400   1.0165      0.1400
+  19418  19420   89.8    0.1400   0.9805      0.1400
+  19811  19812   54.4    0.1400   0.1500      0.1400
+  19811  19813   44.1    0.1410   0.1562      0.1400
+  19850  19851   62.5   10.0361  21.1007      0.1400
+  19850  19852   34.6   13.0924  31.5834      0.1400
+  20321  20322   70.3    0.1400   0.1399      0.1400
+  20651  20652   43.1    0.1397   0.1393      0.1400
+  20651  20653   47.5    0.1393   0.1398      0.1400
+  20855  20856  132.7    0.1400  36.3219      0.1400
+  20855  20857  115.6    0.1400  35.0889      0.1400
+  22064  22065   44.1    0.1398   0.1427      0.1400
+  22064  22066   33.0    0.1384   0.1463      0.1400
+  22172  22173   82.3    0.1386   0.1487      0.1400
+  22172  22174   39.3    0.1382   0.1613      0.1400
+  22250  22251   67.8    0.1400  16.3403      0.1400
+  22250  22252   44.9    0.1400  15.2567      0.1400
+  22322  22323   44.0    0.1408   0.1493      0.1400
+  22322  22324   43.6    0.1409   0.1499      0.1400
+  22367  22368   31.8    0.1413   0.1412      0.1400
+  22541  22542   89.9    0.7234   2.6480      0.1400
+  22541  22543   89.9    0.7444   2.8772      0.1400
+  22724  22726   35.0    0.1399   0.1418      0.1400
+  22745  22746   37.0    0.1372   0.1391      0.1400
+  22745  22747   32.2    0.1372   0.1400      0.1400
+  22790  22792   39.8    0.1400   0.1400      0.1400
+  23393  23395   31.2    0.1441   0.1381      0.1400
+  23696  23697   39.7    0.1469   0.1610      0.1400
+  23696  23698   89.8    0.1407   0.1635      0.1400
+  24176  24177   90.0    0.1400   0.2827      0.1400
+  24176  24178   90.0    0.1400   0.2910      0.1400
+  24245  24246   90.0    1.3971   1.0987      0.1400
+  24245  24247   90.0    1.3975   1.3687      0.1400
+  24488  24489   90.0    0.2040   2.9638      0.1400
+  24488  24490   90.0    0.1895   3.0335      0.1400
+  24830  24832   45.1    0.1402   0.1405      0.1400
+  24884  24885   90.8    0.1597   0.2480      0.1400
+  24884  24886   74.6    0.1627   0.1594      0.1400
+  25013  25014  177.3    6.1960  10.8250      0.1400
+  25013  25015   89.8    4.6326   2.2020      0.1400
+  25421  25422   41.5    0.1439   0.1373      0.1400
+  25754  25756   61.6    0.1393   0.1410      0.1400
+  25826  25828   31.3    0.1412   0.1403      0.1400
+  26717  26719   45.3    0.1395   0.1400      0.1400
+  26813  26815   63.1    0.1357   0.1385      0.1400
+  27032  27034   34.3    0.1411   0.1410      0.1400
+  27317  27318   87.7    6.2560   2.2022      0.1400
+  27317  27319   83.1    5.8330   6.4873      0.1400
+  27401  27402   92.1    0.5424   0.9394      0.1400
+  27401  27403   92.3    0.5162   1.0005      0.1400
+  27470  27471   80.1    0.1400   0.1547      0.1400
+  27470  27472   62.0    0.1400   0.1607      0.1400
+  27488  27490   39.6    0.1535   0.1329      0.1400
+  27839  27840   44.5    0.1387   0.1422      0.1400
+  27839  27841   38.2    0.1380   0.1435      0.1400
+  27854  27855   89.3    0.1459   0.1285      0.1400
+  27872  27873  128.9    3.0238   8.0359      0.1400
+  27872  27874  128.0    1.9492   8.1447      0.1400
+  28298  28299   90.0    0.1399   2.6537      0.1400
+  28298  28300   90.0    0.1400   2.5314      0.1400
+  28439  28440   93.4    1.7885   1.4975      0.1400
+  28439  28441   94.8    1.6495   1.1510      0.1400
+  28595  28596   90.0    0.1449   0.1742      0.1400
+  28595  28597   31.8    0.1369   0.1568      0.1400
+  28727  28728   33.1    0.1358   0.1422      0.1400
+  28727  28729   40.0    0.1395   0.1419      0.1400
+  30245  30247   31.2   13.1682  36.8290      0.1400
+  30710  30712   33.8    0.1413   0.1407      0.1400
+  31079  31081   45.4    0.1413   0.1403      0.1400
+  31217  31218   91.6    0.1745   0.2375      0.1400
+  31217  31219   80.2    0.1860   0.1266      0.1400
+  31238  31239   89.6    0.2166   0.4269      0.1400
+  31238  31240   89.6    0.2255   0.4367      0.1400
+  31547  31549   61.2    0.1217   0.1457      0.1400
+  31754  31755   58.0    0.1400   0.1663      0.1400
+  31754  31756   67.7    0.1416   0.1654      0.1400
+  31976  31977   32.1    0.1413   0.1383      0.1400
+  31991  31992   90.5    2.7343   0.6063      0.1400
+  31991  31993   91.7    2.8851   4.4468      0.1400
+  32084  32085   34.2    0.1384   0.1382      0.1400
+  32084  32086   35.5    0.1388   0.1385      0.1400
+  32156  32157   38.1    0.1411   0.1377      0.1400
+  32939  32940   37.6    0.1400   0.1406      0.1400
+  32939  32941   34.0    0.1411   0.1408      0.1400
+  33059  33060   85.7    2.1073  22.8370      0.1400
+  33059  33061   44.6    1.6948  25.2668      0.1400
+  33329  33330   88.4    7.8555   6.4712      0.1400
+  33329  33331   89.5    7.8514   3.2589      0.1400
+  33509  33510   48.8    0.1411   0.1436      0.1400
+  33563  33564   84.8    0.1400   0.1383      0.1400
+  33563  33565   75.7    0.1400   0.1463      0.1400
+  33653  33654   90.0    0.1400   7.2390      0.1400
+  33653  33655   90.0    0.1400   7.7250      0.1400
+  33740  33741   33.6    0.1411   0.1416      0.1400
+  33740  33742   34.9    0.1396   0.1386      0.1400
+  33878  33879   39.8    0.1406   0.1413      0.1400
+  34229  34231   33.3    0.1403   0.1392      0.1400
+  34355  34357   36.8    0.1411   0.1411      0.1400
+  34652  34653   90.0    0.1400   1.1862      0.1400
+  34652  34654   90.0    0.1400   1.2090      0.1400
+  34937  34938   90.0    0.1400   1.2814      0.1400
+  34937  34939   90.0    0.1400   1.2611      0.1400
+  35108  35109   30.8    0.1400   0.1397      0.1400
+  35594  35595   90.0    0.1494   0.1817      0.1400
+  35594  35596   90.0    0.1766   0.1849      0.1400
+  35702  35704   33.1    0.1396   0.1400      0.1400
+  36347  36348   51.1    0.1469   0.1479      0.1400
+  36347  36349   40.4    0.1368   0.1464      0.1400
+  36644  36645  103.9    0.3668   5.0972      0.1400
+  36644  36646   89.8    0.3636   5.6553      0.1400
+  37049  37050   33.7    0.1371   0.1447      0.1400
+  37049  37051   46.4    0.1398   0.1426      0.1400
+  37220  37222   34.3    0.1399   0.1401      0.1400
+  37346  37347   91.3    0.1765   0.1614      0.1400
+  37346  37348   91.1    0.1460   0.2247      0.1400
+  37403  37405   32.9    0.1400   0.1400      0.1400
+  37571  37572   52.7    0.1394   0.1397      0.1400
+  37571  37573   35.4    0.1370   0.1361      0.1400
+  37598  37599   90.0    0.4895   1.1609      0.1400
+  37598  37600   90.0    0.3764   1.2048      0.1400
+  37709  37710   89.2    2.4703   3.8801      0.1400
+  37709  37711   89.2    2.4822   3.9962      0.1400
+  37838  37839   90.0    0.1408   0.2106      0.1400
+  37838  37840   90.0    0.1310   0.1953      0.1400
+  38021  38023   39.5    0.8496 403.3012      0.1400
+  38183  38184   90.1    0.1400   0.1609      0.1400
+  38183  38185   90.0    0.1400   0.2020      0.1400
+  38423  38424   91.0    0.2713   0.2618      0.1400
+  38423  38425   91.0    0.2507   0.2569      0.1400
+  38477  38478   37.0    0.1419   0.1407      0.1400
+  39233  39234   88.3    2.6425   0.7546      0.1400
+  39233  39235   92.1    2.5985   3.5183      0.1400
+  39569  39570  141.0    0.2264  13.1134      0.1400
+  39569  39571   91.4    0.3400  13.5505      0.1400
+  39689  39690   94.2    0.1637   0.1694      0.1400
+  39689  39691   92.8    0.2356   0.1669      0.1400
+  39797  39798   90.4    0.1401   0.8807      0.1400
+  39797  39799   89.8    0.1401   0.7471      0.1400
+  40664  40665   78.8    0.1408   0.1335      0.1400
+  40724  40725   31.9    0.1400   0.1397      0.1400
+  40724  40726   32.5    0.1398   0.1383      0.1400
+  41330  41331   33.7    0.1402   0.1400      0.1400
+  41519  41520   89.4    0.1400   1.6252      0.1400
+  41519  41521   90.5    0.1400   1.6701      0.1400
+  41528  41529   90.1    0.4924   6.1221      0.1400
+  41528  41530   89.9    0.3818   6.8609      0.1400
+  41975  41977   31.8    0.1418   0.1386      0.1400
+  42971  42972   30.6    0.1402   0.1374      0.1400
+  43118  43119   38.8    0.1394   0.1393      0.1400
+  43214  43216   31.4    0.1402   0.1402      0.1400
+  43229  43230   31.7    0.1323   0.1334      0.1400
+  43229  43231   61.1    0.1477   0.1401      0.1400
+  43475  43477   48.2    0.1402   0.1395      0.1400
+  43520  43522   49.9    0.1399   0.1379      0.1400
+  43793  43794  100.6    2.3329   0.6658      0.1400
+  43793  43795   97.1    2.3529   0.9853      0.1400
+  44018  44019   97.1    3.0659   0.8637      0.1400
+  44018  44020   95.6    3.0135   1.1057      0.1400
+  44360  44361   34.1    0.1401   0.1421      0.1400
+  44600  44601   35.4    0.1364 408.0959      0.1400
+  44600  44602   49.5    0.1400 403.6596      0.1400
+Wrote pdb files with previous and current coordinates
+
+Step 37006, time 740.12 (ps)  LINCS WARNING
+relative constraint deviation after LINCS:
+rms 51554250752.000000, max 3898302791680.000000 (between atoms 17120 and 17121)
+bonds that rotated more than 30 degrees:
+ atom 1 atom 2  angle  previous, current, constraint length
+  11417  11418   90.0    0.1400   0.3987      0.1400
+  11417  11419   90.0    0.1400   0.3814      0.1400
+  11558  11559   90.2    4.1246   1.2729      0.1400
+  11558  11560   91.0    0.1558   4.2495      0.1400
+  11564  11565   31.2    0.1406   0.1399      0.1400
+  11624  11625   90.0    0.1915   1.9087      0.1400
+  11624  11626   90.0    0.7380   3.5044      0.1400
+  11867  11868   58.0    0.1761  21.0631      0.1400
+  11867  11869  114.0    0.1662  20.9018      0.1400
+  11942  11943   90.0    0.1400   7.3454      0.1400
+  11942  11944   90.0    0.1400   6.7852      0.1400
+  12314  12316   37.0    0.1390   0.1407      0.1400
+  12440  12441  145.0    0.1403  17.9866      0.1400
+  12440  12442   58.7    0.1406  20.5808      0.1400
+  12584  12585   90.1    0.1932   0.1779      0.1400
+  12584  12586   90.1    0.2031   0.1895      0.1400
+  13178  13179   31.2    0.1429   0.1412      0.1400
+  13178  13180   46.1    0.1409   0.1397      0.1400
+  13283  13285   89.6    2.8190   1.7238      0.1400
+  13412  13413   37.6    0.1274   0.1704      0.1400
+  13412  13414   90.0    0.1357   0.1885      0.1400
+  13607  13608   37.5    0.1385   0.1402      0.1400
+  13610  13611   92.3    2.8492   8.4719      0.1400
+  13610  13612  138.5    1.3578   7.7017      0.1400
+  13709  13710   42.1    0.1414   0.1464      0.1400
+  13709  13711   44.9    0.1408   0.1456      0.1400
+  13766  13767   95.0    2.4574   1.0287      0.1400
+  13766  13768   95.4    2.6141   0.8959      0.1400
+  14048  14049   32.6    0.1400   0.1418      0.1400
+  14450  14451   52.8    0.1719   0.1528      0.1400
+  14450  14452   59.3    0.2066   0.1441      0.1400
+  14495  14497   35.8    0.1402   0.1398      0.1400
+  14807  14808   31.4    0.1400   0.1469      0.1400
+  14807  14809   42.8    0.1400   0.1468      0.1400
+  14876  14877   49.0    0.1375   0.1451      0.1400
+  14879  14880   71.9    7.7814  28.2044      0.1400
+  14879  14881   57.4    4.6945  26.2363      0.1400
+  14921  14922   70.6    0.1625   0.1322      0.1400
+  14921  14923   40.9    0.1561   0.1508      0.1400
+  14981  14982   33.2    0.1400 514.9516      0.1400
+  14981  14983   51.1    0.1400 513.7943      0.1400
+  15059  15060   49.7    0.1424   0.1386      0.1400
+  15125  15126   70.1    0.1926   0.1381      0.1400
+  15125  15127   41.2    0.1528   0.1563      0.1400
+  15155  15157   42.6    0.1412   0.1399      0.1400
+  15401  15403   31.6    0.1402   0.1384      0.1400
+  15434  15436   32.7    0.1399   0.1400      0.1400
+  15659  15660   31.4    0.1438   0.1444      0.1400
+  15659  15661   38.8    0.1402   0.1403      0.1400
+  15995  15996   33.8    0.1401   0.1400      0.1400
+  16058  16059   59.2    0.1399   0.1341      0.1400
+  16058  16060   42.9    0.1402   0.1506      0.1400
+  16400  16401   55.2    0.1385   0.1311      0.1400
+  16856  16857   90.0    0.1400   0.2318      0.1400
+  16856  16858   89.8    0.1400   0.2192      0.1400
+  17150  17152   53.3    0.1339   0.1410      0.1400
+  17360  17361   44.1    0.1430   0.1364      0.1400
+  17705  17706   30.5    0.1405   0.1404      0.1400
+  17801  17802   45.4    0.1364   0.1232      0.1400
+  17801  17803   41.7    0.1494   0.1329      0.1400
+  18413  18414   67.4    0.1444   0.1661      0.1400
+  18413  18415   53.9    0.1399   0.1148      0.1400
+  18494  18496   33.8    0.1395   0.1401      0.1400
+  18608  18609   38.3    0.1407   0.1407      0.1400
+  18704  18705   37.2    0.1404   0.1400      0.1400
+  18734  18735   90.0    0.2272   0.2313      0.1400
+  18734  18736   52.2    0.1670   0.1836      0.1400
+  18815  18816   33.2    0.1427   0.1530      0.1400
+  18815  18817   62.1    0.1395   0.1527      0.1400
+  18947  18948   90.1    0.1401   1.3272      0.1400
+  18947  18949   90.0    0.1400   1.3235      0.1400
+  19418  19419   90.3    1.0165   8.9708      0.1400
+  19418  19420   90.1    0.9805   9.0769      0.1400
+  19436  19437   31.4    0.1404   0.1401      0.1400
+  19439  19441   34.6    0.1400   0.1369      0.1400
+  19484  19485   94.3    0.1400   8.6611      0.1400
+  19484  19486   90.0    0.1400   8.4945      0.1400
+  19811  19812   55.5    0.1500   0.1391      0.1400
+  19811  19813   42.8    0.1562   0.1396      0.1400
+  20321  20322   69.3    0.1399   0.1397      0.1400
+  20321  20323   33.5    0.1473   0.1547      0.1400
+  20525  20526   90.0    0.1400   0.1918      0.1400
+  20525  20527   50.4    0.1401   0.1719      0.1400
+  20651  20652   35.0    0.1393   0.1386      0.1400
+  20651  20653   41.7    0.1398   0.1400      0.1400
+  20945  20947   31.7    0.1394   0.1390      0.1400
+  22064  22065   61.8    0.1427   0.1583      0.1400
+  22064  22066   48.5    0.1463   0.1586      0.1400
+  22172  22173   54.4    0.1487   0.1377      0.1400
+  22322  22323   53.7    0.1493   0.1479      0.1400
+  22322  22324   53.6    0.1499   0.1487      0.1400
+  22541  22542   91.9    2.6480   1.9535      0.1400
+  22541  22543   92.0    2.8772   1.7301      0.1400
+  22724  22726   32.8    0.1418   0.1403      0.1400
+  22745  22746   37.1    0.1391   0.1419      0.1400
+  22745  22747   38.2    0.1400   0.1431      0.1400
+  22790  22792   33.7    0.1400   0.1398      0.1400
+  23078  23080   30.4    0.1402   0.1422      0.1400
+  23393  23395   35.0    0.1440   0.1395      0.1400
+  23696  23698   47.2    0.1635   0.1401      0.1400
+  23858  23860   35.4    0.1404   0.1403      0.1400
+  24176  24177   89.6    0.2827   4.4527      0.1400
+  24176  24178   89.3    0.2910   4.7928      0.1400
+  24245  24247   90.0    1.3687   0.2354      0.1400
+  24488  24489  122.7    2.9638   0.2128      0.1400
+  24488  24490  119.0    3.0335   0.1985      0.1400
+  24668  24670   30.9    0.1400   0.1377      0.1400
+  24830  24832   48.9    0.1405   0.1405      0.1400
+  24884  24885   89.7    0.2480   0.4651      0.1400
+  24884  24886   90.0    0.1594   0.5826      0.1400
+  24941  24943   31.0    0.1402   0.1400      0.1400
+  25013  25014   89.9   10.8290   4.7035      0.1400
+  25013  25015  100.1    2.2024  14.7228      0.1400
+  25421  25422   43.6    0.1373   0.1405      0.1400
+  25754  25755   35.3    0.1498   0.1508      0.1400
+  25754  25756   61.2    0.1410   0.1415      0.1400
+  26213  26214   90.0    0.1400   0.6445      0.1400
+  26213  26215   90.0    0.1400   0.4749      0.1400
+  26717  26719   45.9    0.1400   0.1398      0.1400
+  26813  26814   32.2    0.1461   0.1524      0.1400
+  26813  26815   70.0    0.1385   0.1489      0.1400
+  27317  27318   90.4    2.2036   3.5690      0.1400
+  27401  27402   93.0    0.9394   1.5259      0.1400
+  27401  27403   92.6    1.0005   1.6591      0.1400
+  27470  27471   90.0    0.1547   0.2847      0.1400
+  27470  27472   90.0    0.1607   0.2920      0.1400
+  27488  27490   41.9    0.1329   0.1388      0.1400
+  27839  27840   53.6    0.1422   0.1499      0.1400
+  27839  27841   47.1    0.1435   0.1502      0.1400
+  27848  27849   30.9    0.1401   0.1396      0.1400
+  27854  27855   89.9    0.1236   0.1891      0.1400
+  28298  28299  104.7    2.6537   0.4961      0.1400
+  28298  28300  107.2    2.5314   0.4461      0.1400
+  28439  28440   92.3    1.4975   1.8399      0.1400
+  28439  28441   93.5    1.1510   1.5164      0.1400
+  28595  28596   66.7    0.1734   0.1356      0.1400
+  28595  28597   40.3    0.1568   0.1593      0.1400
+  28655  28656   90.0    0.1400   0.2732      0.1400
+  28655  28657   90.0    0.1400   0.2346      0.1400
+  28727  28728   40.5    0.1422   0.1498      0.1400
+  28727  28729   50.9    0.1419   0.1489      0.1400
+  28787  28788   49.0    0.1376   0.1390      0.1400
+  29024  29026   30.9    0.1403   0.1426      0.1400
+  30449  30450   38.9    0.1405 311.4295      0.1400
+  30449  30451  134.9    0.1401 310.1865      0.1400
+  30710  30712   34.4    0.1407   0.1399      0.1400
+  30839  30840   90.0    0.1398   0.2452      0.1400
+  30839  30841   76.0    0.1400   0.1103      0.1400
+  31079  31081   41.3    0.1403   0.1366      0.1400
+  31217  31218   90.1    0.2371   0.2068      0.1400
+  31217  31219   90.2    0.1225   0.2494      0.1400
+  31238  31239   43.4    0.4269 314.6121      0.1400
+  31238  31240   84.2    0.4367 314.0020      0.1400
+  31466  31467   43.7    0.1400  22.2978      0.1400
+  31466  31468  139.4    0.1399  23.7287      0.1400
+  31547  31549   58.5    0.1457   0.1357      0.1400
+  31754  31756   31.9    0.1643   0.1382      0.1400
+  31919  31920   89.8    0.1400   0.7311      0.1400
+  31919  31921   89.9    0.1401   0.4139      0.1400
+  31991  31992   89.7    0.6063   3.5119      0.1400
+  31991  31993   89.8    4.4514   2.1154      0.1400
+  32084  32086   36.4    0.1385   0.1395      0.1400
+  32120  32121   31.7    0.1400   0.1437      0.1400
+  32120  32122   43.7    0.1400   0.1352      0.1400
+  32156  32157   43.5    0.1377   0.1385      0.1400
+  32444  32446   38.8    0.1397   0.1408      0.1400
+  32684  32685   90.0    0.1400   0.2719      0.1400
+  32684  32686   90.0    0.1400   0.3297      0.1400
+  32975  32977   74.6    0.1388   0.1357      0.1400
+  33329  33330  113.7    6.4712   7.0146      0.1400
+  33329  33331   80.2    3.2595  18.7387      0.1400
+  33437  33438   90.0    0.1400   9.7916      0.1400
+  33437  33439   90.0    0.1400   9.8943      0.1400
+  33509  33510   33.8    0.1436   0.1372      0.1400
+  33563  33564   57.5    0.1383   0.1405      0.1400
+  33563  33565   55.3    0.1463   0.1389      0.1400
+  33653  33654   70.6    7.2357  26.2545      0.1400
+  33653  33655   65.8    7.7238  16.3470      0.1400
+  33740  33741   39.7    0.1416   0.1415      0.1400
+  33740  33742   35.4    0.1386   0.1381      0.1400
+  33836  33837   38.0    0.1400   0.1386      0.1400
+  33878  33879   39.4    0.1413   0.1405      0.1400
+  34229  34231   34.4    0.1392   0.1406      0.1400
+  34355  34357   40.0    0.1411   0.1399      0.1400
+  34652  34653   91.0    1.1862   7.8728      0.1400
+  34652  34654   90.5    1.2090   7.9362      0.1400
+  34937  34938   90.4    1.2814   7.1605      0.1400
+  34937  34939   89.4    1.2611   7.3149      0.1400
+  35108  35109   32.9    0.1397   0.1403      0.1400
+  35594  35595   63.1    0.1817   0.1297      0.1400
+  35594  35596   52.8    0.1849   0.1633      0.1400
+  35702  35704   32.0    0.1400   0.1392      0.1400
+  36347  36348   45.6    0.1479   0.1437      0.1400
+  36644  36645   92.2    5.0996   5.0774      0.1400
+  36644  36646   87.9    5.6549   8.0957      0.1400
+  37049  37050   43.1    0.1447   0.1526      0.1400
+  37049  37051   60.1    0.1426   0.1526      0.1400
+  37220  37222   32.0    0.1401   0.1399      0.1400
+  37346  37347   90.0    0.1614   0.1937      0.1400
+  37346  37348   90.0    0.2247   0.1885      0.1400
+  37556  37557   34.9    0.1400   0.1396      0.1400
+  37556  37558   33.6    0.1400   0.1379      0.1400
+  37571  37572   59.7    0.1397   0.1451      0.1400
+  37571  37573   48.0    0.1361   0.1425      0.1400
+  37598  37599   99.0    1.1609   0.4951      0.1400
+  37598  37600   96.6    1.2048   0.6652      0.1400
+  37709  37710   91.7    3.8831   4.4377      0.1400
+  37709  37711   91.7    3.9993   4.2847      0.1400
+  37838  37839   42.6    0.2106   0.1408      0.1400
+  37838  37840   31.2    0.1953   0.1436      0.1400
+  37937  37938   89.9    0.1400   0.1651      0.1400
+  37937  37939   90.0    0.1400   0.1743      0.1400
+  38003  38005   34.1    0.1405   0.1412      0.1400
+  38135  38136   90.0    0.1400   0.1363      0.1400
+  38135  38137   65.5    0.1400   0.1486      0.1400
+  38183  38185   91.5    0.2020   0.1406      0.1400
+  38423  38424   90.7    0.2618   0.2509      0.1400
+  38423  38425   90.8    0.2569   0.2354      0.1400
+  38477  38478   37.8    0.1407   0.1403      0.1400
+  39233  39234   89.3    0.7546   3.1917      0.1400
+  39233  39235   89.5    3.5225   2.8757      0.1400
+  39689  39690   62.7    0.1694   0.1533      0.1400
+  39689  39691   91.0    0.1669   0.1756      0.1400
+  39797  39798   50.9    0.8807 510.1565      0.1400
+  39797  39799   77.9    0.7471 509.0576      0.1400
+  40664  40665   78.5    0.1335   0.1498      0.1400
+  40664  40666   45.2    0.1349   0.1717      0.1400
+  40718  40719   90.0    0.1400   1.6990      0.1400
+  40718  40720   90.0    0.1400   1.7091      0.1400
+  41054  41055   31.3    0.1398   0.1388      0.1400
+  41330  41331   34.9    0.1400   0.1401      0.1400
+  41519  41520   32.5    1.6252  22.0517      0.1400
+  41519  41521   40.6    1.6701  21.9014      0.1400
+  41528  41529   73.3    6.1193  25.4418      0.1400
+  41528  41530   88.3    6.8634  11.6994      0.1400
+  43118  43119   34.5    0.1393   0.1375      0.1400
+  43118  43120   33.0    0.1443   0.1437      0.1400
+  43214  43215   38.0    0.1412   0.1466      0.1400
+  43214  43216   39.1    0.1402   0.1459      0.1400
+  43229  43231   63.2    0.1401   0.1358      0.1400
+  43247  43249   32.3    0.1406   0.1397      0.1400
+  43475  43477   41.4    0.1395   0.1397      0.1400
+  43520  43522   54.8    0.1379   0.1439      0.1400
+  43793  43794   90.5    0.6658   2.2289      0.1400
+  43793  43795   90.4    0.9836   2.3111      0.1400
+  44018  44019   89.3    0.8637   1.7728      0.1400
+  44018  44020   89.4    1.1057   1.8273      0.1400
+
+-------------------------------------------------------
+Program:     gmx mdrun, version 2016.3
+Source file: src/gromacs/mdlib/constr.cpp (line 167)
+
+Fatal error:
+Too many LINCS warnings (1163)
+If you know what you are doing you can adjust the lincs warning threshold in
+your mdp file
+or set the environment variable GMX_MAXCONSTRWARN to -1,
+but normally it is better to fix the problem
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+                      :-) GROMACS - gmx grompp, 2016.3 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx grompp, version 2016.3
+Executable:   /home/citrux/software/bin/gmx
+Data prefix:  /home/citrux/software
+Working dir:  /home/sinegordon/Science/2018_Melatonin/DMPCMelCG/charmm-gui/gromacs
+Command line:
+  gmx grompp -f step8_production.mdp -o step8_production.tpr -c step7_production.gro -p system.top -n index.ndx -maxwarn 5
+
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2016.3
+Source file: src/gromacs/commandline/cmdlineparser.cpp (line 235)
+Function:    void gmx::CommandLineParser::parse(int *, char **)
+
+Error in user input:
+Invalid command-line options
+  In command-line option -c
+    File 'step7_production.gro' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+                      :-) GROMACS - gmx mdrun, 2016.3 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2016.3
+Executable:   /home/citrux/software/bin/gmx
+Data prefix:  /home/citrux/software
+Working dir:  /home/sinegordon/Science/2018_Melatonin/DMPCMelCG/charmm-gui/gromacs
+Command line:
+  gmx mdrun -deffnm step8_production -ntomp 6 -v
+
+
+-------------------------------------------------------
+Program:     gmx mdrun, version 2016.3
+Source file: src/gromacs/options/options.cpp (line 258)
+Function:    void gmx::Options::finish()
+
+Error in user input:
+Invalid input values
+  In option s
+    Required option was not provided, and the default file 'topol' does not
+    exist or is not accessible.
+    The following extensions were tried to complete the file name:
+      .tpr
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0
+[unset]: write_line error; fd=-1 buf=:cmd=abort exitcode=1
+:
+system msg for write_line failure : Bad file descriptor
+Traceback (most recent call last):
+  File "/home/sinegordon/local/bin/dynsf", line 269, in <module>
+    f0, f1 = islice(get_itraj(options.trajectory, step=options.step),
+  File "/home/sinegordon/local/lib64/python2.7/site-packages/dsf/trajectory.py", line 63, in get_itraj
+    raise IOError('File "%s" does not exist' % filename)
+IOError: File "./step8_production.trr" does not exist

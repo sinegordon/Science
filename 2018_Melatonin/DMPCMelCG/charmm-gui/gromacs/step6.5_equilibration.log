@@ -1,0 +1,998 @@
+Log file opened on Thu Dec 13 22:17:06 2018
+Host: node51.cluster  pid: 16562  rank ID: 0  number of ranks:  1
+                      :-) GROMACS - gmx mdrun, 2016.3 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2016.3
+Executable:   /home/citrux/software/bin/gmx
+Data prefix:  /home/citrux/software
+Working dir:  /home/sinegordon/Science/2018_Melatonin/DMPCMelCG/charmm-gui/gromacs
+Command line:
+  gmx mdrun -deffnm step6.5_equilibration -ntomp 6 -v
+
+GROMACS version:    2016.3
+Precision:          single
+Memory model:       64 bit
+MPI library:        MPI
+OpenMP support:     enabled (GMX_OPENMP_MAX_THREADS = 32)
+GPU support:        disabled
+SIMD instructions:  AVX2_256
+FFT library:        Intel MKL
+RDTSCP usage:       enabled
+TNG support:        enabled
+Hwloc support:      disabled
+Tracing support:    disabled
+Built on:           Mon 22 May 17:33:11 MSK 2017
+Built by:           citrux@node40.cluster [CMAKE]
+Build OS/arch:      Linux 3.10.0-514.el7.x86_64 x86_64
+Build CPU vendor:   Intel
+Build CPU brand:    Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+Build CPU family:   6   Model: 63   Stepping: 2
+Build CPU features: aes apic avx avx2 clfsh cmov cx8 cx16 f16c fma htt lahf mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdrnd rdtscp sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+C compiler:         /home/intel/compilers_and_libraries_2017.2.174/linux/mpi/intel64/bin/mpiicc Intel 17.0.0.20170213
+C compiler flags:    -march=core-avx2   -mkl=sequential  -std=gnu99  -O3 -DNDEBUG -ip -funroll-all-loops -alias-const -ansi-alias  
+C++ compiler:       /home/intel/compilers_and_libraries_2017.2.174/linux/mpi/intel64/bin/mpiicpc Intel 17.0.0.20170213
+C++ compiler flags:  -march=core-avx2    -std=c++0x   -O3 -DNDEBUG -ip -funroll-all-loops -alias-const -ansi-alias  
+
+
+Running on 1 node with total 24 cores, 24 logical cores
+Hardware detected on host node51.cluster (the node of MPI rank 0):
+  CPU info:
+    Vendor: Intel
+    Brand:  Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz
+    Family: 6   Model: 79   Stepping: 1
+    Features: apic avx avx2 clfsh cmov cx8 cx16 f16c fma hle htt lahf mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdrnd rdtscp rtm sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+    SIMD instructions most likely to fit this hardware: AVX2_256
+    SIMD instructions selected at GROMACS compile time: AVX2_256
+
+  Hardware topology: Only logical processor count
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+M. J. Abraham, T. Murtola, R. Schulz, S. Páll, J. C. Smith, B. Hess, E.
+Lindahl
+GROMACS: High performance molecular simulations through multi-level
+parallelism from laptops to supercomputers
+SoftwareX 1 (2015) pp. 19-25
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Páll, M. J. Abraham, C. Kutzner, B. Hess, E. Lindahl
+Tackling Exascale Software Challenges in Molecular Dynamics Simulations with
+GROMACS
+In S. Markidis & E. Laure (Eds.), Solving Software Challenges for Exascale 8759 (2015) pp. 3-27
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Pronk, S. Páll, R. Schulz, P. Larsson, P. Bjelkmar, R. Apostolov, M. R.
+Shirts, J. C. Smith, P. M. Kasson, D. van der Spoel, B. Hess, and E. Lindahl
+GROMACS 4.5: a high-throughput and highly parallel open source molecular
+simulation toolkit
+Bioinformatics 29 (2013) pp. 845-54
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess and C. Kutzner and D. van der Spoel and E. Lindahl
+GROMACS 4: Algorithms for highly efficient, load-balanced, and scalable
+molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 435-447
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+D. van der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark and H. J. C.
+Berendsen
+GROMACS: Fast, Flexible and Free
+J. Comp. Chem. 26 (2005) pp. 1701-1719
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+E. Lindahl and B. Hess and D. van der Spoel
+GROMACS 3.0: A package for molecular simulation and trajectory analysis
+J. Mol. Mod. 7 (2001) pp. 306-317
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+H. J. C. Berendsen, D. van der Spoel and R. van Drunen
+GROMACS: A message-passing parallel molecular dynamics implementation
+Comp. Phys. Comm. 91 (1995) pp. 43-56
+-------- -------- --- Thank You --- -------- --------
+
+Input Parameters:
+   integrator                     = md
+   tinit                          = 0
+   dt                             = 0.015
+   nsteps                         = 50000
+   init-step                      = 0
+   simulation-part                = 1
+   comm-mode                      = Linear
+   nstcomm                        = 100
+   bd-fric                        = 0
+   ld-seed                        = 274024517
+   emtol                          = 10
+   emstep                         = 0.01
+   niter                          = 20
+   fcstep                         = 0
+   nstcgsteep                     = 1000
+   nbfgscorr                      = 10
+   rtpi                           = 0.05
+   nstxout                        = 0
+   nstvout                        = 0
+   nstfout                        = 0
+   nstlog                         = 1000
+   nstcalcenergy                  = 100
+   nstenergy                      = 1000
+   nstxout-compressed             = 1000
+   compressed-x-precision         = 100
+   cutoff-scheme                  = Verlet
+   nstlist                        = 20
+   ns-type                        = Grid
+   pbc                            = xyz
+   periodic-molecules             = false
+   verlet-buffer-tolerance        = 0.005
+   rlist                          = 1.268
+   coulombtype                    = Reaction-Field
+   coulomb-modifier               = Potential-shift
+   rcoulomb-switch                = 0
+   rcoulomb                       = 1.1
+   epsilon-r                      = 2.5
+   epsilon-rf                     = inf
+   vdw-type                       = Cut-off
+   vdw-modifier                   = Potential-shift
+   rvdw-switch                    = 0
+   rvdw                           = 1.1
+   DispCorr                       = No
+   table-extension                = 1
+   fourierspacing                 = 0.12
+   fourier-nx                     = 0
+   fourier-ny                     = 0
+   fourier-nz                     = 0
+   pme-order                      = 4
+   ewald-rtol                     = 1e-05
+   ewald-rtol-lj                  = 0.001
+   lj-pme-comb-rule               = Geometric
+   ewald-geometry                 = 0
+   epsilon-surface                = 0
+   implicit-solvent               = No
+   gb-algorithm                   = Still
+   nstgbradii                     = 1
+   rgbradii                       = 1
+   gb-epsilon-solvent             = 80
+   gb-saltconc                    = 0
+   gb-obc-alpha                   = 1
+   gb-obc-beta                    = 0.8
+   gb-obc-gamma                   = 4.85
+   gb-dielectric-offset           = 0.009
+   sa-algorithm                   = Ace-approximation
+   sa-surface-tension             = 2.05016
+   tcoupl                         = V-rescale
+   nsttcouple                     = 20
+   nh-chain-length                = 0
+   print-nose-hoover-chain-variables = false
+   pcoupl                         = Berendsen
+   pcoupltype                     = Semiisotropic
+   nstpcouple                     = 20
+   tau-p                          = 5
+   compressibility (3x3):
+      compressibility[    0]={ 3.00000e-04,  0.00000e+00,  0.00000e+00}
+      compressibility[    1]={ 0.00000e+00,  3.00000e-04,  0.00000e+00}
+      compressibility[    2]={ 0.00000e+00,  0.00000e+00,  3.00000e-04}
+   ref-p (3x3):
+      ref-p[    0]={ 1.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    1]={ 0.00000e+00,  1.00000e+00,  0.00000e+00}
+      ref-p[    2]={ 0.00000e+00,  0.00000e+00,  1.00000e+00}
+   refcoord-scaling               = All
+   posres-com (3):
+      posres-com[0]= 0.00000e+00
+      posres-com[1]= 0.00000e+00
+      posres-com[2]= 0.00000e+00
+   posres-comB (3):
+      posres-comB[0]= 0.00000e+00
+      posres-comB[1]= 0.00000e+00
+      posres-comB[2]= 0.00000e+00
+   QMMM                           = false
+   QMconstraints                  = 0
+   QMMMscheme                     = 0
+   MMChargeScaleFactor            = 1
+qm-opts:
+   ngQM                           = 0
+   constraint-algorithm           = Lincs
+   continuation                   = false
+   Shake-SOR                      = false
+   shake-tol                      = 0.0001
+   lincs-order                    = 4
+   lincs-iter                     = 1
+   lincs-warnangle                = 30
+   nwall                          = 0
+   wall-type                      = 9-3
+   wall-r-linpot                  = -1
+   wall-atomtype[0]               = -1
+   wall-atomtype[1]               = -1
+   wall-density[0]                = 0
+   wall-density[1]                = 0
+   wall-ewald-zfac                = 3
+   pull                           = false
+   rotation                       = false
+   interactiveMD                  = false
+   disre                          = No
+   disre-weighting                = Conservative
+   disre-mixed                    = false
+   dr-fc                          = 1000
+   dr-tau                         = 0
+   nstdisreout                    = 100
+   orire-fc                       = 0
+   orire-tau                      = 0
+   nstorireout                    = 100
+   free-energy                    = no
+   cos-acceleration               = 0
+   deform (3x3):
+      deform[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   simulated-tempering            = false
+   E-x:
+      n = 0
+   E-xt:
+      n = 0
+   E-y:
+      n = 0
+   E-yt:
+      n = 0
+   E-z:
+      n = 0
+   E-zt:
+      n = 0
+   swapcoords                     = no
+   userint1                       = 0
+   userint2                       = 0
+   userint3                       = 0
+   userint4                       = 0
+   userreal1                      = 0
+   userreal2                      = 0
+   userreal3                      = 0
+   userreal4                      = 0
+grpopts:
+   nrdf:     31859.1     78054.9
+   ref-t:      310.15      310.15
+   tau-t:           1           1
+annealing:          No          No
+annealing-npoints:           0           0
+   acc:	           0           0           0
+   nfreeze:           N           N           N
+   energygrp-flags[  0]: 0
+
+Using 1 MPI process
+Using 6 OpenMP threads 
+
+Cut-off's:   NS: 1.268   Coulomb: 1.1   LJ: 1.1
+Reaction-Field:
+epsRF = 0, rc = 1.1, krf = 0.375657, crf = 1.36364, epsfac = 55.5742
+The electrostatics potential has its minimum at r = 1.1
+System total charge: 0.000
+Potential shift: LJ r^-12: -3.186e-01 r^-6: -5.645e-01
+
+Using SIMD 4x8 non-bonded kernels
+
+Using full Lennard-Jones parameter combination matrix
+
+Removing pbc first time
+
+Non-default thread affinity set probably by the OpenMP library,
+disabling internal thread affinity
+
+Initializing LINear Constraint Solver
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess
+P-LINCS: A Parallel Linear Constraint Solver for molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 116-122
+-------- -------- --- Thank You --- -------- --------
+
+The number of constraints is 22872
+570 constraints are involved in constraint triangles,
+will apply an additional matrix expansion of order 4 for couplings
+between constraints inside triangles
+Intra-simulation communication will occur every 20 steps.
+Center of mass motion removal mode is Linear
+We have the following groups for center of mass motion removal:
+  0:  rest
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+G. Bussi, D. Donadio and M. Parrinello
+Canonical sampling through velocity rescaling
+J. Chem. Phys. 126 (2007) pp. 014101
+-------- -------- --- Thank You --- -------- --------
+
+There are: 44263 Atoms
+There are: 342 VSites
+
+Constraining the starting coordinates (step 0)
+
+Constraining the coordinates at t0-dt (step 0)
+RMS relative constraint deviation after constraining: 8.11e-05
+Initial temperature: 308.92 K
+
+Started mdrun on rank 0 Thu Dec 13 22:17:06 2018
+           Step           Time
+              0        0.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.25705e+04    4.83988e+04    1.64072e+02   -4.26484e+05   -2.35446e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    6.57480e-05   -5.90796e+05    1.41676e+05   -4.49120e+05    3.10055e+02
+ Pressure (bar)   Constr. rmsd
+    1.77548e+01    8.90146e-05
+
+           Step           Time
+           1000       15.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.25199e+04    4.77553e+04    1.49292e+02   -4.25894e+05   -2.33563e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    1.92250e+02   -5.88841e+05    1.42263e+05   -4.46577e+05    3.11340e+02
+ Pressure (bar)   Constr. rmsd
+    6.04240e+00    8.84428e-05
+
+           Step           Time
+           2000       30.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.26810e+04    4.76287e+04    1.42428e+02   -4.25811e+05   -2.34062e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    2.58703e+02   -5.89162e+05    1.41412e+05   -4.47750e+05    3.09478e+02
+ Pressure (bar)   Constr. rmsd
+    1.84920e+01    9.09569e-05
+
+           Step           Time
+           3000       45.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.24254e+04    4.82183e+04    1.12226e+02   -4.25869e+05   -2.32895e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    3.03435e+02   -5.87704e+05    1.42068e+05   -4.45636e+05    3.10913e+02
+ Pressure (bar)   Constr. rmsd
+    5.06592e+00    8.84358e-05
+
+           Step           Time
+           4000       60.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.22424e+04    4.75752e+04    1.21174e+02   -4.25462e+05   -2.32948e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    3.35607e+02   -5.88136e+05    1.41444e+05   -4.46692e+05    3.09548e+02
+ Pressure (bar)   Constr. rmsd
+    2.08757e+01    9.12766e-05
+
+           Step           Time
+           5000       75.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.23500e+04    4.75895e+04    1.43805e+02   -4.26187e+05   -2.32586e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    3.19182e+02   -5.88371e+05    1.42529e+05   -4.45841e+05    3.11923e+02
+ Pressure (bar)   Constr. rmsd
+    1.38598e+01    8.85092e-05
+
+           Step           Time
+           6000       90.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.21316e+04    4.78717e+04    1.32563e+02   -4.25857e+05   -2.32972e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    3.37023e+02   -5.88356e+05    1.41517e+05   -4.46839e+05    3.09706e+02
+ Pressure (bar)   Constr. rmsd
+    1.44048e+01    8.70331e-05
+
+           Step           Time
+           7000      105.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.23886e+04    4.80168e+04    1.54462e+02   -4.26737e+05   -2.33093e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    3.51867e+02   -5.88918e+05    1.42322e+05   -4.46596e+05    3.11469e+02
+ Pressure (bar)   Constr. rmsd
+   -1.73927e+01    9.20179e-05
+
+           Step           Time
+           8000      120.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.26939e+04    4.74754e+04    1.59698e+02   -4.26252e+05   -2.31384e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    3.54221e+02   -5.86953e+05    1.42201e+05   -4.44752e+05    3.11205e+02
+ Pressure (bar)   Constr. rmsd
+    2.27928e+01    8.87883e-05
+
+           Step           Time
+           9000      135.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.22060e+04    4.76278e+04    1.52758e+02   -4.26635e+05   -2.31315e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    3.88299e+02   -5.87575e+05    1.41937e+05   -4.45638e+05    3.10627e+02
+ Pressure (bar)   Constr. rmsd
+   -1.90933e+01    9.00849e-05
+
+           Step           Time
+          10000      150.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.23215e+04    4.79411e+04    1.71756e+02   -4.24911e+05   -2.33778e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.05198e+02   -5.87849e+05    1.42324e+05   -4.45525e+05    3.11474e+02
+ Pressure (bar)   Constr. rmsd
+    2.63580e+01    8.97041e-05
+
+           Step           Time
+          11000      165.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.21561e+04    4.75984e+04    1.75088e+02   -4.26690e+05   -2.32585e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.07686e+02   -5.88938e+05    1.41448e+05   -4.47490e+05    3.09556e+02
+ Pressure (bar)   Constr. rmsd
+    8.53057e-01    8.76499e-05
+
+           Step           Time
+          12000      180.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.23742e+04    4.77722e+04    1.52041e+02   -4.24596e+05   -2.32473e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    3.76198e+02   -5.86394e+05    1.43720e+05   -4.42675e+05    3.14528e+02
+ Pressure (bar)   Constr. rmsd
+   -7.52234e+00    9.00248e-05
+
+           Step           Time
+          13000      195.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.22625e+04    4.75258e+04    1.68178e+02   -4.23876e+05   -2.32757e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    3.80052e+02   -5.86296e+05    1.42045e+05   -4.44251e+05    3.10862e+02
+ Pressure (bar)   Constr. rmsd
+    4.19153e+01    9.14116e-05
+
+           Step           Time
+          14000      210.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.26021e+04    4.77391e+04    1.67161e+02   -4.25797e+05   -2.31852e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.11320e+02   -5.86730e+05    1.42170e+05   -4.44559e+05    3.11137e+02
+ Pressure (bar)   Constr. rmsd
+   -8.75588e+00    9.00448e-05
+
+           Step           Time
+          15000      225.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.22298e+04    4.77720e+04    1.35789e+02   -4.26050e+05   -2.31493e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.03582e+02   -5.87001e+05    1.41750e+05   -4.45250e+05    3.10218e+02
+ Pressure (bar)   Constr. rmsd
+    4.94857e+00    8.81647e-05
+
+           Step           Time
+          16000      240.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.24532e+04    4.77811e+04    1.31541e+02   -4.27180e+05   -2.33506e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.11839e+02   -5.89908e+05    1.41519e+05   -4.48390e+05    3.09711e+02
+ Pressure (bar)   Constr. rmsd
+   -1.92386e+01    9.36563e-05
+
+           Step           Time
+          17000      255.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.19316e+04    4.80333e+04    1.36345e+02   -4.26116e+05   -2.31499e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.29196e+02   -5.87085e+05    1.42288e+05   -4.44797e+05    3.11395e+02
+ Pressure (bar)   Constr. rmsd
+   -2.25343e+01    9.16850e-05
+
+           Step           Time
+          18000      270.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.26359e+04    4.83110e+04    1.49717e+02   -4.26740e+05   -2.33283e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    3.90823e+02   -5.88536e+05    1.42326e+05   -4.46210e+05    3.11478e+02
+ Pressure (bar)   Constr. rmsd
+   -2.30281e+01    9.30064e-05
+
+           Step           Time
+          19000      285.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.20846e+04    4.79101e+04    1.49767e+02   -4.25254e+05   -2.33022e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.03247e+02   -5.87728e+05    1.41876e+05   -4.45852e+05    3.10494e+02
+ Pressure (bar)   Constr. rmsd
+    2.06320e+01    8.92764e-05
+
+           Step           Time
+          20000      300.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.26912e+04    4.77194e+04    1.12556e+02   -4.24251e+05   -2.31995e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.29562e+02   -5.85294e+05    1.41196e+05   -4.44098e+05    3.09005e+02
+ Pressure (bar)   Constr. rmsd
+    3.88552e+01    8.87695e-05
+
+           Step           Time
+          21000      315.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.25716e+04    4.78975e+04    1.52419e+02   -4.24728e+05   -2.32556e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.22272e+02   -5.86240e+05    1.42286e+05   -4.43954e+05    3.11391e+02
+ Pressure (bar)   Constr. rmsd
+    1.93373e+01    9.09488e-05
+
+           Step           Time
+          22000      330.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.25536e+04    4.78528e+04    1.41478e+02   -4.25660e+05   -2.33056e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.27427e+02   -5.87741e+05    1.42398e+05   -4.45343e+05    3.11636e+02
+ Pressure (bar)   Constr. rmsd
+    1.53507e+01    8.83384e-05
+
+           Step           Time
+          23000      345.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.20301e+04    4.74958e+04    1.31545e+02   -4.26309e+05   -2.32492e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.32895e+02   -5.88711e+05    1.41086e+05   -4.47624e+05    3.08765e+02
+ Pressure (bar)   Constr. rmsd
+   -3.67628e+00    8.76554e-05
+
+           Step           Time
+          24000      360.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.19877e+04    4.72670e+04    1.44386e+02   -4.24818e+05   -2.31779e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.32348e+02   -5.86765e+05    1.41588e+05   -4.45177e+05    3.09863e+02
+ Pressure (bar)   Constr. rmsd
+    4.03560e+01    8.99410e-05
+
+           Step           Time
+          25000      375.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.23972e+04    4.83811e+04    1.31243e+02   -4.26693e+05   -2.34534e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.06988e+02   -5.89910e+05    1.40457e+05   -4.49453e+05    3.07387e+02
+ Pressure (bar)   Constr. rmsd
+    8.64157e+00    8.84685e-05
+
+           Step           Time
+          26000      390.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.22695e+04    4.81532e+04    1.50513e+02   -4.25962e+05   -2.34218e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.13325e+02   -5.89193e+05    1.42104e+05   -4.47089e+05    3.10992e+02
+ Pressure (bar)   Constr. rmsd
+    1.54686e+01    8.91089e-05
+
+           Step           Time
+          27000      405.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.17248e+04    4.82500e+04    1.45280e+02   -4.26465e+05   -2.34735e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.25506e+02   -5.90654e+05    1.41752e+05   -4.48902e+05    3.10222e+02
+ Pressure (bar)   Constr. rmsd
+    3.59076e+00    9.01662e-05
+
+           Step           Time
+          28000      420.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.27753e+04    4.86004e+04    1.41148e+02   -4.26391e+05   -2.34164e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.32896e+02   -5.88605e+05    1.40976e+05   -4.47629e+05    3.08524e+02
+ Pressure (bar)   Constr. rmsd
+    1.43707e+01    8.86206e-05
+
+           Step           Time
+          29000      435.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.29497e+04    4.79421e+04    1.15319e+02   -4.25645e+05   -2.33732e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.52411e+02   -5.87917e+05    1.41063e+05   -4.46853e+05    3.08715e+02
+ Pressure (bar)   Constr. rmsd
+   -2.92897e+00    8.79230e-05
+
+           Step           Time
+          30000      450.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.19071e+04    4.78189e+04    1.38971e+02   -4.27717e+05   -2.32271e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.53050e+02   -5.89670e+05    1.40969e+05   -4.48702e+05    3.08507e+02
+ Pressure (bar)   Constr. rmsd
+   -3.29587e+01    8.79077e-05
+
+           Step           Time
+          31000      465.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.27043e+04    4.76297e+04    1.46916e+02   -4.26374e+05   -2.32919e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.50562e+02   -5.88362e+05    1.41514e+05   -4.46848e+05    3.09700e+02
+ Pressure (bar)   Constr. rmsd
+    1.54439e+01    9.09536e-05
+
+           Step           Time
+          32000      480.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.22689e+04    4.82223e+04    1.64216e+02   -4.26219e+05   -2.32200e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.45295e+02   -5.87319e+05    1.41691e+05   -4.45628e+05    3.10088e+02
+ Pressure (bar)   Constr. rmsd
+   -2.69773e+01    8.78398e-05
+
+           Step           Time
+          33000      495.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.24139e+04    4.80130e+04    1.18587e+02   -4.26725e+05   -2.32680e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.47066e+02   -5.88413e+05    1.42650e+05   -4.45763e+05    3.12186e+02
+ Pressure (bar)   Constr. rmsd
+    1.65681e+01    9.24734e-05
+
+           Step           Time
+          34000      510.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.24668e+04    4.77397e+04    1.35600e+02   -4.25457e+05   -2.33803e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.14894e+02   -5.88503e+05    1.41415e+05   -4.47089e+05    3.09484e+02
+ Pressure (bar)   Constr. rmsd
+    4.32659e+01    9.13488e-05
+
+           Step           Time
+          35000      525.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.27238e+04    4.78084e+04    1.44737e+02   -4.25321e+05   -2.33540e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.40596e+02   -5.87744e+05    1.41598e+05   -4.46146e+05    3.09885e+02
+ Pressure (bar)   Constr. rmsd
+    1.09829e+01    9.07139e-05
+
+           Step           Time
+          36000      540.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.22206e+04    4.77540e+04    1.83411e+02   -4.25377e+05   -2.32959e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.42772e+02   -5.87735e+05    1.40736e+05   -4.47000e+05    3.07997e+02
+ Pressure (bar)   Constr. rmsd
+    3.44081e+01    8.71667e-05
+
+           Step           Time
+          37000      555.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.26931e+04    4.78471e+04    1.72905e+02   -4.25152e+05   -2.31855e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.39735e+02   -5.85854e+05    1.41628e+05   -4.44226e+05    3.09950e+02
+ Pressure (bar)   Constr. rmsd
+    9.84241e+00    9.21633e-05
+
+           Step           Time
+          38000      570.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.22269e+04    4.82604e+04    1.29177e+02   -4.25440e+05   -2.33751e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.52100e+02   -5.88123e+05    1.41705e+05   -4.46418e+05    3.10119e+02
+ Pressure (bar)   Constr. rmsd
+    3.54184e+00    8.92756e-05
+
+           Step           Time
+          39000      585.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.25221e+04    4.73375e+04    1.26620e+02   -4.24245e+05   -2.31650e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.48016e+02   -5.85462e+05    1.41064e+05   -4.44398e+05    3.08715e+02
+ Pressure (bar)   Constr. rmsd
+    3.28484e+01    8.92758e-05
+
+           Step           Time
+          40000      600.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.28284e+04    4.77129e+04    1.58763e+02   -4.26040e+05   -2.32691e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.48126e+02   -5.87582e+05    1.41398e+05   -4.46185e+05    3.09446e+02
+ Pressure (bar)   Constr. rmsd
+   -6.34584e-01    8.65823e-05
+
+           Step           Time
+          41000      615.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.25311e+04    4.81918e+04    1.53647e+02   -4.26440e+05   -2.32572e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.73124e+02   -5.87662e+05    1.41340e+05   -4.46322e+05    3.09320e+02
+ Pressure (bar)   Constr. rmsd
+   -2.56483e+01    8.74213e-05
+
+           Step           Time
+          42000      630.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.21504e+04    4.82706e+04    1.71159e+02   -4.25141e+05   -2.34504e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.45061e+02   -5.88607e+05    1.40780e+05   -4.47827e+05    3.08095e+02
+ Pressure (bar)   Constr. rmsd
+    1.53346e+01    8.71825e-05
+
+           Step           Time
+          43000      645.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.26237e+04    4.77381e+04    1.35314e+02   -4.25886e+05   -2.32859e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.63919e+02   -5.87784e+05    1.42411e+05   -4.45373e+05    3.11663e+02
+ Pressure (bar)   Constr. rmsd
+    1.07727e+01    8.93623e-05
+
+           Step           Time
+          44000      660.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.22256e+04    4.79370e+04    1.50081e+02   -4.26211e+05   -2.33965e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.44908e+02   -5.89419e+05    1.42569e+05   -4.46851e+05    3.12009e+02
+ Pressure (bar)   Constr. rmsd
+   -1.67880e+00    9.25655e-05
+
+           Step           Time
+          45000      675.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.27028e+04    4.78174e+04    1.41600e+02   -4.24745e+05   -2.34375e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.69909e+02   -5.87988e+05    1.42069e+05   -4.45919e+05    3.10916e+02
+ Pressure (bar)   Constr. rmsd
+    1.29800e+01    9.16711e-05
+
+           Step           Time
+          46000      690.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.30231e+04    4.74971e+04    1.62073e+02   -4.25943e+05   -2.32685e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.44735e+02   -5.87501e+05    1.42513e+05   -4.44988e+05    3.11887e+02
+ Pressure (bar)   Constr. rmsd
+   -2.59587e+01    8.55801e-05
+
+           Step           Time
+          47000      705.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.26971e+04    4.76397e+04    1.23961e+02   -4.25960e+05   -2.32477e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.58783e+02   -5.87518e+05    1.42153e+05   -4.45364e+05    3.11100e+02
+ Pressure (bar)   Constr. rmsd
+    5.53440e+00    9.03617e-05
+
+           Step           Time
+          48000      720.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.22564e+04    4.76021e+04    1.33416e+02   -4.25623e+05   -2.31331e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.68022e+02   -5.86494e+05    1.42228e+05   -4.44266e+05    3.11263e+02
+ Pressure (bar)   Constr. rmsd
+   -1.04855e+01    9.25119e-05
+
+           Step           Time
+          49000      735.00000
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.21549e+04    4.74515e+04    1.29315e+02   -4.25989e+05   -2.32153e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.46863e+02   -5.87959e+05    1.41551e+05   -4.46408e+05    3.09782e+02
+ Pressure (bar)   Constr. rmsd
+    2.56469e+01    9.06099e-05
+
+           Step           Time
+          50000      750.00000
+
+Writing checkpoint, step 50000 at Thu Dec 13 22:20:25 2018
+
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.23962e+04    4.74790e+04    1.30829e+02   -4.25453e+05   -2.32695e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.61911e+02   -5.87680e+05    1.41998e+05   -4.45682e+05    3.10759e+02
+ Pressure (bar)   Constr. rmsd
+    2.35456e+01    9.28154e-05
+
+	<======  ###############  ==>
+	<====  A V E R A G E S  ====>
+	<==  ###############  ======>
+
+	Statistics over 50001 steps using 501 frames
+
+   Energies (kJ/mol)
+           Bond       G96Angle  Improper Dih.        LJ (SR)   Coulomb (SR)
+    2.23851e+04    4.78530e+04    1.45802e+02   -4.25842e+05   -2.32997e+05
+ Position Rest.      Potential    Kinetic En.   Total Energy    Temperature
+    4.08659e+02   -5.88047e+05    1.41823e+05   -4.46224e+05    3.10377e+02
+ Pressure (bar)   Constr. rmsd
+    2.87203e+00    0.00000e+00
+
+          Box-X          Box-Y          Box-Z
+    1.77283e+01    1.77283e+01    7.70172e+00
+
+   Total Virial (kJ/mol)
+    4.71510e+04    9.20999e+01    1.12186e+02
+    9.20992e+01    4.69983e+04    7.85557e+01
+    1.12189e+02    7.85615e+01    4.70463e+04
+
+   Pressure (bar)
+    2.09551e+00   -1.33880e+00   -1.74427e+00
+   -1.33879e+00    4.72621e+00   -1.24296e+00
+   -1.74432e+00   -1.24304e+00    1.79436e+00
+
+     T-MEMBRANE       T-SOLUTE
+    3.09930e+02    3.10560e+02
+
+
+	M E G A - F L O P S   A C C O U N T I N G
+
+ NB=Group-cutoff nonbonded kernels    NxN=N-by-N cluster Verlet kernels
+ RF=Reaction-Field  VdW=Van der Waals  QSTab=quadratic-spline table
+ W3=SPC/TIP3p  W4=TIP4p (single or pairs)
+ V&F=Potential and force  V=Potential only  F=Force only
+
+ Computing:                               M-Number         M-Flops  % Flops
+-----------------------------------------------------------------------------
+ Pair Search distance check           27802.630238      250223.672     1.3
+ NxN RF Elec. + LJ [F]               267271.000096    10156298.004    51.2
+ NxN RF Elec. + LJ [V&F]               2705.140352      146077.579     0.7
+ NxN LJ [F]                           64981.519168     2144390.133    10.8
+ NxN LJ [V&F]                           657.501376       28272.559     0.1
+ NxN RF Electrostatics [F]           216621.814592     6715276.252    33.9
+ NxN RF Electrostatics [V&F]           2192.484320       78929.436     0.4
+ Shift-X                                111.557105         669.343     0.0
+ Bonds                                  466.509330       27524.050     0.1
+ Angles                                 870.467409      146238.525     0.7
+ Impropers                                5.700114        1185.624     0.0
+ Pos. Restr.                             56.901138        2845.057     0.0
+ Virial                                 111.669650        2010.054     0.0
+ Stop-CM                                 22.391710         223.917     0.0
+ P-Coupling                             111.512500         669.075     0.0
+ Calc-Ekin                              223.114210        6024.084     0.0
+ Lincs                                 1143.668616       68620.117     0.3
+ Lincs-Mat                             7511.850684       30047.403     0.2
+ Constraint-V                          2287.291488       18298.332     0.1
+ Constraint-Vir                          57.202872        1372.869     0.0
+ Virtual Site 3                           5.985228         221.453     0.0
+ Virtual Site 3out                       11.970456        1041.430     0.0
+-----------------------------------------------------------------------------
+ Total                                                19826458.966   100.0
+-----------------------------------------------------------------------------
+
+
+     R E A L   C Y C L E   A N D   T I M E   A C C O U N T I N G
+
+On 1 MPI rank, each using 6 OpenMP threads
+
+ Computing:          Num   Num      Call    Wall time         Giga-Cycles
+                     Ranks Threads  Count      (s)         total sum    %
+-----------------------------------------------------------------------------
+ Vsite constr.          1    6      50001       0.461          6.090   0.2
+ Neighbor search        1    6       2501      17.682        233.424   8.9
+ Force                  1    6      50001     155.974       2059.072  78.1
+ NB X/F buffer ops.     1    6      97501       4.849         64.010   2.4
+ Vsite spread           1    6      52502       0.606          8.005   0.3
+ Write traj.            1    6         51       0.561          7.409   0.3
+ Update                 1    6      50001       4.774         63.026   2.4
+ Constraints            1    6      50001      14.061        185.622   7.0
+ Rest                                           0.790         10.435   0.4
+-----------------------------------------------------------------------------
+ Total                                        199.759       2637.091 100.0
+-----------------------------------------------------------------------------
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     1198.554      199.759      600.0
+                 (ns/day)    (hour/ns)
+Performance:      324.397        0.074
+Finished mdrun on rank 0 Thu Dec 13 22:20:26 2018
